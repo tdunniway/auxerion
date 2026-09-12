@@ -1,0 +1,13 @@
+/* Auxerion family bar — one strip on every page. Edit LINKS to change destinations everywhere. */
+(()=>{
+const LINKS=[
+ {id:'aux',name:'Auxerion',sub:'The company',href:'../auxerion/index.html',color:'#3B7BFF',color2:'#A855F7',img:null},
+ {id:'c8',name:'Creativ8',sub:'Game development',href:'../creativ8/index.html',color:'#F5A524',color2:'#E85B4B',img:'../assets/bar/creativ8.jpg'},
+ {id:'mo',name:'MOOSE',sub:'Medical offices',href:'../moose/index.html',color:'#1FA7A0',color2:'#1B3A6B',img:'../assets/bar/moose.jpg'},
+ {id:'ha',name:'Kept',sub:'Hospitality',href:'../kept/index.html',color:'#0F5C52',color2:'#C9642F',img:'../assets/bar/kept.jpg'}
+];
+const cur=document.body.dataset.brand||'aux';
+const bar=document.createElement('div');bar.className='fambar';bar.setAttribute('role','navigation');bar.setAttribute('aria-label','Auxerion family');
+bar.innerHTML=LINKS.map(l=>`<a class="ft${l.id===cur?' on':''}" href="${l.href}" style="--c:${l.color};--c2:${l.color2}"${l.id===cur?' aria-current="page"':''}>${l.img?`<img src="${l.img}" alt="" loading="eager" decoding="async">`:`<span class="ax"><i></i><i></i><i></i></span>`}<span class="tx"><b>${l.name}</b><small>${l.sub}</small></span></a>`).join('');
+document.body.insertBefore(bar,document.body.querySelector('.site-nav')||document.body.firstChild);
+})();
