@@ -3,19 +3,19 @@
  "trailingSlash": false,
  "redirects": [
   {
-   "source": "/",
-   "destination": "/auxerion",
-   "permanent": false
+   "source": "/auxerion",
+   "destination": "/",
+   "permanent": true
   },
   {
-   "source": "/company",
-   "destination": "/auxerion/company",
-   "permanent": false
+   "source": "/auxerion/company",
+   "destination": "/company",
+   "permanent": true
   },
   {
-   "source": "/investors",
-   "destination": "/auxerion/investors",
-   "permanent": false
+   "source": "/auxerion/investors",
+   "destination": "/investors",
+   "permanent": true
   }
  ],
  "headers": [

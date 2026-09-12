@@ -3,9 +3,10 @@
 Static family of sites: Auxerion (company, investors), Creativ8, MOOSE, Kept.
 
 ## URLs
-- / → /auxerion (home)
-- /company, /investors
+- / (home), /company, /investors
 - /creativ8, /moose, /kept
+
+All asset/link paths are root-absolute; the site must be served from the domain root.
 
 ## Deploy
 Vercel, framework preset **Other**, no build command, output directory **.** (root). Every push to main redeploys; branches get preview URLs with Comments enabled.
@@ -13,4 +14,5 @@ Vercel, framework preset **Other**, no build command, output directory **.** (ro
 ## Editing
 - Shared shell: family.css, cinema.css, family.js, cinema.js, icons.js
 - Global top bar links: familybar.js (LINKS array)
-- Each site: <site>/index.html
+- Auxerion pages: index.html, company.html, investors.html (styles in auxerion/home.css)
+- Each product: <site>/index.html

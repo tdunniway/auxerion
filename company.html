@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>About Auxerion</title>
+<meta name="description" content="Auxerion builds AI-native operating systems for industries where complex, fast-moving teams still run on fragmented software.">
+<link rel="icon" href="/assets/logos/auxerion-mark-primary.svg">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400&display=swap">
+<link rel="stylesheet" href="/family.css"><link rel="stylesheet" href="/cinema.css">
+<style>
+.hero{min-height:88vh}
+.hero .bg::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(7,11,20,.5),rgba(7,11,20,.85) 60%,var(--bg))}
+.hero .bg img{filter:saturate(.6)}
+.hero h1{font-size:clamp(44px,7vw,108px)}
+.traits{display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:24px;margin-top:64px}
+.trait{border-top:1px solid var(--line);padding-top:24px}
+.trait b{display:block;font-family:"Space Grotesk",sans-serif;font-weight:600;font-size:18px;margin:18px 0 8px}
+.trait p{font-size:15px;color:var(--text2)}
+@media(max-width:960px){.traits{grid-template-columns:repeat(2,minmax(0,1fr))}}@media(max-width:560px){.traits{grid-template-columns:1fr}}
+.inds{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:16px;margin-top:56px}
+.ind{position:relative;aspect-ratio:4/5;border-radius:16px;overflow:hidden}
+.ind img{width:100%;height:100%;object-fit:cover;filter:saturate(.7) brightness(.8);transition:transform 1.2s var(--ease)}
+.ind:hover img{transform:scale(1.05)}
+.ind .t{position:absolute;inset:auto 0 0 0;padding:28px;background:linear-gradient(180deg,transparent,rgba(7,11,20,.95));display:flex;flex-direction:column;gap:8px}
+.ind .t b{font-family:"Space Grotesk",sans-serif;font-weight:600;font-size:26px;letter-spacing:-.02em}
+.ind .t span{font-family:var(--mono);font-size:12px;color:var(--text2);letter-spacing:.06em;text-transform:uppercase}
+@media(max-width:760px){.inds{grid-template-columns:1fr}.ind{aspect-ratio:16/10}}
+.loopline{display:flex;flex-wrap:wrap;gap:10px;margin-top:32px}
+.loopline span{display:inline-flex;align-items:center;gap:8px;height:40px;padding:0 14px;border:1px solid var(--line);border-radius:999px;font-family:var(--mono);font-size:13px}
+.loopline span .ic{width:14px;height:14px;color:#7c9bff}
+.founder{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:64px;align-items:center;padding:56px;border:1px solid var(--line);border-radius:16px;background:var(--bg2);position:relative;overflow:hidden}
+.founder::before{content:"";position:absolute;right:-20%;top:-40%;width:600px;height:600px;border-radius:50%;background:radial-gradient(circle,rgba(59,123,255,.18),transparent 65%)}
+.founder .card{border:1px solid var(--line);border-radius:12px;padding:32px;background:var(--bg)}
+.founder .card b{display:block;font-family:"Space Grotesk",sans-serif;font-weight:600;font-size:28px;letter-spacing:-.02em}
+.founder .card span{display:block;font-size:14px;color:var(--text2);margin-top:6px}
+@media(max-width:860px){.founder{grid-template-columns:1fr;padding:32px 24px;gap:32px}}
+</style></head>
+<body data-brand="aux"><template id="__bundler_thumbnail"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><rect width="100" height="100" fill="#070B14"/><text x="50" y="50" text-anchor="middle" dominant-baseline="central" font-family="Space Grotesk,system-ui,sans-serif" font-weight="700" font-size="40" fill="#3B7BFF">A</text></svg></template>
+<script src="/familybar.js"></script>
+<header class="site-nav"><span class="progress" aria-hidden="true"></span><div class="wrap">
+<a class="brand" href="/" aria-label="Auxerion home"><svg width="40" height="40" viewBox="0 0 160 160" aria-hidden="true"><defs><linearGradient id="sig" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#3B7BFF"/><stop offset="1" stop-color="#A855F7"/></linearGradient></defs><path d="M132 50A60 60 0 1 0 140 80" fill="none" stroke="currentColor" stroke-width="8" stroke-linecap="round"/><circle cx="138" cy="64.5" r="7" fill="url(#sig)"/><path d="M46 112L74 61M86 61L114 112" stroke="currentColor" stroke-width="8" stroke-linecap="round" fill="none"/></svg><span>AUXERION</span></a>
+<nav class="links" id="links" aria-label="Primary"><a href="/#products">Products</a><a href="/#loop">The loop</a><a href="/#platform">Platform</a><a href="/company" aria-current="page">Company</a><a href="/investors">Investors</a></nav>
+<a class="btn primary nav-cta" href="/investors">Investor overview</a>
+<button class="menu-btn" aria-expanded="false" aria-controls="links">Menu</button>
+</div></header>
+<main>
+<section class="hero" data-screen-label="Company hero"><div class="bg" aria-hidden="true"><img class="on" src="https://images.unsplash.com/photo-1451187580459-43490279c0fa?auto=format&fit=crop&w=2000&q=60" alt=""></div>
+<div class="wrap"><div class="copy">
+<div class="eyebrow reveal in"><span class="tag">Company</span><span class="live"><i></i>AI assists. People decide.</span></div>
+<h1 class="words"><span>One</span> <span>company.</span> <span>Three</span> <span>industries.</span> <span>One</span> <span>idea.</span></h1>
+<p class="lede reveal in d3">Auxerion builds AI-native operating systems for industries where complex, fast-moving teams still run on fragmented software.</p>
+</div></div><a class="cue" href="#why" aria-label="Scroll"><span></span></a></section>
+
+<section class="block" id="why" data-screen-label="Why these industries"><div class="wrap">
+<div class="hd"><div class="reveal"><div class="signal draw" style="margin-bottom:28px"></div><h2 class="statement sm">We chose game development, medical practice operations, and hotel operations deliberately.</h2></div><p class="lede reveal d1">They share the traits that make operational software hard and valuable: complex multi-step work, real-time pressure, skilled but non-technical teams, fragmented incumbents, and no modern operating layer.</p></div>
+<div class="inds">
+<a class="ind reveal" href="/creativ8"><img src="https://images.unsplash.com/photo-1542751371-adc38448a05e?auto=format&fit=crop&w=1000&q=70" alt=""><div class="t"><span>Creativ8 · Deep functional prototype</span><b>Game development</b></div></a>
+<a class="ind reveal d1" href="/moose"><img src="https://images.unsplash.com/photo-1579684385127-1ef15d508118?auto=format&fit=crop&w=1000&q=70" alt=""><div class="t"><span>MOOSE · MVP candidate</span><b>Medical practice operations</b></div></a>
+<a class="ind reveal d2" href="/kept"><img src="/assets/kept-web/hero-aerial.jpg" alt=""><div class="t"><span>Kept · Investor demonstration</span><b>Hotel operations</b></div></a>
+</div>
+<div class="traits">
+<div class="trait reveal"><span class="oring"><svg viewBox="0 0 64 64"><circle cx="32" cy="32" r="30"/></svg><svg class="ic"><use href="#i-branch"/></svg></span><b>Complex multi-step work</b><p>Real consequences when handoffs fail.</p></div>
+<div class="trait reveal d1"><span class="oring"><svg viewBox="0 0 64 64"><circle cx="32" cy="32" r="30"/></svg><svg class="ic"><use href="#i-zap"/></svg></span><b>Real-time pressure</b><p>Priorities change during the day.</p></div>
+<div class="trait reveal d2"><span class="oring"><svg viewBox="0 0 64 64"><circle cx="32" cy="32" r="30"/></svg><svg class="ic"><use href="#i-users"/></svg></span><b>Skilled, non-technical teams</b><p>They abandon tools that add steps.</p></div>
+<div class="trait reveal d3"><span class="oring"><svg viewBox="0 0 64 64"><circle cx="32" cy="32" r="30"/></svg><svg class="ic"><use href="#i-board"/></svg></span><b>Fragmented incumbents</b><p>Systems of record and point solutions; none sees the whole.</p></div>
+<div class="trait reveal d4"><span class="oring"><svg viewBox="0 0 64 64"><circle cx="32" cy="32" r="30"/></svg><svg class="ic"><use href="#i-layers"/></svg></span><b>No modern operating layer</b><p>Incumbents are decades old or narrowly scoped.</p></div>
+</div>
+</div></section>
+
+<section class="block" id="shared" data-screen-label="What they share"><div class="wrap hd">
+<div class="reveal"><h2>Each product is purpose-built and operated as its own business with its own partners and investors.</h2></div>
+<div class="reveal d1"><p class="lede">What they share is one operating loop — signal, owned work, AI-prepared next step, human approval, evidence, verified outcome — and, increasingly, Auxerion's platform: WorkOS, a shared operational core designed to carry that loop into any vertical.</p>
+<div class="loopline"><span><svg class="ic"><use href="#i-radio"/></svg>signal</span><span><svg class="ic"><use href="#i-users"/></svg>owned work</span><span><svg class="ic"><use href="#i-sparkles"/></svg>AI-prepared next step</span><span><svg class="ic"><use href="#i-usercheck"/></svg>human approval</span><span><svg class="ic"><use href="#i-filecheck"/></svg>evidence</span><span><svg class="ic"><use href="#i-check"/></svg>verified outcome</span></div></div>
+</div></section>
+
+<section class="block" id="approach" data-screen-label="Approach"><div class="wrap">
+<div class="hd"><div class="reveal"><h2>Built around the work.</h2></div><p class="lede reveal d1">Start with the person doing the work. Map the real workflow, including the parts that live in someone's head. Build the system that holds the whole picture. Put AI where it removes steps, never where it adds them. Prove it with operators before we say it works.</p></div>
+<div class="pipe reveal" style="--n:5" aria-hidden="true"><svg class="wire" viewBox="0 0 1000 10" preserveAspectRatio="none"><defs><path id="wp" d="M0 5H1000"/></defs><path d="M0 5H1000" class="base"/><circle r="4" fill="#7c9bff"><animateMotion dur="6s" repeatCount="indefinite"><mpath href="#wp"/></animateMotion></circle></svg>
+<div class="st" style="--d:0s"><span class="ring"><svg class="ic"><use href="#i-users"/></svg></span><b>Start with the person</b><small>doing the work</small></div>
+<div class="st" style="--d:1.2s"><span class="ring"><svg class="ic"><use href="#i-route"/></svg></span><b>Map the real workflow</b><small>including what lives in someone's head</small></div>
+<div class="st" style="--d:2.4s"><span class="ring"><svg class="ic"><use href="#i-scan"/></svg></span><b>Hold the whole picture</b><small>build the system</small></div>
+<div class="st" style="--d:3.6s"><span class="ring"><svg class="ic"><use href="#i-zap"/></svg></span><b>AI removes steps</b><small>never adds them</small></div>
+<div class="st" style="--d:4.8s"><span class="ring"><svg class="ic"><use href="#i-flask"/></svg></span><b>Prove it with operators</b><small>before we say it works</small></div>
+</div></div></section>
+
+<section class="block" id="founder" data-screen-label="Founder"><div class="wrap"><div class="founder reveal">
+<div><span class="label" style="display:block;margin-bottom:16px">Founder &amp; CEO</span><h2 style="margin-bottom:16px">Troy Dunniway.</h2><p class="lede">Troy Dunniway is the Founder and CEO of Auxerion. He leads product, architecture, and technology across the company's three products and the shared platform beneath them. His background spans creative direction and game development, and hands-on involvement in medical practice and hospitality operations, which is where the conviction behind Auxerion comes from: the teams that do the most demanding operational work deserve software built around how that work actually happens.</p></div>
+<div class="card"><b>Troy Dunniway</b><span>Founder &amp; CEO, Auxerion</span><div class="signal" style="margin:24px 0"></div><a class="btn secondary" href="mailto:troy@auxerion.com"><svg class="ic"><use href="#i-mail"/></svg>troy@auxerion.com</a></div>
+</div></div></section>
+
+<section class="block contact" id="contact" data-screen-label="Contact"><div class="halo" aria-hidden="true"><i></i><i></i><i></i></div><div class="wrap">
+<h2 class="reveal">Talk to us about<br>what comes next.</h2>
+<p class="lede reveal d1">For investment, partnership, and early-access conversations, reach us directly.</p>
+<a class="big reveal d2" href="mailto:troy@auxerion.com"><svg class="ic"><use href="#i-mail"/></svg>troy@auxerion.com</a>
+</div></section>
+</main>
+<footer><div class="wrap"><div class="top">
+<a class="brand" href="/" aria-label="Auxerion"><svg width="24" height="24" viewBox="0 0 160 160" aria-hidden="true"><path d="M132 50A60 60 0 1 0 140 80" fill="none" stroke="currentColor" stroke-width="8" stroke-linecap="round"/><circle cx="138" cy="64.5" r="7" fill="url(#sig)"/><path d="M46 112L74 61M86 61L114 112" stroke="currentColor" stroke-width="8" stroke-linecap="round" fill="none"/></svg><span style="font-size:13px">AUXERION</span></a>
+<nav class="family" aria-label="Auxerion family"><a href="/" aria-current="true"><span class="dot" style="background:var(--ax)"></span>Auxerion</a><a href="/creativ8"><span class="dot" style="background:var(--c8)"></span>Creativ8</a><a href="/moose"><span class="dot" style="background:var(--mo)"></span>MOOSE</a><a href="/kept"><span class="dot" style="background:var(--ha)"></span>Kept</a></nav>
+<div><a href="mailto:troy@auxerion.com">troy@auxerion.com</a></div></div>
+<div class="bottom"><span>© 2026 Auxerion</span><span><a href="/company">Company</a> · <a href="/investors">Investors</a></span></div></div></footer>
+<script src="/icons.js"></script><script src="/family.js"></script><script src="/cinema.js"></script>
+</body></html>

@@ -1,10 +1,10 @@
 /* Auxerion family bar — one strip on every page. Edit LINKS to change destinations everywhere. */
 (()=>{
 const LINKS=[
- {id:'aux',name:'Auxerion',sub:'The company',href:'../auxerion/index.html',color:'#3B7BFF',color2:'#A855F7',img:null},
- {id:'c8',name:'Creativ8',sub:'Game development',href:'../creativ8/index.html',color:'#F5A524',color2:'#E85B4B',img:'../assets/bar/creativ8.jpg'},
- {id:'mo',name:'MOOSE',sub:'Medical offices',href:'../moose/index.html',color:'#1FA7A0',color2:'#1B3A6B',img:'../assets/bar/moose.jpg'},
- {id:'ha',name:'Kept',sub:'Hospitality',href:'../kept/index.html',color:'#0F5C52',color2:'#C9642F',img:'../assets/bar/kept.jpg'}
+ {id:'aux',name:'Auxerion',sub:'The company',href:'/',color:'#3B7BFF',color2:'#A855F7',img:null},
+ {id:'c8',name:'Creativ8',sub:'Game development',href:'/creativ8',color:'#F5A524',color2:'#E85B4B',img:'/assets/bar/creativ8.jpg'},
+ {id:'mo',name:'MOOSE',sub:'Medical offices',href:'/moose',color:'#1FA7A0',color2:'#1B3A6B',img:'/assets/bar/moose.jpg'},
+ {id:'ha',name:'Kept',sub:'Hospitality',href:'/kept',color:'#0F5C52',color2:'#C9642F',img:'/assets/bar/kept.jpg'}
 ];
 const cur=document.body.dataset.brand||'aux';
 const bar=document.createElement('div');bar.className='fambar';bar.setAttribute('role','navigation');bar.setAttribute('aria-label','Auxerion family');
