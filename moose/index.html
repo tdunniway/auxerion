@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>MOOSE — Medical Office OS Environment. Close every loop.</title>
+<meta name="description" content="MOOSE is the operational control plane around the EHR — every signal becomes owned, due, verified work, with AI that removes the chasing and never removes the judgment.">
+<link rel="icon" href="../assets/logos/moose-logo.png">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400&display=swap">
+<link rel="stylesheet" href="../family.css"><link rel="stylesheet" href="../cinema.css">
+<style>
+body{font-size:19px}
+.site-nav.solid{background:rgba(247,249,251,.86)}
+.hero{min-height:100vh;background:linear-gradient(180deg,#EAF3F5,#F7F9FB 60%)}
+.hero .bg img{filter:saturate(.7);opacity:1;transform:none}
+.hero .veil{position:absolute;inset:0;z-index:-2;background:linear-gradient(180deg,rgba(247,249,251,.35),rgba(247,249,251,.9) 55%,#F7F9FB 90%)}
+.hero .veil::after{content:"";position:absolute;inset:0;background:linear-gradient(90deg,rgba(247,249,251,.92),rgba(247,249,251,.3) 60%)}
+.hero .pulsebg{position:absolute;left:0;right:0;bottom:22%;height:120px;z-index:-1;opacity:.9;pointer-events:none}
+.hero .pulsebg path{fill:none;stroke:var(--accent);stroke-width:2;stroke-dasharray:1200;stroke-dashoffset:1200;animation:ekg 6s linear infinite;filter:drop-shadow(0 0 8px rgba(31,167,160,.5))}
+@keyframes ekg{to{stroke-dashoffset:-1200}}
+.hero h1{font-size:clamp(56px,10vw,150px);letter-spacing:-.045em;line-height:.92;color:var(--text)}
+.hero h1 .a{color:var(--accent)}
+.hero .lede{color:var(--text2)}
+.hero .mline{font-family:"Space Grotesk",sans-serif;font-weight:600;font-size:clamp(16px,1.4vw,20px);letter-spacing:.02em;color:var(--text);display:flex;align-items:center;gap:14px;margin-top:8px}
+.hero .mline span{color:var(--text2);font-weight:500}
+.mascot{position:absolute;right:2vw;bottom:0;width:min(46vw,760px);z-index:-1;pointer-events:none;animation:float 8s ease-in-out infinite}
+@keyframes float{0%,100%{transform:translateY(0)}50%{transform:translateY(-14px)}}
+.mascot img{width:100%;display:block;filter:drop-shadow(0 30px 60px rgba(27,58,107,.25))}
+.mascot::before{content:"";position:absolute;left:12%;right:12%;bottom:6%;height:60%;border-radius:50%;background:radial-gradient(ellipse,rgba(31,167,160,.28),transparent 70%);filter:blur(30px);z-index:-1}
+@media(max-width:960px){.mascot{position:relative;right:auto;width:min(100%,520px);margin:0 auto -40px;order:2}}
+.stagebar{display:flex;gap:28px;flex-wrap:wrap;margin-top:56px;padding-top:20px;border-top:1px solid var(--line);font-family:var(--mono);font-size:12px;letter-spacing:.08em;text-transform:uppercase;color:var(--text2)}
+.stagebar .demo{margin-left:auto;display:inline-flex;align-items:center;gap:8px}
+.stagebar .demo i{width:8px;height:8px;border-radius:50%;background:var(--accent)}
+/* thesis */
+.thesis{padding-block:140px 0;border-top:0}
+.arrows{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:16px;margin-top:64px}
+.arw{display:grid;grid-template-columns:1fr auto 1fr;align-items:center;gap:16px;padding:28px 32px;border:1px solid var(--line);border-radius:14px;background:#fff;position:relative;overflow:hidden}
+.arw span{font-family:"Space Grotesk",sans-serif;font-weight:600;font-size:clamp(18px,1.6vw,24px);letter-spacing:-.02em}
+.arw span:first-child{color:var(--text2);font-weight:500}
+.arw .ic{color:var(--accent);width:28px;height:28px}
+.arw::after{content:"";position:absolute;left:0;bottom:0;height:3px;width:100%;background:linear-gradient(90deg,transparent,var(--accent));transform:scaleX(0);transform-origin:left;transition:transform 1s var(--ease) .3s}
+.arw.in::after{transform:scaleX(1)}
+@media(max-width:760px){.arrows{grid-template-columns:1fr}.arw{grid-template-columns:1fr;text-align:left}.arw .ic{transform:rotate(90deg)}}
+.split{display:grid;grid-template-columns:1fr 1fr;gap:24px;margin-top:40px}
+.split div{padding:28px 32px;border-radius:14px;border:1px solid var(--line)}
+.split div:first-child{background:#fff}
+.split div:last-child{background:var(--text);color:#fff;border-color:var(--text)}
+.split .label{margin-bottom:10px}
+.split div:last-child .label{color:#B7C3D6}
+.split b{font-family:"Space Grotesk",sans-serif;font-weight:600;font-size:clamp(20px,1.8vw,26px);letter-spacing:-.02em}
+@media(max-width:760px){.split{grid-template-columns:1fr}}
+/* loop ring */
+.loopsec{padding-block:140px 0;border-top:0}
+.loopgrid{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:64px;align-items:center;margin-top:24px}
+@media(max-width:900px){.loopgrid{grid-template-columns:1fr}}
+.ring9{width:100%;max-width:560px;margin:0 auto;aspect-ratio:1}
+.ring9 .r{fill:none;stroke:var(--line);stroke-width:2}
+.ring9 .rg{fill:none;stroke:var(--accent);stroke-width:3;stroke-linecap:round;stroke-dasharray:80 1400;animation:dash 9s linear infinite}
+@keyframes dash{to{stroke-dashoffset:-1480}}
+.ring9 .nd circle{fill:#fff;stroke:var(--text);stroke-width:2;transform-box:fill-box;transform-origin:center;animation:np 9s linear infinite;animation-delay:var(--d)}
+@keyframes np{0%,3%{fill:#fff;transform:scale(1)}6%{fill:var(--accent);stroke:var(--accent);transform:scale(1.5)}12%,100%{fill:#fff;stroke:var(--text);transform:scale(1)}}
+.ring9 text{font-family:"Space Grotesk",sans-serif;font-weight:600;font-size:15px;fill:var(--text)}
+.ring9 .c{fill:var(--text);font-size:30px;letter-spacing:-.02em}.ring9 .c2{fill:var(--text2);font-family:var(--mono);font-weight:400;font-size:12px}
+.ring9 .gate{fill:none;stroke:var(--text);stroke-width:2}
+.proof{margin-top:48px;border:1px solid var(--line);border-radius:14px;background:#fff;padding:28px 32px}
+.proof .label{margin-bottom:12px}
+.hand{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:12px;margin-top:20px}
+.hand div{padding:18px;border-radius:10px;background:var(--mist);position:relative}
+.hand div b{display:flex;align-items:center;gap:8px;font-family:"Space Grotesk",sans-serif;font-weight:600;font-size:15px;margin-bottom:6px}
+.hand div small{font-size:13px;color:var(--text2)}
+.hand div .ic{color:var(--accent)}
+.hand .card-owner{display:inline-flex;align-items:center;gap:6px;margin-top:12px;padding:4px 8px;border-radius:4px;background:#fff;border:1px solid var(--line);font-family:var(--mono);font-size:11px;color:var(--text)}
+.hand .card-owner::before{content:"";width:6px;height:6px;border-radius:50%;background:var(--text)}
+@media(max-width:760px){.hand{grid-template-columns:1fr}}
+/* pillars */
+.pillsec{padding-block:140px 0;border-top:0}
+.pil{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:16px;margin-top:64px}
+.pil article{padding:32px 28px;border-radius:14px;background:#fff;border:1px solid var(--line);transition:transform .5s var(--ease),box-shadow .5s}
+.pil article:hover{transform:translateY(-6px);box-shadow:0 30px 60px -30px rgba(27,58,107,.3)}
+.pil .oring{margin-bottom:24px;color:var(--text)}
+.pil h3{font-size:22px;margin-bottom:10px;color:var(--text)}
+.pil p{font-size:16px;color:var(--text2)}
+@media(max-width:960px){.pil{grid-template-columns:repeat(2,minmax(0,1fr))}}@media(max-width:560px){.pil{grid-template-columns:1fr}}
+/* roles */
+.rolesec{padding-block:140px 0;border-top:0}
+.rgrid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:16px;margin-top:56px}
+.rc{position:relative;border-radius:14px;overflow:hidden;border:1px solid var(--line);background:#fff;display:grid;grid-template-rows:180px auto}
+.rc img{width:100%;height:100%;object-fit:cover;filter:saturate(.8)}
+.rc .t{padding:24px}
+.rc b{display:flex;align-items:center;gap:10px;font-family:"Space Grotesk",sans-serif;font-weight:600;font-size:20px;letter-spacing:-.01em;margin-bottom:8px;color:var(--text)}
+.rc b .ic{color:var(--accent)}
+.rc p{font-size:15.5px;color:var(--text2)}
+@media(max-width:960px){.rgrid{grid-template-columns:repeat(2,minmax(0,1fr))}}@media(max-width:560px){.rgrid{grid-template-columns:1fr}}
+/* trust dark */
+.trust{margin-top:140px;padding-block:140px;background:var(--text);color:#fff;border-top:0;position:relative;overflow:hidden}
+.trust::before{content:"";position:absolute;inset:0;background:radial-gradient(ellipse 50% 60% at 80% 50%,rgba(31,167,160,.25),transparent 60%)}
+.trust .lede{color:#B7C3D6}
+.trust h2{color:#fff}
+.gates{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:16px;margin-top:56px;position:relative}
+.gate{padding:24px;border:1px solid rgba(255,255,255,.15);border-radius:12px;background:rgba(255,255,255,.04)}
+.gate b{display:flex;align-items:center;gap:10px;font-family:"Space Grotesk",sans-serif;font-weight:600;font-size:17px;margin-bottom:8px}
+.gate .ic{color:var(--accent)}
+.gate p{font-size:14.5px;color:#B7C3D6}
+@media(max-width:960px){.gates{grid-template-columns:repeat(2,minmax(0,1fr))}}@media(max-width:560px){.gates{grid-template-columns:1fr}}
+.trust .ledger{margin-top:48px;border:1px solid rgba(255,255,255,.15);border-radius:12px;overflow:hidden;font-family:var(--mono);font-size:13px}
+.trust .ledger .r{display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:12px;padding:14px 20px;border-top:1px solid rgba(255,255,255,.12)}
+.trust .ledger .r:first-child{border-top:0;color:#B7C3D6;font-size:11px;letter-spacing:.08em;text-transform:uppercase;background:rgba(255,255,255,.04)}
+.trust .ledger .ok{color:var(--accent)}
+@media(max-width:760px){.trust .ledger .r{grid-template-columns:1fr 1fr}}
+/* specialty */
+.spec{padding-block:140px 0;border-top:0}
+.spec .box{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:56px;align-items:center}
+.spec .pic{border-radius:16px;overflow:hidden;aspect-ratio:4/3}
+.spec .pic img{width:100%;height:100%;object-fit:cover;filter:saturate(.8)}
+@media(max-width:860px){.spec .box{grid-template-columns:1fr}}
+.inv{padding-block:140px 0;border-top:0}
+.inv .box{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.4fr);gap:56px;padding:56px;border:1px solid var(--line);border-radius:16px;background:#fff}
+.inv .box p{color:var(--text2)}
+@media(max-width:860px){.inv .box{grid-template-columns:1fr;padding:32px 24px;gap:24px}}
+.contact{padding-block:180px 160px}
+.contact .big{color:var(--text)}
+.brand.product img{height:40px}
+footer{color:var(--text2)}
+.disclose{font-family:var(--mono);font-size:11px;letter-spacing:.06em;text-transform:uppercase;color:var(--text2)}
+</style></head>
+<body data-brand="mo"><template id="__bundler_thumbnail"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><rect width="100" height="100" fill="#1B3A6B"/><text x="50" y="50" text-anchor="middle" dominant-baseline="central" font-family="Space Grotesk,system-ui,sans-serif" font-weight="700" font-size="40" fill="#1FA7A0">M</text></svg></template>
+<script src="../familybar.js"></script>
+<header class="site-nav"><span class="progress" aria-hidden="true"></span><div class="wrap">
+<a class="brand product" href="index.html" aria-label="MOOSE home"><img src="../assets/logos/moose-logo.png" alt="MOOSE"><span class="by" style="align-self:flex-end;margin-bottom:6px">by Auxerion</span></a>
+<nav class="links" id="links" aria-label="Primary"><a href="#how">How it works</a><a href="#roles">For every role</a><a href="#trust">Trust</a><a href="#investors">Investors</a><a href="#contact">Contact</a></nav>
+<a class="btn primary nav-cta" href="#contact">Request a pilot conversation</a>
+<button class="menu-btn" aria-expanded="false" aria-controls="links">Menu</button>
+</div></header>
+<main>
+<section class="hero" data-screen-label="Hero">
+<div class="bg" aria-hidden="true"><img src="https://images.unsplash.com/photo-1631217868264-e5b90bb7e133?auto=format&fit=crop&w=2000&q=70" alt=""></div>
+<div class="veil" aria-hidden="true"></div>
+<svg class="pulsebg" viewBox="0 0 1600 120" preserveAspectRatio="none" aria-hidden="true"><path d="M0 60H520L560 60L580 20L600 100L620 40L640 60H1000L1040 60L1060 30L1080 90L1100 60H1600"/></svg>
+<div class="mascot" aria-hidden="true"><img src="../assets/moose/mascot-scene.png" alt=""></div>
+<div class="wrap"><div class="copy">
+<div class="eyebrow reveal in"><span class="tag accent">MVP candidate</span><span class="tag">Limited pilot forming</span></div>
+<div class="mline reveal in">MOOSE <span>· Medical Office OS Environment</span></div>
+<h1 class="words"><span>Close</span> <span>every</span> <span class="a">loop.</span></h1>
+<p class="lede reveal in d3">The operational control plane around the EHR. Every signal becomes owned, due, verified work — with AI that removes the chasing and a person who signs every consequential decision.</p>
+<div class="actions reveal in d4"><a class="btn primary lg" href="#contact">Request a pilot conversation <svg class="ic"><use href="#i-arrow"/></svg></a><a class="btn secondary lg" href="#investors">For investors</a></div>
+</div>
+<div class="stagebar reveal in d4"><span>Owner → Due → Next action → Proof → Escalation</span><span>Done = proven.</span><span class="demo"><i></i>Synthetic demo workspace</span></div>
+</div><a class="cue" href="#problem" aria-label="Scroll"><span></span></a></section>
+
+<section class="block" id="problem" style="padding-block:140px 0;border-top:0" data-screen-label="Problem"><div class="wrap">
+<div class="hd"><div class="reveal"><div class="signal draw" style="margin-bottom:28px"></div><h2 class="statement">The hardest work lives between the systems.</h2></div><p class="lede reveal d1">Phone calls. Faxes. Portals. Payer sites. Results. Sticky notes. People remembering what to chase next. The EHR may contain the record — but the practice still has to make the outcome happen.</p></div>
+<div class="tript">
+<figure class="reveal"><img src="https://images.unsplash.com/photo-1576091160399-112ba8d25d1d?auto=format&fit=crop&w=1000&q=70" alt=""><figcaption><small><svg class="ic"><use href="#i-phone"/></svg>Phone · fax · portal</small>Signals arrive from everywhere.</figcaption></figure>
+<figure class="reveal d1"><img src="https://images.unsplash.com/photo-1579684385127-1ef15d508118?auto=format&fit=crop&w=1000&q=70" alt=""><figcaption><small><svg class="ic"><use href="#i-doc"/></svg>The EHR</small>Contains the record.</figcaption></figure>
+<figure class="reveal d2"><img src="https://images.unsplash.com/photo-1666214280557-f1b5022eb634?auto=format&fit=crop&w=1000&q=70" alt=""><figcaption><small><svg class="ic"><use href="#i-brain"/></svg>People</small>Remembering what to chase next.</figcaption></figure>
+</div></div></section>
+
+<section class="block thesis" data-screen-label="Thesis"><div class="wrap">
+<div class="hd"><div class="reveal"><h2 class="statement sm">Medical offices create artifacts. Patients need outcomes.</h2></div><p class="lede reveal d1">MOOSE is the system of action that gets the work closed. The EHR stays the source of clinical truth.</p></div>
+<div class="arrows">
+<div class="arw reveal"><span>Referral received</span><svg class="ic"><use href="#i-arrow"/></svg><span>patient scheduled</span></div>
+<div class="arw reveal d1"><span>Authorization submitted</span><svg class="ic"><use href="#i-arrow"/></svg><span>service approved</span></div>
+<div class="arw reveal d2"><span>Result posted</span><svg class="ic"><use href="#i-arrow"/></svg><span>patient informed</span></div>
+<div class="arw reveal d3"><span>Claim filed</span><svg class="ic"><use href="#i-arrow"/></svg><span>payment resolved</span></div>
+</div>
+<div class="split reveal"><div><span class="label">EHR</span><b>Source of clinical truth.</b></div><div><span class="label">MOOSE</span><b>System of action.</b></div></div>
+</div></section>
+
+<section class="block loopsec" id="how" data-screen-label="How MOOSE works"><div class="wrap">
+<div class="hd"><div class="reveal"><h2 class="statement sm">Every workflow follows the same visible loop.</h2></div><p class="lede reveal d1">Detect, classify, assign, due, assist, verify, escalate, close, measure. Done means proven.</p></div>
+<div class="loopgrid">
+<svg class="ring9 reveal" viewBox="0 0 560 560" role="img" aria-label="The MOOSE loop: detect, classify, assign, due, assist, verify, escalate, close, measure">
+<circle class="r" cx="280" cy="280" r="200"/><circle class="rg" cx="280" cy="280" r="200" transform="rotate(-90 280 280)"/>
+<g class="nd" style="--d:0s"><circle cx="280" cy="80" r="9"/><text x="280" y="56" text-anchor="middle">detect</text></g>
+<g class="nd" style="--d:1s"><circle cx="408.6" cy="126.8" r="9"/><text x="428" y="118">classify</text></g>
+<g class="nd" style="--d:2s"><circle cx="477" cy="245.3" r="9"/><text x="498" y="250">assign</text></g>
+<g class="nd" style="--d:3s"><circle cx="453.2" cy="380" r="9"/><text x="474" y="392">due</text></g>
+<g class="nd" style="--d:4s"><circle cx="348.4" cy="468.4" r="9"/><text x="360" y="500" text-anchor="middle">assist</text></g>
+<g class="nd" style="--d:5s"><circle cx="211.6" cy="468.4" r="9"/><text x="200" y="500" text-anchor="middle">verify</text></g>
+<g class="nd" style="--d:6s"><circle cx="106.8" cy="380" r="9"/><text x="86" y="392" text-anchor="end">escalate</text></g>
+<g class="nd" style="--d:7s"><circle cx="83" cy="245.3" r="9"/><text x="62" y="250" text-anchor="end">close</text></g>
+<g class="nd" style="--d:8s"><circle cx="151.4" cy="126.8" r="9"/><text x="132" y="118" text-anchor="end">measure</text></g>
+<path class="gate" d="M232 300h96M300 286l14 14-14 14" opacity=".9"/>
+<text class="c" x="280" y="262" text-anchor="middle">Done = proven.</text>
+<text class="c2" x="280" y="340" text-anchor="middle">a named owner · a due · a next action · proof · escalation</text>
+</svg>
+<div class="reveal d1">
+<div class="proof"><span class="label">Proof line · current build</span><p style="font-family:'Space Grotesk',sans-serif;font-weight:600;font-size:clamp(20px,1.8vw,26px);letter-spacing:-.02em;line-height:1.2">The handoff bridge — a virtual assistant prepares and calls, a medical assistant takes the Epic action, the team follows through — with a named owner and a next step on every card.</p>
+<div class="hand"><div><b><svg class="ic"><use href="#i-phone"/></svg>VA · Prepare &amp; call</b><small>remote prep, documented</small><span class="card-owner">owner · next step</span></div><div><b><svg class="ic"><use href="#i-task"/></svg>MA · Epic actions</b><small>the action in the EHR</small><span class="card-owner">owner · next step</span></div><div><b><svg class="ic"><use href="#i-check"/></svg>Follow-through</b><small>verified, not assumed</small><span class="card-owner">owner · next step</span></div></div>
+<p class="disclose" style="margin-top:16px">Synthetic demo workspace · no patient data</p></div>
+</div></div>
+</div></section>
+
+<section class="block pillsec" data-screen-label="Pillars"><div class="wrap">
+<div class="reveal"><h2 class="statement sm">Four pillars.</h2></div>
+<div class="pil">
+<article class="reveal"><span class="oring"><svg viewBox="0 0 64 64"><circle cx="32" cy="32" r="30"/></svg><svg class="ic"><use href="#i-check"/></svg></span><h3>Close every loop.</h3><p>Owner, due, next action, proof, escalation on every piece of work. Waiting never means invisible.</p></article>
+<article class="reveal d1"><span class="oring"><svg viewBox="0 0 64 64"><circle cx="32" cy="32" r="30"/></svg><svg class="ic"><use href="#i-task"/></svg></span><h3>Visit readiness before the visit.</h3><p>Insurance, authorization, records, orders, and confirmation checked ahead of time; exceptions surfaced with an owner.</p></article>
+<article class="reveal d2"><span class="oring"><svg viewBox="0 0 64 64"><circle cx="32" cy="32" r="30"/></svg><svg class="ic"><use href="#i-chat"/></svg></span><h3>Every channel, one accountable conversation.</h3><p>Phone, fax, text, portal, and email classified into cases and tasks on one work graph.</p></article>
+<article class="reveal d3"><span class="oring"><svg viewBox="0 0 64 64"><circle cx="32" cy="32" r="30"/></svg><svg class="ic"><use href="#i-sparkles"/></svg></span><h3>AI removes chasing, not judgment.</h3><p>Classify, summarize, draft, extract, prioritize, explain — inside a governed, auditable workflow with human review at the right risk level.</p></article>
+</div></div></section>
+
+<section class="block rolesec" id="roles" data-screen-label="For every role"><div class="wrap">
+<div class="hd"><div class="reveal"><h2 class="statement sm">One operational picture, focused differently for each role.</h2></div></div>
+<div class="rgrid">
+<div class="rc reveal"><img src="https://images.unsplash.com/photo-1559839734-2b71ea197ec2?auto=format&fit=crop&w=900&q=70" alt=""><div class="t"><b><svg class="ic"><use href="#i-usercheck"/></svg>Physicians</b><p>See decisions, exceptions, and signatures.</p></div></div>
+<div class="rc reveal d1"><img src="https://images.unsplash.com/photo-1556761175-5973dc0f32e7?auto=format&fit=crop&w=900&q=70" alt=""><div class="t"><b><svg class="ic"><use href="#i-scan"/></svg>Office managers</b><p>See flow, staffing, and bottlenecks.</p></div></div>
+<div class="rc reveal d2"><img src="https://images.unsplash.com/photo-1584515933487-779824d29309?auto=format&fit=crop&w=900&q=70" alt=""><div class="t"><b><svg class="ic"><use href="#i-task"/></svg>Medical assistants</b><p>See readiness and follow-through.</p></div></div>
+<div class="rc reveal"><img src="https://images.unsplash.com/photo-1631217868264-e5b90bb7e133?auto=format&fit=crop&w=900&q=70" alt=""><div class="t"><b><svg class="ic"><use href="#i-phone"/></svg>Front desk</b><p>Sees scheduling, intake, and communications.</p></div></div>
+<div class="rc reveal d1"><img src="https://images.unsplash.com/photo-1587560699334-cc4ff634909a?auto=format&fit=crop&w=900&q=70" alt=""><div class="t"><b><svg class="ic"><use href="#i-globe"/></svg>Virtual assistants</b><p>See remote prep and documented handoffs.</p></div></div>
+<div class="rc reveal d2"><img src="https://images.unsplash.com/photo-1554224155-6726b3ff858f?auto=format&fit=crop&w=900&q=70" alt=""><div class="t"><b><svg class="ic"><use href="#i-card"/></svg>Billing</b><p>Sees eligibility, auth, claims, and denials.</p></div></div>
+</div></div></section>
+
+<section class="block trust" id="trust" data-screen-label="Trust"><div class="wrap">
+<div class="hd"><div class="reveal"><h2 class="statement sm">Explainable, reviewable, reversible.</h2></div><p class="lede reveal d1">Every AI action shows its reason and evidence, makes uncertainty visible, waits for human review at the right risk level, and is recorded with who, what, when, source, and outcome. Access is role-based and minimum-necessary. MOOSE is built HIPAA-first and integrates in layers — read context, coordinate work, document handoffs, and write back only when governed and supported. EHR-agnostic, with Epic as an important path.</p></div>
+<div class="gates">
+<div class="gate reveal"><b><svg class="ic"><use href="#i-eye"/></svg>Read context</b><p>Layer one.</p></div>
+<div class="gate reveal d1"><b><svg class="ic"><use href="#i-users"/></svg>Coordinate work</b><p>Layer two.</p></div>
+<div class="gate reveal d2"><b><svg class="ic"><use href="#i-filecheck"/></svg>Document handoffs</b><p>Layer three.</p></div>
+<div class="gate reveal d3"><b><svg class="ic"><use href="#i-shield"/></svg>Write back</b><p>Only when governed and supported.</p></div>
+</div>
+<div class="ledger reveal" aria-label="Audit trail fields"><div class="r"><span>Who</span><span>What</span><span>When</span><span>Source</span><span>Outcome</span></div><div class="r"><span>MA · named</span><span>Epic action taken</span><span>09:14</span><span>VA handoff</span><span class="ok">verified</span></div><div class="r"><span>AI · draft</span><span>summary prepared</span><span>09:02</span><span>fax · classified</span><span>awaiting review</span></div><div class="r"><span>Physician · signed</span><span>approval</span><span>09:31</span><span>readiness exception</span><span class="ok">closed</span></div></div>
+<p class="disclose" style="margin-top:16px;color:#B7C3D6">Synthetic demo workspace · illustrative rows · no clinical or outcome claims</p>
+</div></section>
+
+<section class="block spec" data-screen-label="Specialty"><div class="wrap"><div class="box">
+<div class="reveal"><span class="label" style="display:block;margin-bottom:16px">Specialty</span><h2 style="margin-bottom:16px">Urology is the learning wedge, not the product boundary.</h2><p class="lede">MOOSE's first pathways are shaped by urology practice operations — surveillance recalls, procedure authorizations, procedure prep, specialty billing. The same engine, ownership, proof, and governance are configured for the next specialty's real work.</p></div>
+<div class="pic reveal d1"><img src="https://images.unsplash.com/photo-1666214280391-8ff5bd3c0bf0?auto=format&fit=crop&w=1200&q=70" alt="A practice office, front of house"></div>
+</div></div></section>
+
+<section class="block inv" id="investors" data-screen-label="Investors"><div class="wrap"><div class="box reveal">
+<div><span class="label" style="display:block;margin-bottom:16px">For investors</span><h2 style="margin-bottom:20px">MVP candidate. A limited urology test is the next milestone.</h2><a class="btn primary" href="mailto:troy@auxerion.com?subject=MOOSE%20investor%20overview">MOOSE investor overview <svg class="ic"><use href="#i-arrow"/></svg></a></div>
+<p>Independent medical practices face staffing shortages, payer friction, and administrative burden that grows every year, while the operational tooling around the EHR remains fragmented across phone systems, fax, portals, clearinghouses, and manual follow-up. MOOSE targets that operational layer as a governed, auditable system of action with a specialty-first go-to-market. The wedge is visit readiness and closed loops — visible to staff within days — with revenue assurance as the measurable consequence. The current build is an MVP candidate; the next milestone is a limited, carefully scoped urology test. Regulatory posture, pilot design, and pricing are supplied in the investor overview. MOOSE makes no clinical or outcome claims.</p>
+</div></div></section>
+
+<section class="block contact" id="contact" data-screen-label="Contact"><div class="halo" aria-hidden="true"><i></i><i></i><i></i></div><div class="wrap">
+<h2 class="reveal">Request a pilot conversation.</h2>
+<p class="lede reveal d1">We're looking for a small number of practices to shape MOOSE with us before wider release.</p>
+<a class="big reveal d2" href="mailto:troy@auxerion.com?subject=MOOSE%20pilot%20conversation"><svg class="ic"><use href="#i-mail"/></svg>troy@auxerion.com</a>
+</div></section>
+</main>
+<footer><div class="wrap"><div class="top">
+<a class="brand" href="../auxerion/index.html" aria-label="Auxerion"><svg width="24" height="24" viewBox="0 0 160 160" aria-hidden="true"><path d="M132 50A60 60 0 1 0 140 80" fill="none" stroke="currentColor" stroke-width="8" stroke-linecap="round"/><circle cx="138" cy="64.5" r="7" fill="#1FA7A0"/><path d="M46 112L74 61M86 61L114 112" stroke="currentColor" stroke-width="8" stroke-linecap="round" fill="none"/></svg><span style="font-size:13px">AUXERION</span></a>
+<nav class="family" aria-label="Auxerion family"><a href="../auxerion/index.html"><span class="dot" style="background:var(--ax)"></span>Auxerion</a><a href="../creativ8/index.html"><span class="dot" style="background:var(--c8)"></span>Creativ8</a><a href="index.html" aria-current="true"><span class="dot" style="background:var(--mo)"></span>MOOSE</a><a href="../kept/index.html"><span class="dot" style="background:var(--ha)"></span>Kept</a></nav>
+<div><a href="mailto:troy@auxerion.com">troy@auxerion.com</a></div></div>
+<div class="bottom"><span>© 2026 MOOSE · Medical Office OS Environment · an Auxerion company</span><span>auxerion.com/moose</span></div></div></footer>
+<script src="../icons.js"></script><script src="../family.js"></script><script src="../cinema.js"></script>
+</body></html>

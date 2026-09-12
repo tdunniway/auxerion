@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Creativ8 — The living system for game development</title>
+<meta name="description" content="Creativ8 is the AI-native studio platform where a game's characters, systems, locations, documents, tasks, and assets live as one connected graph.">
+<link rel="icon" href="../assets/logos/creativ8-mark.svg">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400&display=swap">
+<link rel="stylesheet" href="../family.css"><link rel="stylesheet" href="../cinema.css">
+<style>
+body{background:#0D0C0A}
+.hero{min-height:100vh;background:#0D0C0A}
+.hero .bg img{filter:saturate(.9) brightness(.55);opacity:1;transform:none}
+.hero .veil{position:absolute;inset:0;z-index:-2;background:linear-gradient(180deg,rgba(13,12,10,.2),rgba(13,12,10,.75) 55%,#0D0C0A 92%)}
+.hero .veil::after{content:"";position:absolute;inset:0;background:linear-gradient(90deg,rgba(13,12,10,.85),transparent 60%)}
+.hero .dots{position:absolute;inset:0;z-index:-1;background-image:radial-gradient(rgba(245,165,36,.18) 1px,transparent 1px);background-size:28px 28px;mask-image:radial-gradient(ellipse 70% 60% at 30% 50%,#000 20%,transparent 75%)}
+.hero h1{font-size:clamp(56px,10.5vw,160px);letter-spacing:-.045em;line-height:.9}
+.hero h1 .a{color:var(--accent)}
+.hero .lede{color:#D9CFC1}
+.hexbg{position:absolute;right:-8vw;top:50%;transform:translateY(-50%);width:min(70vmin,720px);aspect-ratio:1;z-index:-1;pointer-events:none;opacity:.9}
+.hexbg svg{width:100%;height:100%;overflow:visible}
+.hexbg .h{fill:none;stroke:rgba(245,165,36,.25);stroke-width:1.2;stroke-linejoin:round;transform-box:fill-box;transform-origin:center;animation:spin 80s linear infinite}
+.hexbg .h2{stroke:rgba(245,165,36,.12);animation-direction:reverse;animation-duration:120s}
+.hexbg .h3{stroke:url(#amb);stroke-width:2;stroke-dasharray:90 900;animation:dash 9s linear infinite}
+@keyframes dash{to{stroke-dashoffset:-990}}
+@keyframes spin{to{transform:rotate(360deg)}}
+.hexbg .dot{fill:#E85B4B;filter:drop-shadow(0 0 16px rgba(232,91,75,.9))}
+.hexbg .glow{position:absolute;inset:22%;border-radius:50%;background:radial-gradient(circle,rgba(245,165,36,.22),transparent 65%);filter:blur(30px)}
+@media(max-width:960px){.hexbg{position:relative;right:auto;top:auto;transform:none;width:min(80%,420px);margin:0 auto;order:2}}
+.stagebar{display:flex;gap:24px;flex-wrap:wrap;align-items:center;margin-top:64px;padding-top:20px;border-top:1px solid var(--line);font-family:var(--mono);font-size:12px;letter-spacing:.08em;text-transform:uppercase;color:var(--text2)}
+.stagebar b{color:var(--accent);font-weight:400}
+/* graph */
+.graphsec{padding-block:140px 0;border-top:0}
+.graph{position:relative;margin-top:64px;border:1px solid var(--line);border-radius:16px;background:radial-gradient(ellipse 60% 60% at 50% 50%,rgba(245,165,36,.07),transparent 70%),#171512;aspect-ratio:16/9;overflow:hidden}
+.graph svg{position:absolute;inset:0;width:100%;height:100%}
+.graph .e{stroke:rgba(179,167,154,.25);stroke-width:1;vector-effect:non-scaling-stroke;transition:stroke .4s}
+.graph .e.hot{stroke:var(--accent);stroke-width:1.5}
+.graph .pulse{fill:var(--accent);filter:drop-shadow(0 0 8px rgba(245,165,36,.9))}
+.gn{position:absolute;transform:translate(-50%,-50%);display:inline-flex;align-items:center;gap:10px;height:44px;padding:0 16px 0 12px;border:1px solid var(--line);border-radius:999px;background:#0D0C0A;font-family:var(--mono);font-size:12.5px;color:var(--text);cursor:default;transition:border-color .3s,box-shadow .3s,transform .3s;left:var(--x);top:var(--y)}
+.gn .ic{width:16px;height:16px;color:var(--text2)}
+.gn.hot,.gn:hover{border-color:var(--accent);box-shadow:0 0 30px -6px rgba(245,165,36,.7);transform:translate(-50%,-50%) scale(1.05)}
+.gn.hot .ic{color:var(--accent)}
+.gn.chg{border-color:#E85B4B;box-shadow:0 0 30px -6px rgba(232,91,75,.8)}
+.graph .legend{position:absolute;left:20px;bottom:16px;display:flex;gap:18px;font-family:var(--mono);font-size:11px;letter-spacing:.06em;color:var(--text2);text-transform:uppercase}
+.graph .legend i{display:inline-block;width:8px;height:8px;border-radius:50%;margin-right:6px;vertical-align:middle}
+.graph .status{position:absolute;right:20px;top:16px;font-family:var(--mono);font-size:12px;color:var(--text2);display:flex;align-items:center;gap:8px}
+.graph .status b{color:var(--accent);font-weight:400}
+@media(max-width:760px){.graph{aspect-ratio:3/4}.gn{height:36px;font-size:11px;padding:0 10px 0 8px}.gn .ic{width:13px;height:13px}}
+/* modules */
+.mods{padding-block:140px 0;border-top:0}
+.modgrid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:12px;margin-top:56px}
+.mod{position:relative;aspect-ratio:1;border:1px solid var(--line);border-radius:12px;background:#171512;padding:22px;display:flex;flex-direction:column;justify-content:space-between;overflow:hidden;transition:border-color .3s,transform .5s var(--ease)}
+.mod:hover{border-color:var(--accent);transform:translateY(-4px)}
+.mod .n{font-family:var(--mono);font-size:11px;color:var(--accent);letter-spacing:.08em}
+.mod b{font-family:"Space Grotesk",sans-serif;font-weight:600;font-size:clamp(18px,1.6vw,24px);letter-spacing:-.02em;line-height:1.1}
+.mod p{font-size:13.5px;color:var(--text2);margin-top:10px}
+.mod .oring{width:48px;height:48px;color:var(--text)}.mod .oring .ic{width:20px;height:20px}
+.mod::after{content:"";position:absolute;right:-30%;bottom:-30%;width:70%;aspect-ratio:1;border-radius:50%;background:radial-gradient(circle,rgba(245,165,36,.16),transparent 70%);opacity:0;transition:opacity .4s}
+.mod:hover::after{opacity:1}
+@media(max-width:960px){.modgrid{grid-template-columns:repeat(2,minmax(0,1fr))}}
+.illus{margin-top:72px;position:relative;border-radius:16px;overflow:hidden;border:1px solid var(--line)}
+.illus img{width:100%;display:block;transition:transform 1.4s var(--ease)}
+.illus:hover img{transform:scale(1.02)}
+.illus .cap{position:absolute;left:16px;bottom:14px;font-family:var(--mono);font-size:11px;letter-spacing:.06em;padding:5px 9px;border-radius:4px;background:rgba(0,0,0,.55);color:#fff;backdrop-filter:blur(4px)}
+.illus .slot{position:absolute;right:16px;top:14px;font-family:var(--mono);font-size:11px;letter-spacing:.06em;padding:5px 9px;border:1px dashed rgba(245,165,36,.6);border-radius:4px;color:var(--accent);background:rgba(13,12,10,.6)}
+/* pillars w/ big numerals */
+.pillsec{padding-block:140px 0;border-top:0}
+.pil{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:24px;margin-top:64px}
+.pil article{border-top:1px solid var(--line);padding-top:24px;position:relative}
+.pil .num{font-family:"Space Grotesk",sans-serif;font-weight:600;font-size:clamp(56px,6vw,96px);letter-spacing:-.05em;line-height:.9;color:transparent;-webkit-text-stroke:1px rgba(245,165,36,.6);margin-bottom:24px}
+.pil h3{font-size:22px;margin-bottom:10px}
+.pil p{font-size:16px;color:var(--text2)}
+@media(max-width:960px){.pil{grid-template-columns:repeat(2,minmax(0,1fr))}}@media(max-width:560px){.pil{grid-template-columns:1fr}}
+/* roles */
+.rolesec{padding-block:140px 0;border-top:0}
+.rolegrid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:16px;margin-top:56px}
+.rcard{position:relative;aspect-ratio:3/4;border-radius:14px;overflow:hidden;border:1px solid var(--line)}
+.rcard img{width:100%;height:100%;object-fit:cover;object-position:50% 20%;filter:brightness(.85);transition:transform 1.2s var(--ease),filter .6s}
+.rcard:hover img{transform:scale(1.06);filter:brightness(1)}
+.rcard .t{position:absolute;inset:auto 0 0 0;padding:24px;background:linear-gradient(180deg,transparent,rgba(13,12,10,.95))}
+.rcard .t b{display:flex;align-items:center;gap:10px;font-family:"Space Grotesk",sans-serif;font-weight:600;font-size:22px;letter-spacing:-.02em;margin-bottom:8px}
+.rcard .t b .ic{color:var(--accent)}
+.rcard .t p{font-size:14.5px;color:#D9CFC1}
+@media(max-width:960px){.rolegrid{grid-template-columns:repeat(2,minmax(0,1fr))}}
+/* trust / built by */
+.builtby{padding-block:140px 0;border-top:0}
+.quote{position:relative;padding:64px;border:1px solid var(--line);border-radius:16px;background:#171512;overflow:hidden}
+.quote::before{content:"";position:absolute;left:-10%;top:-60%;width:500px;height:500px;border-radius:50%;background:radial-gradient(circle,rgba(245,165,36,.16),transparent 65%)}
+.quote p{font-family:"Space Grotesk",sans-serif;font-weight:600;font-size:clamp(24px,2.6vw,40px);letter-spacing:-.02em;line-height:1.15;max-width:26em;position:relative}
+.quote .hx{position:absolute;right:-40px;bottom:-60px;width:280px;height:280px;fill:none;stroke:rgba(245,165,36,.15);stroke-width:1;animation:spin 90s linear infinite}
+@media(max-width:760px){.quote{padding:32px 24px}}
+/* investors */
+.inv{padding-block:140px 0;border-top:0}
+.inv .box{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.4fr);gap:56px;padding:56px;border:1px solid var(--line);border-radius:16px;background:#171512}
+.inv .box p{color:var(--text2)}
+@media(max-width:860px){.inv .box{grid-template-columns:1fr;padding:32px 24px;gap:24px}}
+.contact{padding-block:180px 160px}
+.contact h2{font-family:"Space Grotesk",sans-serif}
+.contact .big{gap:16px;background-image:linear-gradient(var(--accent),var(--accent))}
+.brand.product .ic-mark{width:36px;height:36px}
+</style></head>
+<body data-brand="c8"><template id="__bundler_thumbnail"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><rect width="100" height="100" fill="#0D0C0A"/><text x="50" y="50" text-anchor="middle" dominant-baseline="central" font-family="Space Grotesk,system-ui,sans-serif" font-weight="700" font-size="30" fill="#F5A524">C8</text></svg></template>
+<script src="../familybar.js"></script>
+<header class="site-nav"><span class="progress" aria-hidden="true"></span><div class="wrap">
+<a class="brand product" href="index.html" aria-label="Creativ8 home"><svg class="ic-mark" viewBox="0 0 160 160" aria-hidden="true"><path d="M115.3 40.4L132 50L132 110L80 140L28 110L28 50L80 20L96.6 29.6" stroke="#F5A524" stroke-width="8" stroke-linecap="round" stroke-linejoin="round" fill="none"/><circle cx="106" cy="35" r="6.5" fill="#E85B4B"/><text x="80" y="97" text-anchor="middle" font-family="Space Grotesk,sans-serif" font-weight="600" font-size="48" fill="#F5A524">C8</text></svg><span>Creativ8<span class="by">by Auxerion</span></span></a>
+<nav class="links" id="links" aria-label="Primary"><a href="#how">How it works</a><a href="#modules">Workspaces</a><a href="#roles">For every role</a><a href="#investors">Investors</a><a href="#contact">Contact</a></nav>
+<a class="btn primary nav-cta" href="#contact">Request early access</a>
+<button class="menu-btn" aria-expanded="false" aria-controls="links">Menu</button>
+</div></header>
+<main>
+<section class="hero" data-screen-label="Hero">
+<div class="bg" aria-hidden="true"><img src="https://images.unsplash.com/photo-1542751371-adc38448a05e?auto=format&fit=crop&w=2000&q=70" alt=""></div>
+<div class="veil" aria-hidden="true"></div><div class="dots" aria-hidden="true"></div>
+<div class="hexbg" aria-hidden="true"><div class="glow"></div><svg viewBox="0 0 400 400"><defs><linearGradient id="amb" x1="0" x2="1"><stop offset="0" stop-color="#F5A524" stop-opacity="0"/><stop offset="1" stop-color="#F5A524"/></linearGradient></defs>
+<path class="h h2" d="M200 20L356 110L356 290L200 380L44 290L44 110Z"/>
+<path class="h" d="M200 50L330 125L330 275L200 350L70 275L70 125Z"/>
+<path class="h h3" d="M200 50L330 125L330 275L200 350L70 275L70 125Z"/>
+<path class="h" style="animation:none;stroke:rgba(245,165,36,.5);stroke-width:2" d="M283 97.5L330 125L330 275L200 350L70 275L70 125L200 50L240 73"/>
+<circle class="dot" cx="262" cy="86" r="7"/>
+<text x="200" y="228" text-anchor="middle" font-family="Space Grotesk,sans-serif" font-weight="600" font-size="96" fill="rgba(245,165,36,.9)" letter-spacing="-4">C8</text></svg></div>
+<div class="wrap"><div class="copy">
+<div class="eyebrow reveal in"><span class="tag accent">Deep functional prototype</span><span class="tag">Early access forming</span><span class="live"><i></i>AI assists. People decide.</span></div>
+<h1 class="words"><span>Dream.</span> <span>Design.</span> <span class="a">Deliver.</span></h1>
+<p class="lede reveal in d3">The living system for game development. One connected graph for design, world, levels, production, and leadership — with AI beside every role.</p>
+<div class="actions reveal in d4"><a class="btn primary lg" href="#contact">Request early access <svg class="ic"><use href="#i-arrow"/></svg></a><a class="btn secondary lg" href="#investors">For investors</a></div>
+</div>
+<div class="stagebar reveal in d4"><span><b>8</b> modules</span><span><b>26</b> tools</span><span><b>1</b> shared object graph</span><span>contract-tested end to end</span><span style="margin-left:auto">demo project · Neon Frontier</span></div>
+</div><a class="cue" href="#problem" aria-label="Scroll"><span></span></a></section>
+
+<section class="block" id="problem" style="padding-block:140px 0;border-top:0" data-screen-label="Problem"><div class="wrap">
+<div class="hd"><div class="reveal"><div class="signal draw" style="margin-bottom:28px"></div><h2 class="statement">The design exists everywhere — and nowhere.</h2></div><p class="lede reveal d1">Docs, boards, chats, tasks, and files each hold a piece. The GDD is obsolete before it is finished. Design mistakes surface when they cost the most. And when people leave, the project's memory leaves with them.</p></div>
+<div class="tript">
+<figure class="reveal"><img src="https://images.unsplash.com/photo-1552820728-8b83bb6b773f?auto=format&fit=crop&w=1000&q=70" alt=""><figcaption><small><svg class="ic"><use href="#i-doc"/></svg>Docs · boards · chats</small>Each holds a piece.</figcaption></figure>
+<figure class="reveal d1"><img src="https://images.unsplash.com/photo-1511512578047-dfb367046420?auto=format&fit=crop&w=1000&q=70" alt=""><figcaption><small><svg class="ic"><use href="#i-zap"/></svg>Production</small>Mistakes surface when they cost the most.</figcaption></figure>
+<figure class="reveal d2"><img src="https://images.unsplash.com/photo-1519389950473-47ba0277781c?auto=format&fit=crop&w=1000&q=70" alt=""><figcaption><small><svg class="ic"><use href="#i-brain"/></svg>Memory</small>When people leave, the project's memory leaves with them.</figcaption></figure>
+</div></div></section>
+
+<section class="block graphsec" id="how" data-screen-label="How it works"><div class="wrap">
+<div class="hd"><div class="reveal"><h2 class="statement sm">One living project graph connects everything.</h2></div><p class="lede reveal d1">Every character, system, location, document, task, and asset is a Smart Object. Change one and every live view updates. Commitments that depend on it — issued briefs, approved tasks, engine contracts — are flagged for review, never silently rewritten. Every important decision keeps its why.</p></div>
+<div class="graph reveal d2" id="graph" aria-label="Diagram: a change to one Smart Object propagates to live views and flags dependent commitments for review">
+<svg viewBox="0 0 100 56" preserveAspectRatio="none"><g class="edges"></g></svg>
+<div class="gn" data-id="char" style="--x:50%;--y:50%"><svg class="ic"><use href="#i-users"/></svg>Character · Vex-9</div>
+<div class="gn" data-id="sys" style="--x:22%;--y:28%"><svg class="ic"><use href="#i-branch"/></svg>System · Stealth</div>
+<div class="gn" data-id="lvl" style="--x:78%;--y:24%"><svg class="ic"><use href="#i-scan"/></svg>Level · Docks</div>
+<div class="gn" data-id="doc" style="--x:18%;--y:70%"><svg class="ic"><use href="#i-doc"/></svg>Wiki · Vex-9 profile</div>
+<div class="gn" data-id="task" style="--x:52%;--y:82%"><svg class="ic"><use href="#i-task"/></svg>Task · Rig pass</div>
+<div class="gn" data-id="asset" style="--x:82%;--y:66%"><svg class="ic"><use href="#i-folder"/></svg>Asset · Vex-9 model</div>
+<div class="gn" data-id="brief" style="--x:72%;--y:88%"><svg class="ic"><use href="#i-filecheck"/></svg>Brief · issued</div>
+<div class="gn" data-id="quest" style="--x:36%;--y:14%"><svg class="ic"><use href="#i-route"/></svg>Quest · Broker's debt</div>
+<div class="status"><span class="live"><i></i></span><span id="gstat">one graph · live</span></div>
+<div class="legend"><span><i style="background:#E85B4B"></i>changed</span><span><i style="background:#F5A524"></i>live view updated</span><span><i style="border:1px solid #B3A79A"></i>flagged for review</span></div>
+</div>
+<div class="pipe reveal" style="--n:4" aria-hidden="true"><svg class="wire" viewBox="0 0 1000 10" preserveAspectRatio="none"><defs><path id="wp" d="M0 5H1000"/></defs><path d="M0 5H1000" class="base"/><circle r="4" fill="#F5A524"><animateMotion dur="6s" repeatCount="indefinite"><mpath href="#wp"/></animateMotion></circle></svg>
+<div class="st" style="--d:0s"><span class="ring"><svg class="ic"><use href="#i-zap"/></svg></span><b>Change one object</b><small>impact</small></div>
+<div class="st" style="--d:1.5s"><span class="ring"><svg class="ic"><use href="#i-layers"/></svg></span><b>Update live views</b><small>affected work</small></div>
+<div class="st" style="--d:3s"><span class="ring"><svg class="ic"><use href="#i-usercheck"/></svg></span><b>Review affected commitments</b><small>human review</small></div>
+<div class="st" style="--d:4.5s"><span class="ring"><svg class="ic"><use href="#i-filecheck"/></svg></span><b>Keep the why</b><small>decision record</small></div>
+</div>
+</div></section>
+
+<section class="block mods" id="modules" data-screen-label="Eight workspaces"><div class="wrap">
+<div class="hd"><div class="reveal"><h2 class="statement sm">Eight workspaces,<br>one data foundation.</h2></div><p class="lede reveal d1">Game Designer · Creator · Viz · Wiki · Assembler · Producer · MAKer · Manager — plus specialist tools for characters, quests, levels, balance, simulation, feedback, and more. The modules change. The truth does not.</p></div>
+<div class="modgrid">
+<div class="mod reveal"><span class="n">01</span><span class="oring"><svg viewBox="0 0 64 64"><circle cx="32" cy="32" r="30"/></svg><svg class="ic"><use href="#i-branch"/></svg></span><div><b>Game Designer</b><p>Turns the design document into the game's control model, with coverage, dependency, and impact checks.</p></div></div>
+<div class="mod reveal d1"><span class="n">02</span><span class="oring"><svg viewBox="0 0 64 64"><circle cx="32" cy="32" r="30"/></svg><svg class="ic"><use href="#i-globe"/></svg></span><div><b>Creator</b><p>Grows a world from one seed — cosmology, history, cultures, characters.</p></div></div>
+<div class="mod reveal d2"><span class="n">03</span><span class="oring"><svg viewBox="0 0 64 64"><circle cx="32" cy="32" r="30"/></svg><svg class="ic"><use href="#i-scan"/></svg></span><div><b>Viz</b><p>Makes the whole game legible on an infinite canvas of live Smart Objects.</p></div></div>
+<div class="mod reveal d3"><span class="n">04</span><span class="oring"><svg viewBox="0 0 64 64"><circle cx="32" cy="32" r="30"/></svg><svg class="ic"><use href="#i-doc"/></svg></span><div><b>Wiki</b><p>Turns pages into living workspaces that always know the world they describe.</p></div></div>
+<div class="mod reveal"><span class="n">05</span><span class="oring"><svg viewBox="0 0 64 64"><circle cx="32" cy="32" r="30"/></svg><svg class="ic"><use href="#i-route"/></svg></span><div><b>Assembler</b><p>Connects space, story, and gameplay from level brief to playable encounter.</p></div></div>
+<div class="mod reveal d1"><span class="n">06</span><span class="oring"><svg viewBox="0 0 64 64"><circle cx="32" cy="32" r="30"/></svg><svg class="ic"><use href="#i-task"/></svg></span><div><b>Producer</b><p>Turns design intent into owned work — backlog, pipeline, milestones, capacity, project health.</p></div></div>
+<div class="mod reveal d2"><span class="n">07</span><span class="oring"><svg viewBox="0 0 64 64"><circle cx="32" cy="32" r="30"/></svg><svg class="ic"><use href="#i-zap"/></svg></span><div><b>MAKer</b><p>Carries intent from brief to engine, tracking who makes each asset, what they were briefed, and whether the spec has moved underneath them.</p></div></div>
+<div class="mod reveal d3"><span class="n">08</span><span class="oring"><svg viewBox="0 0 64 64"><circle cx="32" cy="32" r="30"/></svg><svg class="ic"><use href="#i-layers"/></svg></span><div><b>Manager</b><p>Gives leadership the live picture: projects, budgets, capacity, publishing, risk.</p></div></div>
+</div>
+<figure class="illus reveal" style="margin-bottom:0"><img src="../assets/creativ8/deck-eight-workspaces.jpg" alt="Illustration from the Creativ8 investor deck: eight workspaces around one data foundation"><span class="slot">slot · real product screens to follow</span><span class="cap">illustration · Creativ8 investor deck</span></figure>
+<div class="marq" style="margin-top:16px;border-color:rgba(245,165,36,.3);color:var(--accent)"><div>Game Designer · Creator · Viz · Wiki · Assembler · Producer · MAKer · Manager · Characters · Quests · Levels · Balance · Simulator · Feedback · Smart Objects · Create once. Connect everywhere. · Every task knows why it exists. · </div></div>
+</div></section>
+
+<section class="block pillsec" data-screen-label="Pillars"><div class="wrap">
+<div class="reveal"><h2 class="statement sm">Four things Creativ8 does that nothing else does.</h2></div>
+<div class="pil">
+<article class="reveal"><div class="num">01</div><h3>One living project graph.</h3><p>Characters, systems, locations, documents, tasks, and assets are Smart Objects connected to everything they touch. Create once, connect everywhere.</p></article>
+<article class="reveal d1"><div class="num">02</div><h3>Design as the game's control model.</h3><p>Coverage, dependency, gap, and impact checks so the design finds the conflict before it reaches production.</p></article>
+<article class="reveal d2"><div class="num">03</div><h3>Every task knows why it exists.</h3><p>Briefs, pipelines, and schedules trace back to the design intent that created them; drift is detected, not discovered.</p></article>
+<article class="reveal d3"><div class="num">04</div><h3>AI assists. People decide.</h3><p>Project-grounded, source-linked AI beside every role — drafting, suggesting, summarizing — with human approval before anything changes.</p></article>
+</div></div></section>
+
+<section class="block rolesec" id="roles" data-screen-label="For every role"><div class="wrap">
+<div class="hd"><div class="reveal"><h2 class="statement sm">Every role sees the same truth through the view it needs.</h2></div></div>
+<div class="rolegrid">
+<div class="rcard reveal"><img src="../assets/creativ8/vex-9.jpg" alt="Vex-9, Neon Frontier character concept" loading="lazy"><div class="t"><b><svg class="ic"><use href="#i-branch"/></svg>Designers</b><p>See systems and implications.</p></div></div>
+<div class="rcard reveal d1"><img src="../assets/creativ8/mira.jpg" alt="Mira, Neon Frontier character concept" loading="lazy"><div class="t"><b><svg class="ic"><use href="#i-task"/></svg>Producers</b><p>See owned work and schedule.</p></div></div>
+<div class="rcard reveal d2"><img src="../assets/creativ8/torin.jpg" alt="Torin, Neon Frontier character concept" loading="lazy"><div class="t"><b><svg class="ic"><use href="#i-folder"/></svg>Artists &amp; partners</b><p>See the brief and its context.</p></div></div>
+<div class="rcard reveal d3"><img src="../assets/creativ8/wardin.jpg" alt="Wardin, Neon Frontier character concept" loading="lazy"><div class="t"><b><svg class="ic"><use href="#i-scan"/></svg>Leadership</b><p>Sees live reality instead of status meetings.</p></div></div>
+</div><p class="label reveal" style="margin-top:20px;color:var(--text2)">Character art from Neon Frontier, the sample project that ships with Creativ8.</p></div></section>
+
+<section class="block builtby" data-screen-label="Built by"><div class="wrap"><div class="quote reveal"><span class="label" style="display:block;margin-bottom:20px;position:relative">Built by people who have shipped games</span><p>Creativ8 comes from decades of creative direction and production experience, applied to the problem every studio has and no tool has solved.</p><svg class="hx" viewBox="0 0 400 400" aria-hidden="true"><path d="M200 20L356 110L356 290L200 380L44 290L44 110Z"/></svg></div></div></section>
+
+<section class="block inv" id="investors" data-screen-label="Investors"><div class="wrap"><div class="box reveal">
+<div><span class="label" style="display:block;margin-bottom:16px">For investors</span><h2 style="margin-bottom:20px">Deep functional prototype. Early-access studio pilots next.</h2><a class="btn primary" href="mailto:troy@auxerion.com?subject=Creativ8%20investor%20overview">Creativ8 investor overview <svg class="ic"><use href="#i-arrow"/></svg></a></div>
+<p>Game development is a large, global, creative industry that still runs its most important operational work on general-purpose documents and spreadsheets. Creativ8 targets the studio's core loop — design to production — with an AI-native product that has no direct modern equivalent. The current build is a deep functional prototype: eight modules, twenty-six tools, one shared object graph, contract-tested end to end. The beachhead is mid-size and independent studios, where the pain is sharpest and adoption decisions are fast; the plan is early-access studio pilots, then broader testing, then public launch.</p>
+</div></div></section>
+
+<section class="block contact" id="contact" data-screen-label="Contact"><div class="halo" aria-hidden="true"><i></i><i></i><i></i></div><div class="wrap">
+<h2 class="reveal">Request early access.</h2>
+<p class="lede reveal d1">We're looking for a small number of studios to shape Creativ8 with us before wider release.</p>
+<a class="big reveal d2" href="mailto:troy@creativ8.net?subject=Creativ8%20early%20access"><svg class="ic"><use href="#i-mail"/></svg>troy@creativ8.net</a>
+</div></section>
+</main>
+<footer><div class="wrap"><div class="top">
+<a class="brand" href="../auxerion/index.html" aria-label="Auxerion"><svg width="24" height="24" viewBox="0 0 160 160" aria-hidden="true"><path d="M132 50A60 60 0 1 0 140 80" fill="none" stroke="currentColor" stroke-width="8" stroke-linecap="round"/><circle cx="138" cy="64.5" r="7" fill="#F5A524"/><path d="M46 112L74 61M86 61L114 112" stroke="currentColor" stroke-width="8" stroke-linecap="round" fill="none"/></svg><span style="font-size:13px">AUXERION</span></a>
+<nav class="family" aria-label="Auxerion family"><a href="../auxerion/index.html"><span class="dot" style="background:var(--ax)"></span>Auxerion</a><a href="index.html" aria-current="true"><span class="dot" style="background:var(--c8)"></span>Creativ8</a><a href="../moose/index.html"><span class="dot" style="background:var(--mo)"></span>MOOSE</a><a href="../kept/index.html"><span class="dot" style="background:var(--ha)"></span>Kept</a></nav>
+<div><a href="mailto:troy@creativ8.net">troy@creativ8.net</a></div></div>
+<div class="bottom"><span>© 2026 Creativ8 · an Auxerion company</span><span>creativ8.net · auxerion.com/creativ8</span></div></div></footer>
+<script src="../icons.js"></script><script src="../family.js"></script><script src="../cinema.js"></script>
+<script>
+(()=>{const g=document.getElementById('graph');if(!g)return;const rm=matchMedia('(prefers-reduced-motion: reduce)').matches;
+const N={};g.querySelectorAll('.gn').forEach(n=>N[n.dataset.id]=n);
+const E=[['char','sys'],['char','lvl'],['char','doc'],['char','task'],['char','asset'],['task','brief'],['asset','brief'],['sys','quest'],['char','quest'],['lvl','quest']];
+const svg=g.querySelector('.edges');const lines={};
+for(const [a,b] of E){const l=document.createElementNS('http://www.w3.org/2000/svg','line');l.setAttribute('class','e');const pa=N[a].style,pb=N[b].style;l.setAttribute('x1',parseFloat(pa.getPropertyValue('--x')));l.setAttribute('y1',parseFloat(pa.getPropertyValue('--y'))*.56);l.setAttribute('x2',parseFloat(pb.getPropertyValue('--x')));l.setAttribute('y2',parseFloat(pb.getPropertyValue('--y'))*.56);svg.appendChild(l);lines[a+b]=l}
+const stat=document.getElementById('gstat');
+const steps=[()=>{reset();N.char.classList.add('chg');stat.textContent='Vex-9 changed · impact'},()=>{['sys','lvl','doc','asset'].forEach(k=>{N[k].classList.add('hot');(lines['char'+k]).classList.add('hot')});stat.textContent='live views updated · affected work'},()=>{['task','brief','quest'].forEach(k=>N[k].classList.add('rev'));lines.chartask.classList.add('hot');lines.taskbrief.classList.add('hot');lines.charquest.classList.add('hot');stat.textContent='3 commitments flagged for review · human review'},()=>{stat.textContent='decision recorded · the why is kept'}];
+function reset(){g.querySelectorAll('.gn').forEach(n=>n.classList.remove('chg','hot','rev'));svg.querySelectorAll('.e').forEach(l=>l.classList.remove('hot'))}
+let i=0;function tick(){steps[i%steps.length]();i++;setTimeout(tick,i%steps.length===0?3200:1800)}
+if(rm){steps[0]();steps[1]();steps[2]()}else new IntersectionObserver((es,o)=>{if(es[0].isIntersecting){tick();o.disconnect()}},{threshold:.35}).observe(g);
+})();
+</script>
+<style>.gn.rev{border-style:dashed;border-color:#B3A79A}</style>
+</body></html>

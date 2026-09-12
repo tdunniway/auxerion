@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Investing in Auxerion</title>
+<meta name="description" content="Auxerion is structured as a parent company with three product businesses. Each product raises and operates independently.">
+<link rel="icon" href="../assets/logos/auxerion-mark-primary.svg">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400&display=swap">
+<link rel="stylesheet" href="../family.css"><link rel="stylesheet" href="../cinema.css">
+<style>
+.hero{min-height:82vh;background:radial-gradient(ellipse 60% 50% at 70% 30%,rgba(59,123,255,.14),transparent 60%),radial-gradient(ellipse 40% 40% at 20% 90%,rgba(168,85,247,.1),transparent 60%)}
+.hero h1{font-size:clamp(44px,7vw,108px)}
+.structure{position:relative;margin-top:64px;display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:24px}
+.structure::before{content:"";position:absolute;left:16.6%;right:16.6%;top:-40px;height:1px;background:var(--line)}
+.structure .parent{grid-column:1/-1;justify-self:center;margin-bottom:24px;display:inline-flex;align-items:center;gap:14px;padding:18px 28px;border:1px solid rgba(124,155,255,.5);border-radius:12px;background:var(--bg2);box-shadow:0 0 60px -10px rgba(99,80,255,.5);font-family:"Space Grotesk",sans-serif;font-weight:600;font-size:20px;letter-spacing:.1em}
+.structure .parent small{font-family:var(--mono);font-size:11px;letter-spacing:.06em;color:var(--text2);text-transform:none}
+.pcard{display:flex;flex-direction:column;gap:14px;padding:32px;border:1px solid var(--line);border-radius:16px;background:var(--bg2);position:relative;overflow:hidden;text-decoration:none;transition:transform .4s var(--ease),border-color .3s}
+.pcard:hover{transform:translateY(-4px);border-color:var(--text2)}
+.pcard .bar{position:absolute;left:0;right:0;top:0;height:4px}
+.pcard img{height:44px;width:auto;align-self:flex-start}
+.pcard b{font-family:"Space Grotesk",sans-serif;font-weight:600;font-size:28px;letter-spacing:-.02em}
+.pcard .go{margin-top:auto;display:inline-flex;align-items:center;gap:8px;font-weight:600;font-size:14px}
+.pcard p{font-size:15px;color:var(--text2)}
+@media(max-width:860px){.structure{grid-template-columns:1fr}.structure::before{display:none}}
+.faq{margin-top:56px;border-top:1px solid var(--line)}
+.faq details{border-bottom:1px solid var(--line)}
+.faq summary{list-style:none;cursor:pointer;display:flex;justify-content:space-between;align-items:center;gap:24px;padding:26px 0;font-family:"Space Grotesk",sans-serif;font-weight:600;font-size:clamp(18px,1.6vw,22px);letter-spacing:-.01em}
+.faq summary::-webkit-details-marker{display:none}
+.faq summary .ic{transition:transform .3s;color:#7c9bff}
+.faq details[open] summary .ic{transform:rotate(90deg)}
+.faq p{padding:0 0 28px;color:var(--text2);max-width:52em}
+.stage{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:16px;margin-top:48px}
+.stage div{padding:24px;border:1px solid var(--line);border-radius:12px;background:var(--bg2)}
+.stage b{display:block;font-family:"Space Grotesk",sans-serif;font-weight:600;font-size:20px;margin:10px 0 8px}
+.stage p{font-size:15px;color:var(--text2)}
+@media(max-width:860px){.stage{grid-template-columns:1fr}}
+</style></head>
+<body data-brand="aux"><template id="__bundler_thumbnail"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><rect width="100" height="100" fill="#070B14"/><text x="50" y="50" text-anchor="middle" dominant-baseline="central" font-family="Space Grotesk,system-ui,sans-serif" font-weight="700" font-size="40" fill="#3B7BFF">A</text></svg></template>
+<script src="../familybar.js"></script>
+<header class="site-nav"><span class="progress" aria-hidden="true"></span><div class="wrap">
+<a class="brand" href="index.html" aria-label="Auxerion home"><svg width="40" height="40" viewBox="0 0 160 160" aria-hidden="true"><defs><linearGradient id="sig" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#3B7BFF"/><stop offset="1" stop-color="#A855F7"/></linearGradient></defs><path d="M132 50A60 60 0 1 0 140 80" fill="none" stroke="currentColor" stroke-width="8" stroke-linecap="round"/><circle cx="138" cy="64.5" r="7" fill="url(#sig)"/><path d="M46 112L74 61M86 61L114 112" stroke="currentColor" stroke-width="8" stroke-linecap="round" fill="none"/></svg><span>AUXERION</span></a>
+<nav class="links" id="links" aria-label="Primary"><a href="index.html#products">Products</a><a href="index.html#loop">The loop</a><a href="index.html#platform">Platform</a><a href="company.html">Company</a><a href="investors.html" aria-current="page">Investors</a></nav>
+<a class="btn primary nav-cta" href="mailto:troy@auxerion.com">Request the company overview</a>
+<button class="menu-btn" aria-expanded="false" aria-controls="links">Menu</button>
+</div></header>
+<main>
+<section class="hero" data-screen-label="Investors hero"><div class="wrap"><div class="copy">
+<div class="eyebrow reveal in"><span class="tag">Investors</span></div>
+<h1 class="words"><span>Investing</span> <span>in</span> <span>Auxerion.</span></h1>
+<p class="lede reveal in d3">Auxerion is structured as a parent company with three product businesses. Each product raises and operates independently. The parent holds the shared technology and the method for applying it to new verticals.</p>
+<div class="actions reveal in d4"><a class="btn primary lg" href="mailto:troy@auxerion.com?subject=Auxerion%20company%20overview">Request the company overview <svg class="ic"><use href="#i-arrow"/></svg></a></div>
+</div></div></section>
+
+<section class="block" id="structure" data-screen-label="Structure"><div class="wrap">
+<div class="hd"><div class="reveal"><h2 class="statement sm">Three product businesses.<br>One parent.</h2></div><p class="lede reveal d1">Investors interested in a specific product should start with that product's overview. Investors interested in the platform and the multi-vertical thesis should contact Troy directly.</p></div>
+<div class="structure">
+<div class="parent reveal"><svg width="28" height="28" viewBox="0 0 160 160" aria-hidden="true"><path d="M132 50A60 60 0 1 0 140 80" fill="none" stroke="currentColor" stroke-width="8" stroke-linecap="round"/><circle cx="138" cy="64.5" r="7" fill="url(#sig)"/><path d="M46 112L74 61M86 61L114 112" stroke="currentColor" stroke-width="8" stroke-linecap="round" fill="none"/></svg>AUXERION <small>shared technology · method · WorkOS</small></div>
+<a class="pcard reveal" href="../creativ8/index.html#investors"><span class="bar" style="background:var(--c8)"></span><img src="../assets/logos/creativ8-mark.svg" alt=""><span class="tag">Deep functional prototype</span><b>Creativ8</b><p>The living system for game development.</p><span class="go">Creativ8 investor overview <svg class="ic"><use href="#i-arrow"/></svg></span></a>
+<a class="pcard reveal d1" href="../moose/index.html#investors"><span class="bar" style="background:var(--mo)"></span><img src="../assets/logos/moose-logo.png" alt=""><span class="tag">MVP candidate</span><b>MOOSE</b><p>Medical Office OS Environment. The operational control plane around the EHR.</p><span class="go">MOOSE investor overview <svg class="ic"><use href="#i-arrow"/></svg></span></a>
+<a class="pcard reveal d2" href="../kept/index.html#investors"><span class="bar" style="background:var(--ha)"></span><img src="../assets/logos/kept-mark.svg" alt=""><span class="tag">Investor demonstration</span><b>Kept</b><p>The operating layer that keeps every promise a hotel makes.</p><span class="go">Kept investor overview <svg class="ic"><use href="#i-arrow"/></svg></span></a>
+</div>
+</div></section>
+
+<section class="block" id="stage" data-screen-label="Stage"><div class="wrap">
+<div class="hd"><div class="reveal"><h2>Which product is furthest along?</h2></div><p class="lede reveal d1">They are at comparable stages, with different strengths.</p></div>
+<div class="stage">
+<div class="reveal"><span class="tag" style="border-color:var(--c8);color:var(--c8)">Creativ8</span><b>The deepest build</b><p>Eight modules, twenty-six tools, one contract-tested object graph.</p></div>
+<div class="reveal d1"><span class="tag" style="border-color:var(--ha);color:var(--ha)">Kept</span><b>The most complete connected investor demonstration</b><p>Guided arrival, experience-recovery, and room-service journeys on a synthetic property.</p></div>
+<div class="reveal d2"><span class="tag" style="border-color:var(--mo);color:var(--mo)">MOOSE</span><b>The most developed governance and compliance architecture</b><p>And the nearest real-world test: a limited urology test is the next milestone.</p></div>
+</div>
+</div></section>
+
+<section class="block" id="faq" data-screen-label="FAQ"><div class="wrap">
+<div class="reveal"><h2>Investor FAQ</h2></div>
+<div class="faq reveal d1">
+<details open><summary>Why should one company build across three industries? <svg class="ic"><use href="#i-arrow"/></svg></summary><p>Because the operational problem is the same underneath, each product independently arrived at the same operating loop, the platform to carry that loop is shared, and each product is run as its own focused business. The parent's job is the core and the method; the products' job is depth.</p></details>
+<details><summary>Isn't this three companies pretending to be one? <svg class="ic"><use href="#i-arrow"/></svg></summary><p>Legally, each product is its own business with its own investors. The parent holds the shared technology and licenses it in. That is deliberate: it keeps each product's cap table clean and lets the platform compound.</p></details>
+<details><summary>What does WorkOS actually share today? <svg class="ic"><use href="#i-arrow"/></svg></summary><p>An operational model (outcomes, owners, dependencies, approvals, evidence), a shared component kit, and a workflow foundation integrated into the hospitality product. Full convergence is a roadmap item, not a current claim.</p></details>
+<details><summary>Where is the traction? <svg class="ic"><use href="#i-arrow"/></svg></summary><p>Pre-revenue. The next milestones are early-access studio pilots, a limited urology test, and a pilot property — not customer counts. Numbers will be reported with dates and sources.</p></details>
+<details><summary>Who is on the team? <svg class="ic"><use href="#i-arrow"/></svg></summary><p>Withheld for now beyond the founder. Partners exist per product and will be introduced in product-level conversations.</p></details>
+<details><summary>What are the biggest risks? <svg class="ic"><use href="#i-arrow"/></svg></summary><p>Focus across three products; integration dependencies with systems of record in each vertical (engines, EHRs, PMS/POS); regulatory posture in healthcare; and converting demonstrations and prototypes into pilots with measured outcomes.</p></details>
+</div>
+</div></section>
+
+<section class="block contact" id="contact" data-screen-label="Contact"><div class="halo" aria-hidden="true"><i></i><i></i><i></i></div><div class="wrap">
+<h2 class="reveal">Request the<br>company overview.</h2>
+<p class="lede reveal d1">Founder &amp; CEO: Troy Dunniway.</p>
+<a class="big reveal d2" href="mailto:troy@auxerion.com?subject=Auxerion%20company%20overview"><svg class="ic"><use href="#i-mail"/></svg>troy@auxerion.com</a>
+</div></section>
+</main>
+<footer><div class="wrap"><div class="top">
+<a class="brand" href="index.html" aria-label="Auxerion"><svg width="24" height="24" viewBox="0 0 160 160" aria-hidden="true"><path d="M132 50A60 60 0 1 0 140 80" fill="none" stroke="currentColor" stroke-width="8" stroke-linecap="round"/><circle cx="138" cy="64.5" r="7" fill="url(#sig)"/><path d="M46 112L74 61M86 61L114 112" stroke="currentColor" stroke-width="8" stroke-linecap="round" fill="none"/></svg><span style="font-size:13px">AUXERION</span></a>
+<nav class="family" aria-label="Auxerion family"><a href="index.html" aria-current="true"><span class="dot" style="background:var(--ax)"></span>Auxerion</a><a href="../creativ8/index.html"><span class="dot" style="background:var(--c8)"></span>Creativ8</a><a href="../moose/index.html"><span class="dot" style="background:var(--mo)"></span>MOOSE</a><a href="../kept/index.html"><span class="dot" style="background:var(--ha)"></span>Kept</a></nav>
+<div><a href="mailto:troy@auxerion.com">troy@auxerion.com</a></div></div>
+<div class="bottom"><span>© 2026 Auxerion</span><span><a href="company.html">Company</a> · <a href="investors.html">Investors</a></span></div></div></footer>
+<script src="../icons.js"></script><script src="../family.js"></script><script src="../cinema.js"></script>
+</body></html>
