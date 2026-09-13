@@ -16,6 +16,7 @@
 <meta name="twitter:description" content="Creativ8 is the AI-native studio platform where a game's characters, systems, locations, documents, tasks, and assets live as one connected graph.">
 <meta name="twitter:image" content="https://auxerion.vercel.app/assets/og/creativ8.jpg">
 
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"VideoObject","name":"Creativ8 Explainer","description":"Learn about what Creativ8 is and how it helps you design and develop games better, faster and cheaper with our revolutionary new game development platform and tools.","thumbnailUrl":["https://auxerion.vercel.app/assets/creativ8/explainer-poster.jpg","https://i.ytimg.com/vi/kXHdyCe-Hs0/sddefault.jpg"],"uploadDate":"2024-05-22T10:24:22-07:00","duration":"PT3M23S","embedUrl":"https://www.youtube-nocookie.com/embed/kXHdyCe-Hs0","contentUrl":"https://www.youtube.com/watch?v=kXHdyCe-Hs0","url":"https://auxerion.vercel.app/creativ8#watch","publisher":{"@type":"Organization","name":"Auxerion","url":"https://auxerion.vercel.app/"}}</script>
 <link rel="icon" href="/assets/logos/creativ8-mark.svg">
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400&display=swap">
 <link rel="stylesheet" href="/family.css"><link rel="stylesheet" href="/cinema.css">
@@ -110,12 +111,35 @@ body{background:#0D0C0A}
 .contact h2{font-family:"Space Grotesk",sans-serif}
 .contact .big{gap:16px;background-image:linear-gradient(var(--accent),var(--accent))}
 .brand.product .ic-mark{width:36px;height:36px}
+/* explainer video */
+.watch{padding-block:140px 0;border-top:0}
+.player{margin:64px 0 0}
+.yt{position:relative;aspect-ratio:16/9;border:1px solid var(--line);border-radius:16px;overflow:hidden;background:#171512}
+.yt::after{content:"";position:absolute;inset:0;border-radius:16px;box-shadow:0 0 90px -24px rgba(245,165,36,.5);pointer-events:none;transition:box-shadow .4s}
+.yt:hover::after{box-shadow:0 0 120px -14px rgba(245,165,36,.75)}
+.yt iframe{position:absolute;inset:0;width:100%;height:100%;border:0;display:block}
+.ytbtn{position:absolute;inset:0;width:100%;height:100%;padding:0;border:0;background:none;color:inherit;text-align:left;cursor:pointer;display:block}
+.ytbtn:focus-visible{outline:2px solid var(--accent);outline-offset:-4px}
+.ytbtn img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;filter:saturate(.92) brightness(.72);transition:transform .6s var(--ease),filter .4s}
+.ytbtn:hover img,.ytbtn:focus-visible img{transform:scale(1.03);filter:saturate(1) brightness(.82)}
+.ytbtn .scrim{position:absolute;inset:0;background:linear-gradient(180deg,rgba(13,12,10,.1),rgba(13,12,10,.82))}
+.ytbtn .play{position:absolute;left:50%;top:50%;transform:translate(-50%,-50%);width:88px;height:88px;border-radius:50%;background:var(--accent);color:var(--on-accent);display:grid;place-items:center;box-shadow:0 0 44px -8px rgba(245,165,36,.9);transition:transform .25s var(--ease)}
+.ytbtn:hover .play,.ytbtn:focus-visible .play{transform:translate(-50%,-50%) scale(1.08)}
+.ytbtn .play svg{width:30px;height:30px;margin-left:5px;fill:currentColor;stroke:none}
+.ytbtn .meta{position:absolute;left:28px;right:28px;bottom:24px;display:flex;align-items:baseline;gap:8px 16px;flex-wrap:wrap}
+.ytbtn .meta b{font-family:"Space Grotesk",sans-serif;font-weight:600;font-size:clamp(19px,2vw,28px);letter-spacing:-.02em;color:#fff}
+.ytbtn .meta small{font-family:var(--mono);font-size:12px;letter-spacing:.08em;text-transform:uppercase;color:var(--text2)}
+.player figcaption{display:flex;gap:14px 28px;flex-wrap:wrap;align-items:center;margin-top:20px;padding-top:18px;border-top:1px solid var(--line);font-family:var(--mono);font-size:12px;letter-spacing:.08em;text-transform:uppercase;color:var(--text2)}
+.player figcaption a{color:var(--text);display:inline-flex;align-items:center;gap:8px}
+.player figcaption a:hover{color:var(--accent)}
+.player figcaption .ic{width:14px;height:14px}
+@media(max-width:760px){.watch{padding-block:96px 0}.player{margin-top:40px}.ytbtn .play{width:62px;height:62px}.ytbtn .play svg{width:22px;height:22px}.ytbtn .meta{left:18px;right:18px;bottom:14px}.ytbtn .meta b{display:none}}
 </style></head>
 <body data-brand="c8"><template id="__bundler_thumbnail"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><rect width="100" height="100" fill="#0D0C0A"/><text x="50" y="50" text-anchor="middle" dominant-baseline="central" font-family="Space Grotesk,system-ui,sans-serif" font-weight="700" font-size="30" fill="#F5A524">C8</text></svg></template>
 <script src="/familybar.js"></script>
 <header class="site-nav"><span class="progress" aria-hidden="true"></span><div class="wrap">
 <a class="brand product" href="/creativ8" aria-label="Creativ8 home"><svg class="ic-mark" viewBox="0 0 160 160" aria-hidden="true"><path d="M115.3 40.4L132 50L132 110L80 140L28 110L28 50L80 20L96.6 29.6" stroke="#F5A524" stroke-width="8" stroke-linecap="round" stroke-linejoin="round" fill="none"/><circle cx="106" cy="35" r="6.5" fill="#E85B4B"/><text x="80" y="97" text-anchor="middle" font-family="Space Grotesk,sans-serif" font-weight="600" font-size="48" fill="#F5A524">C8</text></svg><span>Creativ8<span class="by">by Auxerion</span></span></a>
-<nav class="links" id="links" aria-label="Primary"><a href="#how">How it works</a><a href="#modules">Workspaces</a><a href="#roles">For every role</a><a href="#investors">Investors</a><a href="#contact">Contact</a></nav>
+<nav class="links" id="links" aria-label="Primary"><a href="#watch">Watch</a><a href="#how">How it works</a><a href="#modules">Workspaces</a><a href="#roles">For every role</a><a href="#investors">Investors</a><a href="#contact">Contact</a></nav>
 <a class="btn primary nav-cta" href="#contact">Request early access</a>
 <button class="menu-btn" aria-expanded="false" aria-controls="links">Menu</button>
 </div></header>
@@ -137,7 +161,21 @@ body{background:#0D0C0A}
 <div class="actions reveal in d4"><a class="btn primary lg" href="#contact">Request early access <svg class="ic"><use href="#i-arrow"/></svg></a><a class="btn secondary lg" href="#investors">For investors</a></div>
 </div>
 <div class="stagebar reveal in d4"><span><b>8</b> modules</span><span><b>26</b> tools</span><span><b>1</b> shared object graph</span><span>contract-tested end to end</span><span style="margin-left:auto">demo project · Neon Frontier</span></div>
-</div><a class="cue" href="#problem" aria-label="Scroll"><span></span></a></section>
+</div><a class="cue" href="#watch" aria-label="Scroll"><span></span></a></section>
+
+<section class="block watch" id="watch" data-screen-label="Explainer"><div class="wrap">
+<div class="hd"><div class="reveal"><h2 class="statement sm">Watch the explainer.</h2></div><p class="lede reveal d1">Three minutes on what Creativ8 is and how one connected graph lets a studio design and build a game better, faster, and cheaper than the scatter of docs, boards, and chats it replaces.</p></div>
+<figure class="player reveal d2">
+<div class="yt" data-video="kXHdyCe-Hs0" data-start="3" data-title="Creativ8 Explainer">
+<button class="ytbtn" type="button" aria-label="Play the Creativ8 explainer video, 3 minutes 23 seconds">
+<img src="/assets/creativ8/explainer-poster.jpg" alt="" width="1280" height="720" loading="lazy" decoding="async">
+<span class="scrim" aria-hidden="true"></span>
+<span class="play" aria-hidden="true"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M8 5v14l11-7z"/></svg></span>
+<span class="meta" aria-hidden="true"><b>Creativ8 Explainer</b><small>3:23 &middot; plays here</small></span>
+</button></div>
+<figcaption><span>Nothing loads from YouTube until you press play.</span><a href="https://www.youtube.com/watch?v=kXHdyCe-Hs0&amp;t=3s" target="_blank" rel="noopener">Watch on YouTube <svg class="ic"><use href="#i-arrow"/></svg></a></figcaption>
+</figure>
+</div></section>
 
 <section class="block" id="problem" style="padding-block:140px 0;border-top:0" data-screen-label="Problem"><div class="wrap">
 <div class="hd"><div class="reveal"><div class="signal draw" style="margin-bottom:28px"></div><h2 class="statement">The design exists everywhere — and nowhere.</h2></div><p class="lede reveal d1">Docs, boards, chats, tasks, and files each hold a piece. The GDD is obsolete before it is finished. Design mistakes surface when they cost the most. And when people leave, the project's memory leaves with them.</p></div>
@@ -235,6 +273,15 @@ function reset(){g.querySelectorAll('.gn').forEach(n=>n.classList.remove('chg','
 let i=0;function tick(){steps[i%steps.length]();i++;setTimeout(tick,i%steps.length===0?3200:1800)}
 if(rm){steps[0]();steps[1]();steps[2]()}else new IntersectionObserver((es,o)=>{if(es[0].isIntersecting){tick();o.disconnect()}},{threshold:.35}).observe(g);
 })();
+</script>
+<script>
+(()=>{document.querySelectorAll('.yt').forEach(box=>{const btn=box.querySelector('.ytbtn');if(!btn)return;
+btn.addEventListener('click',()=>{const f=document.createElement('iframe');
+f.src='https://www.youtube-nocookie.com/embed/'+encodeURIComponent(box.dataset.video)+'?start='+(box.dataset.start||0)+'&autoplay=1&rel=0&modestbranding=1&playsinline=1';
+f.title=box.dataset.title||'Video';
+f.allow='accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share';
+f.referrerPolicy='strict-origin-when-cross-origin';f.allowFullscreen=true;
+box.replaceChildren(f);f.focus()},{once:true})})})();
 </script>
 <style>.gn.rev{border-style:dashed;border-color:#B3A79A}</style>
 </body></html>
