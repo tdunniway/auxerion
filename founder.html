@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Troy Dunniway — Founder &amp; CEO of Auxerion</title>
+<meta name="description" content="Troy Dunniway is the Founder and CEO of Auxerion. Three decades of operating leadership across Microsoft, EA, Ubisoft, Disney, Samsung and Insomniac — 150+ shipped products, organizations built to 250 people, teams coordinated across 25 countries.">
+<link rel="canonical" href="https://auxerion.vercel.app/founder">
+<meta property="og:type" content="profile">
+<meta property="og:site_name" content="Auxerion">
+<meta property="og:url" content="https://auxerion.vercel.app/founder">
+<meta property="og:title" content="Troy Dunniway — Founder &amp; CEO of Auxerion">
+<meta property="og:description" content="Three decades of operating leadership across Microsoft, EA, Ubisoft, Disney, Samsung and Insomniac — 150+ shipped products, organizations built to 250 people, teams coordinated across 25 countries.">
+<meta property="og:image" content="https://auxerion.vercel.app/assets/og/founder.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Troy Dunniway — Founder &amp; CEO of Auxerion">
+<meta name="twitter:description" content="Three decades of operating leadership across Microsoft, EA, Ubisoft, Disney, Samsung and Insomniac — 150+ shipped products, organizations built to 250 people.">
+<meta name="twitter:image" content="https://auxerion.vercel.app/assets/og/founder.jpg">
+
+<link rel="icon" href="/assets/logos/auxerion-mark-primary.svg">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400&display=swap">
+<link rel="stylesheet" href="/family.css"><link rel="stylesheet" href="/cinema.css">
+<style>
+/* hero is deliberately not 100vh - a bio page should show its first section, not fill the screen */
+.hero{min-height:auto;padding-block:150px 90px;justify-content:flex-start}
+.hero .wrap{padding-bottom:0}
+.hero .fold{display:grid;grid-template-columns:minmax(0,1.25fr) minmax(0,.75fr);gap:72px;align-items:center}
+.hero .copy{max-width:none;padding-top:0}
+.hero h1{font-size:clamp(46px,7vw,104px);margin:20px 0 28px}
+.hero .lede{max-width:32em}
+.portrait{position:relative;border-radius:16px;overflow:hidden;border:1px solid var(--line);background:var(--bg2);aspect-ratio:4/5}
+.portrait img{width:100%;height:100%;object-fit:cover;display:block}
+.portrait::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,transparent 55%,rgba(7,11,20,.72));pointer-events:none}
+.portrait .plate{position:absolute;inset:auto 0 0 0;padding:24px;display:flex;flex-direction:column;gap:4px;z-index:1}
+.portrait .plate b{font-family:"Space Grotesk",sans-serif;font-weight:600;font-size:20px;letter-spacing:-.02em}
+.portrait .plate span{font-family:var(--mono);font-size:11px;letter-spacing:.08em;text-transform:uppercase;color:var(--text2)}
+.hero .orb{position:absolute;right:-10%;top:-30%;width:760px;height:760px;border-radius:50%;background:radial-gradient(circle,rgba(59,123,255,.16),transparent 62%);pointer-events:none;z-index:-1}
+@media(max-width:960px){.hero{padding-block:120px 64px}.hero .fold{grid-template-columns:1fr;gap:40px}.portrait{max-width:380px}}
+
+/* measured figures, not decoration - each one is checkable against the record below */
+.statband{display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:1px;background:var(--line);border:1px solid var(--line);border-radius:16px;overflow:hidden;margin-top:72px}
+.statband div{background:var(--bg);padding:28px 24px;display:flex;flex-direction:column;gap:6px}
+.statband b{font-family:"Space Grotesk",sans-serif;font-weight:600;font-size:clamp(30px,3.4vw,44px);letter-spacing:-.03em;line-height:1;font-variant-numeric:tabular-nums}
+.statband span{font-family:var(--mono);font-size:11px;letter-spacing:.07em;text-transform:uppercase;color:var(--text2);line-height:1.5}
+@media(max-width:960px){.statband{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media(max-width:480px){.statband{grid-template-columns:1fr}}
+
+/* the argument: his record mapped onto the problem Auxerion sells against */
+.maps{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:20px;margin-top:56px}
+.map{border:1px solid var(--line);border-radius:16px;padding:32px;background:var(--bg2);display:flex;flex-direction:column;gap:14px}
+.map .hdr{display:flex;align-items:center;gap:14px}
+.map .hdr b{font-family:"Space Grotesk",sans-serif;font-weight:600;font-size:19px;letter-spacing:-.01em}
+.map p{font-size:15.5px;color:var(--text2)}
+.map .ev{font-family:var(--mono);font-size:11.5px;letter-spacing:.05em;color:var(--text);border-top:1px solid var(--line);padding-top:14px;margin-top:auto}
+@media(max-width:860px){.maps{grid-template-columns:1fr}}
+
+/* career record */
+.rail{margin-top:56px;border-left:1px solid var(--line);padding-left:0}
+.role{position:relative;display:grid;grid-template-columns:132px minmax(0,1fr);gap:28px;padding:26px 0 26px 32px;border-bottom:1px solid var(--line)}
+.role::before{content:"";position:absolute;left:-4.5px;top:34px;width:8px;height:8px;border-radius:50%;background:var(--accent);box-shadow:0 0 0 4px var(--bg)}
+.role.dim::before{background:var(--line);box-shadow:0 0 0 4px var(--bg)}
+.role .yr{font-family:var(--mono);font-size:12px;color:var(--text2);letter-spacing:.04em;padding-top:3px}
+.role b{font-family:"Space Grotesk",sans-serif;font-weight:600;font-size:18px;letter-spacing:-.01em;display:block}
+.role .co{font-family:var(--mono);font-size:11.5px;letter-spacing:.08em;text-transform:uppercase;color:var(--accent);display:block;margin-bottom:9px}
+.role p{font-size:15.5px;color:var(--text2)}
+@media(max-width:700px){.role{grid-template-columns:1fr;gap:8px;padding-left:24px}}
+
+/* breadth beyond games */
+.breadth{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:20px;margin-top:56px}
+.bx{border:1px solid var(--line);border-radius:16px;padding:30px;display:flex;flex-direction:column;gap:12px;background:var(--bg2)}
+.bx b{font-family:"Space Grotesk",sans-serif;font-weight:600;font-size:18px;letter-spacing:-.01em}
+.bx p{font-size:15px;color:var(--text2)}
+@media(max-width:960px){.breadth{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media(max-width:620px){.breadth{grid-template-columns:1fr}}
+
+/* portfolio */
+.creds{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:20px;margin-top:48px}
+.cred{border-top:1px solid var(--line);padding-top:22px}
+.cred .k{display:flex;align-items:center;gap:10px;font-family:var(--mono);font-size:11px;letter-spacing:.08em;text-transform:uppercase;color:var(--text2);margin-bottom:14px}
+.cred .k .ic{width:14px;height:14px;color:var(--accent)}
+.cred ul{margin:0;padding:0;list-style:none;display:flex;flex-wrap:wrap;gap:8px}
+.cred li{font-size:13.5px;border:1px solid var(--line);border-radius:999px;padding:6px 13px;color:var(--text)}
+@media(max-width:760px){.creds{grid-template-columns:1fr}}
+
+.awards{display:flex;flex-direction:column;gap:14px;margin-top:40px}
+.aw{display:flex;gap:14px;align-items:flex-start;font-size:16px}
+.aw .ic{color:var(--accent);margin-top:4px}
+.srcnote{margin-top:56px;border:1px solid var(--line);border-left:2px solid var(--accent);border-radius:0 12px 12px 0;padding:22px 26px;background:var(--bg2)}
+.srcnote p{font-size:14.5px;color:var(--text2)}
+</style>
+<noscript><style>.reveal{opacity:1!important;transform:none!important}</style></noscript>
+</head>
+<body data-brand="aux"><template id="__bundler_thumbnail"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><rect width="100" height="100" fill="#070B14"/><text x="50" y="50" text-anchor="middle" dominant-baseline="central" font-family="Space Grotesk,system-ui,sans-serif" font-weight="700" font-size="40" fill="#3B7BFF">A</text></svg></template>
+<script src="/familybar.js"></script>
+<header class="site-nav"><span class="progress" aria-hidden="true"></span><div class="wrap">
+<a class="brand" href="/" aria-label="Auxerion home"><svg width="40" height="40" viewBox="0 0 160 160" aria-hidden="true"><defs><linearGradient id="sig" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#3B7BFF"/><stop offset="1" stop-color="#A855F7"/></linearGradient></defs><path d="M132 50A60 60 0 1 0 140 80" fill="none" stroke="currentColor" stroke-width="8" stroke-linecap="round"/><circle cx="138" cy="64.5" r="7" fill="url(#sig)"/><path d="M46 112L74 61M86 61L114 112" stroke="currentColor" stroke-width="8" stroke-linecap="round" fill="none"/></svg><span>AUXERION</span></a>
+<nav class="links" id="links" aria-label="Primary"><a href="/#products">Products</a><a href="/#loop">The loop</a><a href="/#platform">Platform</a><a href="/company">Company</a><a href="/founder" aria-current="page">Founder</a><a href="/investors">Investors</a></nav>
+<a class="btn primary nav-cta" href="/investors">Investor overview</a>
+<button class="menu-btn" aria-expanded="false" aria-controls="links">Menu</button>
+</div></header>
+<main id="main">
+
+<section class="hero" data-screen-label="Founder hero">
+<div class="orb" aria-hidden="true"></div>
+<div class="wrap"><div class="fold">
+<div class="copy">
+<div class="eyebrow reveal in"><span class="tag">Founder &amp; CEO</span><span class="live"><i></i>Three decades of operating leadership</span></div>
+<h1 class="words"><span>Troy</span> <span>Dunniway.</span></h1>
+<p class="lede reveal in d2">He has spent thirty years running the kind of operation Auxerion now builds software for — global studios, distributed teams, live products, and work that breaks at the handoffs.</p>
+<div class="actions reveal in d3">
+<a class="btn primary lg" href="#record">See the record <svg class="ic"><use href="#i-arrow"/></svg></a>
+<a class="btn secondary lg" href="/investors">Investor overview</a>
+</div>
+</div>
+<figure class="portrait reveal in d1" style="margin:0">
+<img src="/assets/troy/troy-dunniway.webp" alt="Troy Dunniway, Founder and CEO of Auxerion" width="900" height="1125">
+<figcaption class="plate"><b>Troy Dunniway</b><span>Founder &amp; CEO · Fremont, California</span></figcaption>
+</figure>
+</div></div>
+</section>
+
+<section class="block" id="scale" data-screen-label="Scale"><div class="wrap">
+<div class="statband reveal">
+<div><b>30+</b><span>Years of operating leadership</span></div>
+<div><b>150+</b><span>Games and interactive products contributed to</span></div>
+<div><b>250</b><span>Person organization built and led</span></div>
+<div><b>25+</b><span>Countries with teams coordinated</span></div>
+<div><b>7</b><span>BAFTA nominations, 2007 alone</span></div>
+</div>
+</div></section>
+
+<section class="block" id="why" data-screen-label="Why him"><div class="wrap">
+<div class="hd"><div class="reveal"><div class="signal draw" style="margin-bottom:28px"></div><h2 class="statement sm">He didn't study this problem. He ran it, at scale, for thirty years.</h2></div><p class="lede reveal d1">Auxerion sells to teams doing complex, multi-step work under real-time pressure, where the software is fragmented and the truth lives in someone's head. That is a fair description of a game studio — and of every studio, publisher and product organization Troy has built and run.</p></div>
+
+<div class="maps">
+<div class="map reveal">
+<div class="hdr"><span class="oring"><svg viewBox="0 0 64 64"><circle cx="32" cy="32" r="30"/></svg><svg class="ic"><use href="#i-branch"/></svg></span><b>Work that breaks at the handoffs</b></div>
+<p>He co-founded and grew GlobeX Studios into a 250-person MMO developer and publisher with four offices across three countries, coordinating internal leaders, external developers and outsourcing partners across more than 25 countries.</p>
+<div class="ev">Failed handoffs were a daily operating cost, not a hypothesis.</div>
+</div>
+<div class="map reveal d1">
+<div class="hdr"><span class="oring"><svg viewBox="0 0 64 64"><circle cx="32" cy="32" r="30"/></svg><svg class="ic"><use href="#i-zap"/></svg></span><b>Operations that continue after launch</b></div>
+<p>He has directed premium, free-to-play, live-service, multiplayer, PvP, MMO, mobile, console, PC and VR portfolios — product lines where shipping is the start of the operation rather than the end of the project.</p>
+<div class="ev">Live service is an operating discipline before it is a business model.</div>
+</div>
+<div class="map reveal d2">
+<div class="hdr"><span class="oring"><svg viewBox="0 0 64 64"><circle cx="32" cy="32" r="30"/></svg><svg class="ic"><use href="#i-users"/></svg></span><b>Skilled teams who abandon bad tools</b></div>
+<p>Three decades leading designers, artists, producers and engineers — and, at CG Spectrum, building the curriculum that trains them. Craft teams do not file tickets to make a process happy; they route around anything that adds steps.</p>
+<div class="ev">Why Auxerion's rule is that AI removes steps, never adds them.</div>
+</div>
+<div class="map reveal d3">
+<div class="hdr"><span class="oring"><svg viewBox="0 0 64 64"><circle cx="32" cy="32" r="30"/></svg><svg class="ic"><use href="#i-board"/></svg></span><b>Accountability for the numbers</b></div>
+<p>General management and P&amp;L ownership at Samsung, Disney, GlobeX and Blinkmoon, covering budgets, staffing, organizational design, pipelines, partnerships and delivery — the economics of an operation, not only its craft.</p>
+<div class="ev">He has carried the cost of the problem he is now selling the fix for.</div>
+</div>
+</div>
+</div></section>
+
+<section class="block" id="record" data-screen-label="Operating record"><div class="wrap">
+<div class="sec-head"><div class="label reveal"><span class="capline">Operating record</span></div><h2 class="statement sm reveal">Studios built. Teams led. Products shipped.</h2><p class="lede reveal d1">Senior leadership across global publishers, platform companies, startups and education. Several founder, investor, advisory and teaching roles overlapped with the operating positions below.</p></div>
+
+<div class="rail">
+<div class="role reveal"><div class="yr">2026 — present</div><div><b>Founder &amp; Chief Executive Officer</b><span class="co">Auxerion</span><p>Leads product, architecture and technology across three products and the shared operational core beneath them.</p></div></div>
+<div class="role reveal"><div class="yr">2017 — present</div><div><b>Vice President &amp; Head of Game Design</b><span class="co">CG Spectrum</span><p>Created and leads the online Game Design program and the wider game development department — program strategy, curriculum, quality standards and industry alignment.</p></div></div>
+<div class="role reveal"><div class="yr">2025 — 2026</div><div><b>Vice President, Game Design</b><span class="co">Mayhem Studios · India</span><p>Led design for a mobile battle royale shooter built for the Indian market, shaping gameplay vision, core systems and player experience.</p></div></div>
+<div class="role reveal"><div class="yr">2014 — 2025</div><div><b>Executive Producer &amp; Co-Founder</b><span class="co">Nekcom Games · China</span><p>Co-founded and established the studio, guiding strategy, product direction, team development and international collaboration; later transitioned to investor and strategic advisory oversight.</p></div></div>
+<div class="role reveal"><div class="yr">2020 — 2022</div><div><b>General Manager &amp; Co-Founder</b><span class="co">Blinkmoon</span><p>Co-founded and launched a studio building a AAA action game for PC and console on Unreal Engine 5 with Web3 technologies — company formation, product strategy, staffing, budgets and partnerships.</p></div></div>
+<div class="role reveal"><div class="yr">2019 — 2021</div><div><b>General Manager &amp; Studio Head</b><span class="co">Samsung</span><p>Led a 70+ person studio with full P&amp;L responsibility, creative direction, staffing, scheduling, production and day-to-day operations.</p></div></div>
+<div class="role reveal"><div class="yr">2014 — 2015</div><div><b>General Manager &amp; Studio Head</b><span class="co">Disney</span><p>Directed all studio departments and end-to-end operations — P&amp;L, staffing, IT, production process, resource planning and creative direction.</p></div></div>
+<div class="role reveal"><div class="yr">2008 — 2014</div><div><b>EVP, General Manager &amp; Executive Producer</b><span class="co">GlobeX Studios · China</span><p>Co-founded and grew GlobeX into a 250-person MMO developer and publisher with four offices in three countries, accountable for production, publishing, organizational design, pipelines and delivery.</p></div></div>
+<div class="role reveal"><div class="yr">2012 — 2013</div><div><b>Creative Director</b><span class="co">Realta Entertainment</span><p>Led design and creative development of BandFuse: Rock Legends across gameplay, systems, user experience and content direction.</p></div></div>
+<div class="role reveal dim"><div class="yr">2007 — 2008</div><div><b>Design Director &amp; Senior Creative Producer</b><span class="co">Brash Entertainment</span></div></div>
+<div class="role reveal dim"><div class="yr">2006 — 2007</div><div><b>Lead Game Designer &amp; Senior Producer</b><span class="co">Midway Games</span></div></div>
+<div class="role reveal dim"><div class="yr">2005 — 2006</div><div><b>Lead Game Designer</b><span class="co">Insomniac Games</span></div></div>
+<div class="role reveal dim"><div class="yr">2004 — 2005</div><div><b>Project Director</b><span class="co">Ubisoft Montreal</span></div></div>
+<div class="role reveal dim"><div class="yr">2002 — 2004</div><div><b>Worldwide Creative Director</b><span class="co">Electronic Arts / Westwood Studios</span></div></div>
+<div class="role reveal dim"><div class="yr">1999 — 2002</div><div><b>Worldwide Creative Director</b><span class="co">Microsoft</span></div></div>
+<div class="role reveal dim"><div class="yr">1994 — 1999</div><div><b>Lead Designer &amp; Lead Animator</b><span class="co">Ronin Entertainment</span></div></div>
+</div>
+</div></section>
+
+<section class="block" id="beyond" data-screen-label="Beyond games"><div class="wrap">
+<div class="sec-head"><div class="label reveal"><span class="capline">Breadth</span></div><h2 class="statement sm reveal">Not only games.</h2><p class="lede reveal d1">Games are where the operating experience was earned, but the career runs wider — film, software, education, publishing, standards bodies, company formation and investing.</p></div>
+
+<div class="breadth">
+<div class="bx reveal"><span class="oring"><svg viewBox="0 0 64 64"><circle cx="32" cy="32" r="30"/></svg><svg class="ic"><use href="#i-eye"/></svg></span><b>Film visual effects</b><p>Began in special effects for feature film, including <em>True Lies</em> and <em>Lawnmower Man 2</em>, before moving into interactive design.</p></div>
+<div class="bx reveal d1"><span class="oring"><svg viewBox="0 0 64 64"><circle cx="32" cy="32" r="30"/></svg><svg class="ic"><use href="#i-doc"/></svg></span><b>Published author</b><p><em>Game Development Essentials: Gameplay Mechanics</em>, published by Cengage Learning with Jeannie Novak, and used as a teaching text in schools internationally.</p></div>
+<div class="bx reveal d2"><span class="oring"><svg viewBox="0 0 64 64"><circle cx="32" cy="32" r="30"/></svg><svg class="ic"><use href="#i-users"/></svg></span><b>Education &amp; curriculum</b><p>Built and leads CG Spectrum's online Game Design program, and has worked on educational and serious-games projects for more than twenty years.</p></div>
+<div class="bx reveal"><span class="oring"><svg viewBox="0 0 64 64"><circle cx="32" cy="32" r="30"/></svg><svg class="ic"><use href="#i-globe"/></svg></span><b>Standards &amp; community</b><p>Director of Games for ACM SIGGRAPH from 2007 to 2010, running the games program for the conference.</p></div>
+<div class="bx reveal d1"><span class="oring"><svg viewBox="0 0 64 64"><circle cx="32" cy="32" r="30"/></svg><svg class="ic"><use href="#i-layers"/></svg></span><b>Advisory &amp; investing</b><p>Consulting and advisory work for Sony, Atari, Double Fine, Plarium, GREE, Petroglyph, Pandemic, Scaleform, Limit Break, Digimancy and others; investor and strategic advisor to Nekcom.</p></div>
+<div class="bx reveal d2"><span class="oring"><svg viewBox="0 0 64 64"><circle cx="32" cy="32" r="30"/></svg><svg class="ic"><use href="#i-flask"/></svg></span><b>Emerging technology</b><p>Unreal Engine 5, Web3 and VR product work, alongside a foundation in astrophysics and mechanical engineering at UC Santa Barbara.</p></div>
+</div>
+</div></section>
+
+<section class="block" id="portfolio" data-screen-label="Portfolio"><div class="wrap">
+<div class="sec-head"><div class="label reveal"><span class="capline">Selected portfolio</span></div><h2 class="statement sm reveal">A representative slice of 150+ shipped products.</h2></div>
+<div class="creds">
+<div class="cred reveal"><div class="k"><svg class="ic"><use href="#i-zap"/></svg>Action &amp; shooters</div><ul><li>Tom Clancy's Rainbow Six: Vegas</li><li>Ratchet &amp; Clank Future: Tools of Destruction</li><li>Mercenaries: Playground of Destruction</li><li>Resistance: Fall of Man</li><li>Halo</li><li>GoldenEye: Rogue Agent</li><li>Ratchet: Deadlocked</li><li>James Bond 007: Nightfire</li></ul></div>
+<div class="cred reveal d1"><div class="k"><svg class="ic"><use href="#i-board"/></svg>Strategy, RPG &amp; MMO</div><ul><li>Age of Empires III</li><li>Command &amp; Conquer 3: Tiberium Wars</li><li>C&amp;C Generals: Zero Hour</li><li>Rise of Nations</li><li>Star Wars: Empire at War</li><li>Fable</li><li>Legend of the Blademasters</li></ul></div>
+<div class="cred reveal"><div class="k"><svg class="ic"><use href="#i-gamepad"/></svg>Platform &amp; family</div><ul><li>Oddworld: Munch's Oddysee</li><li>Psychonauts</li><li>Voodoo Vince</li><li>Blinx: The Time Sweeper</li><li>The Tale of Despereaux</li><li>Where the Wild Things Are</li></ul></div>
+<div class="cred reveal d1"><div class="k"><svg class="ic"><use href="#i-phone"/></svg>Mobile, music &amp; VR</div><ul><li>BandFuse: Rock Legends</li><li>RollerCoaster Tycoon 4 Mobile</li><li>League of War: Mercenaries</li><li>Super Bunny Breakout</li><li>Shattered (VR)</li><li>Dying: Reborn</li><li>TNA iMPACT!</li></ul></div>
+</div>
+</div></section>
+
+<section class="block" id="recognition" data-screen-label="Recognition"><div class="wrap">
+<div class="hd"><div class="reveal"><h2 class="statement sm">Recognition.</h2></div>
+<div class="reveal d1"><div class="awards">
+<div class="aw"><svg class="ic"><use href="#i-check"/></svg><span>Titles led have won national <strong>Game of the Year</strong>, <strong>Game Design of the Year</strong>, <strong>Best of Show</strong>, <strong>Best Shooter</strong> and <strong>Best PS3 Game</strong> honors.</span></div>
+<div class="aw"><svg class="ic"><use href="#i-check"/></svg><span>Projects led in <strong>2007 alone</strong> earned <strong>seven BAFTA nominations</strong> and multiple AIAS nominations.</span></div>
+<div class="aw"><svg class="ic"><use href="#i-check"/></svg><span>Published author, instructor, presenter and mentor; <strong>32 professional recommendations</strong> on LinkedIn across three decades of colleagues.</span></div>
+<div class="aw"><svg class="ic"><use href="#i-check"/></svg><span><strong>University of California, Santa Barbara</strong> — studies in astrophysics and mechanical engineering; varsity track and field.</span></div>
+</div></div></div>
+
+<div class="srcnote reveal">
+<p><strong>On these figures.</strong> Everything on this page is drawn from Troy's own professional record and public profile. Product counts describe titles contributed to across a thirty-year career in a range of roles, from lead designer to studio general manager — not titles personally authored. Awards listed were won by teams and titles under his leadership.</p>
+</div>
+</div></section>
+
+<section class="block contact" id="contact" data-screen-label="Contact"><div class="halo" aria-hidden="true"><i></i><i></i><i></i></div><div class="wrap">
+<h2 class="reveal">Talk to Troy<br>directly.</h2>
+<p class="lede reveal d1">For investment, partnership and early-access conversations — the founder answers his own inbox.</p>
+<a class="big reveal d2" href="mailto:troy@auxerion.com?subject=Auxerion%20investor%20conversation"><svg class="ic"><use href="#i-mail"/></svg>troy@auxerion.com</a>
+<p class="reveal d3" style="margin-top:32px"><a class="btn secondary" href="https://www.linkedin.com/in/tdunniway/" target="_blank" rel="noopener noreferrer"><svg class="ic"><use href="#i-globe"/></svg>LinkedIn profile</a></p>
+</div></section>
+</main>
+<footer><div class="wrap"><div class="top">
+<a class="brand" href="/" aria-label="Auxerion"><svg width="24" height="24" viewBox="0 0 160 160" aria-hidden="true"><path d="M132 50A60 60 0 1 0 140 80" fill="none" stroke="currentColor" stroke-width="8" stroke-linecap="round"/><circle cx="138" cy="64.5" r="7" fill="url(#sig)"/><path d="M46 112L74 61M86 61L114 112" stroke="currentColor" stroke-width="8" stroke-linecap="round" fill="none"/></svg><span style="font-size:13px">AUXERION</span></a>
+<nav class="family" aria-label="Auxerion products"><a href="/"><span class="dot" style="background:var(--ax)"></span>Auxerion</a><a href="/creativ8"><span class="dot" style="background:var(--c8)"></span>Creativ8</a><a href="/moose"><span class="dot" style="background:var(--mo)"></span>MOOSE</a><a href="/kept"><span class="dot" style="background:var(--ha)"></span>Kept</a></nav>
+<div><a href="mailto:troy@auxerion.com">troy@auxerion.com</a></div></div>
+<div class="bottom"><span>© 2026 Auxerion</span><span><a href="/company">Company</a> · <a href="/founder">Founder</a> · <a href="/investors">Investors</a></span></div></div></footer>
+<script src="/icons.js"></script><script src="/family.js"></script><script src="/cinema.js"></script>
+</body></html>
