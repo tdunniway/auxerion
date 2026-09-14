@@ -81,11 +81,6 @@ body{background:#0D0C0A}
 .mod:hover::after{opacity:1}
 @media(max-width:960px){.modgrid{grid-template-columns:repeat(2,minmax(0,1fr))}}
 @media(max-width:560px){.modgrid{grid-template-columns:1fr;gap:14px}.modbg{height:clamp(300px,42vh,420px)}}
-.illus{margin-top:72px;position:relative;border-radius:16px;overflow:hidden;border:1px solid var(--line)}
-.illus img{width:100%;display:block;transition:transform 1.4s var(--ease)}
-.illus:hover img{transform:scale(1.02)}
-.illus .cap{position:absolute;left:16px;bottom:14px;font-family:var(--mono);font-size:11px;letter-spacing:.06em;padding:5px 9px;border-radius:4px;background:rgba(0,0,0,.55);color:#fff;backdrop-filter:blur(4px)}
-.illus .slot{position:absolute;right:16px;top:14px;font-family:var(--mono);font-size:11px;letter-spacing:.06em;padding:5px 9px;border:1px dashed rgba(245,165,36,.6);border-radius:4px;color:var(--accent);background:rgba(13,12,10,.6)}
 /* pillars w/ big numerals */
 .pillsec{padding-block:140px 0;border-top:0}
 .pil{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:24px;margin-top:64px}
@@ -230,8 +225,7 @@ body{background:#0D0C0A}
 <div class="mod reveal d2"><div class="shot"><img src="/assets/creativ8/workspaces/maker.jpg" alt="A game asset moves from wireframe into a finished textured object on a digital craft workbench." width="880" height="587" loading="lazy" decoding="async"><span class="n">07</span></div><div class="txt"><b>Maker</b><p>Carries intent from brief to engine, tracking who makes each asset, what they were briefed, and whether the spec has moved underneath them.</p></div></div>
 <div class="mod reveal d3"><div class="shot"><img src="/assets/creativ8/workspaces/manager.jpg" alt="A strategic studio planning table brings projects and resource allocation into one overview." width="880" height="587" loading="lazy" decoding="async"><span class="n">08</span></div><div class="txt"><b>Manager</b><p>Gives leadership the live picture: projects, budgets, capacity, publishing, risk.</p></div></div>
 </div>
-<figure class="illus reveal" style="margin-bottom:0"><img src="/assets/creativ8/deck-eight-workspaces.jpg" alt="Illustration from the Creativ8 investor deck: eight workspaces around one data foundation"><span class="slot">slot · real product screens to follow</span><span class="cap">illustration · Creativ8 investor deck</span></figure>
-<div class="marq" style="margin-top:16px;border-color:rgba(245,165,36,.3);color:var(--accent)"><div>Designer · Creator · Viz · Wiki · Assembler · Producer · Maker · Manager · Characters · Quests · Levels · Balance · Simulator · Feedback · Smart Objects · Create once. Connect everywhere. · Every task knows why it exists. · </div></div>
+<div class="marq" style="margin-top:64px;border-color:rgba(245,165,36,.3);color:var(--accent)"><div>Designer · Creator · Viz · Wiki · Assembler · Producer · Maker · Manager · Characters · Quests · Levels · Balance · Simulator · Feedback · Smart Objects · Create once. Connect everywhere. · Every task knows why it exists. · </div></div>
 </div></section>
 
 <section class="block pillsec" data-screen-label="Pillars"><div class="wrap">
