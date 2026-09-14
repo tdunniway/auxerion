@@ -104,7 +104,7 @@ body{overflow-x:hidden}
 .panel .pic{position:relative;overflow:hidden}
 .panel .pic img{width:100%;height:100%;object-fit:cover;transition:transform 1.4s var(--ease)}
 .panel:hover .pic img{transform:scale(1.04)}
-.panel .logo{height:56px;width:auto;margin-bottom:auto}
+.panel .logo{height:56px;width:auto;align-self:flex-start;margin-bottom:auto}
 .panel .pname{font-family:"Space Grotesk",sans-serif;font-weight:600;font-size:clamp(40px,4.6vw,64px);letter-spacing:-.03em;line-height:1}
 .panel .pcat{display:flex;align-items:center;gap:8px;font-size:13px;letter-spacing:.12em;text-transform:uppercase;font-weight:600;opacity:.75}
 .panel p{font-size:clamp(18px,1.5vw,22px);max-width:26em;line-height:1.45}
