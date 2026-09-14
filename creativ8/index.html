@@ -32,13 +32,14 @@ body{background:#0D0C0A}
 .hero .lede{color:#D9CFC1}
 .hexbg{position:absolute;right:-8vw;top:50%;transform:translateY(-50%);width:min(70vmin,720px);aspect-ratio:1;z-index:-1;pointer-events:none;opacity:.9}
 .hexbg svg{width:100%;height:100%;overflow:visible}
-.hexbg .h{fill:none;stroke:rgba(245,165,36,.25);stroke-width:1.2;stroke-linejoin:round;transform-box:fill-box;transform-origin:center;animation:spin 80s linear infinite}
-.hexbg .h2{stroke:rgba(245,165,36,.12);animation-direction:reverse;animation-duration:120s}
+.hexbg .h{fill:none;stroke:rgba(248,105,8,.22);stroke-width:1.2;stroke-linejoin:round;transform-box:fill-box;transform-origin:center;animation:spin 80s linear infinite}
+.hexbg .h2{stroke:rgba(226,20,135,.12);animation-direction:reverse;animation-duration:120s}
 .hexbg .h3{stroke:url(#amb);stroke-width:2;stroke-dasharray:90 900;animation:dash 9s linear infinite}
 @keyframes dash{to{stroke-dashoffset:-990}}
 @keyframes spin{to{transform:rotate(360deg)}}
-.hexbg .dot{fill:#E85B4B;filter:drop-shadow(0 0 16px rgba(232,91,75,.9))}
-.hexbg .glow{position:absolute;inset:22%;border-radius:50%;background:radial-gradient(circle,rgba(245,165,36,.22),transparent 65%);filter:blur(30px)}
+.hexbg .dot{fill:#E21487;filter:drop-shadow(0 0 16px rgba(226,20,135,.9))}
+.hexbg .mk{filter:drop-shadow(0 0 30px rgba(240,72,0,.45))}
+.hexbg .glow{position:absolute;inset:22%;border-radius:50%;background:radial-gradient(circle,rgba(248,105,8,.20),transparent 65%);filter:blur(30px)}
 @media(max-width:960px){.hexbg{position:relative;right:auto;top:auto;transform:none;width:min(80%,420px);margin:0 auto;order:2}}
 .stagebar{display:flex;gap:24px;flex-wrap:wrap;align-items:center;margin-top:64px;padding-top:20px;border-top:1px solid var(--line);font-family:var(--mono);font-size:12px;letter-spacing:.08em;text-transform:uppercase;color:var(--text2)}
 .stagebar b{color:var(--accent);font-weight:400}
@@ -147,13 +148,13 @@ body{background:#0D0C0A}
 <section class="hero" data-screen-label="Hero">
 <div class="bg" aria-hidden="true"><img src="/assets/creativ8/studio-graph-wall.jpg" alt="" width="1672" height="941"></div>
 <div class="veil" aria-hidden="true"></div><div class="dots" aria-hidden="true"></div>
-<div class="hexbg" aria-hidden="true"><div class="glow"></div><svg viewBox="0 0 400 400"><defs><linearGradient id="amb" x1="0" x2="1"><stop offset="0" stop-color="#F5A524" stop-opacity="0"/><stop offset="1" stop-color="#F5A524"/></linearGradient></defs>
+<div class="hexbg" aria-hidden="true"><div class="glow"></div><svg viewBox="0 0 400 400"><defs><linearGradient id="amb" x1="0" x2="1" y1="0" y2="1"><stop offset="0" stop-color="#F86908" stop-opacity="0"/><stop offset=".55" stop-color="#F86908"/><stop offset="1" stop-color="#E21487"/></linearGradient></defs>
 <path class="h h2" d="M200 20L356 110L356 290L200 380L44 290L44 110Z"/>
 <path class="h" d="M200 50L330 125L330 275L200 350L70 275L70 125Z"/>
 <path class="h h3" d="M200 50L330 125L330 275L200 350L70 275L70 125Z"/>
-<path class="h" style="animation:none;stroke:rgba(245,165,36,.5);stroke-width:2" d="M283 97.5L330 125L330 275L200 350L70 275L70 125L200 50L240 73"/>
+<path class="h" style="animation:none;stroke:rgba(248,105,8,.45);stroke-width:2" d="M283 97.5L330 125L330 275L200 350L70 275L70 125L200 50L240 73"/>
 <circle class="dot" cx="262" cy="86" r="7"/>
-<text x="200" y="228" text-anchor="middle" font-family="Space Grotesk,sans-serif" font-weight="600" font-size="96" fill="rgba(245,165,36,.9)" letter-spacing="-4">C8</text></svg></div>
+<image class="mk" href="/assets/logos/creativ8-mark-2026.png" x="130" y="130" width="140" height="140"/></svg></div>
 <div class="wrap"><div class="copy">
 <div class="eyebrow reveal in"><span class="tag accent">Deep functional prototype</span><span class="tag">Early access forming</span><span class="live"><i></i>AI assists. People decide.</span></div>
 <h1 class="words"><span>Dream.</span> <span>Design.</span> <span class="a">Deliver.</span></h1>
