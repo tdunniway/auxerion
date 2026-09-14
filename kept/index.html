@@ -84,8 +84,21 @@
 .devices{margin-top:96px}
 .devcap{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap;margin-top:28px;font-family:var(--mono);font-size:11px;letter-spacing:.06em;text-transform:uppercase;color:#8FA39D}
 .nroles{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:16px;margin-top:64px}
-.nr{padding:28px 24px;border:1px solid rgba(246,241,232,.15);border-radius:14px;background:rgba(246,241,232,.03);transition:background .3s,border-color .3s}
-.nr:hover{background:rgba(246,241,232,.06);border-color:rgba(246,241,232,.3)}
+.nr{border:1px solid rgba(246,241,232,.15);border-radius:14px;background:rgba(246,241,232,.03);overflow:hidden;display:flex;flex-direction:column;transition:background .3s,border-color .3s,transform .3s var(--ease)}
+.nr .shot{position:relative;aspect-ratio:16/10;overflow:hidden;background:#0F1A18}
+.nr .shot img{width:100%;height:100%;object-fit:cover;display:block;transition:transform .9s var(--ease)}
+.nr:hover .shot img{transform:scale(1.05)}
+.nr .shot::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(15,26,24,0) 55%,rgba(15,26,24,.55) 82%,rgba(15,26,24,.9))}
+.nr .txt{padding:18px 22px 24px;flex:1}
+.nr:hover{background:rgba(246,241,232,.06);border-color:rgba(246,241,232,.3);transform:translateY(-3px)}
+.rolewrap{position:relative;margin-top:140px}
+.rolewrap .hd,.rolewrap .nroles{position:relative;z-index:1}
+.rolebg{position:absolute;top:-80px;left:50%;transform:translateX(-50%);width:100vw;height:clamp(340px,44vh,540px);overflow:hidden;pointer-events:none}
+.rolebg img{width:100%;height:100%;object-fit:cover;object-position:50% 48%;opacity:.55}
+.rolebg::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(15,26,24,.80),rgba(15,26,24,.42) 42%,rgba(15,26,24,.93) 84%,#0F1A18)}
+.keptband{margin-top:96px;border-radius:16px;overflow:hidden;border:1px solid var(--line)}
+.keptband img{width:100%;height:auto;display:block}
+@media(max-width:560px){.keptband{margin-top:56px}.rolebg{top:-40px;height:clamp(260px,36vh,400px)}}
 .nr b{display:flex;align-items:center;gap:10px;font-family:"Space Grotesk",sans-serif;font-weight:600;font-size:19px;margin-bottom:10px}
 .nr b .ic{color:#F1B274}
 .nr p{font-size:15px;color:#C9C1B0}
@@ -175,6 +188,7 @@
 <figure class="g5 reveal d2"><img src="/assets/kept-web/private-launch-arrival.jpg" alt="Private launch arriving at the jetty"><figcaption><small>did it happen?</small>Evidence, not assumption.</figcaption></figure>
 </div>
 <p class="disclose" style="margin-top:16px">Imagery · Maravé, a synthetic demonstration property</p>
+<div class="keptband reveal"><img src="/assets/kept-web/kept-banner.jpg" alt="" width="2000" height="667" loading="lazy" decoding="async"></div>
 </div></section>
 
 <section class="block night" id="how" data-screen-label="How it works (night)"><div class="wrap">
@@ -192,13 +206,13 @@
 <div class="dev ph"><img src="/assets/kept-web/guest-phone.png" alt="Kept guest phone"></div>
 </div>
 <div class="devcap"><span>Manager desktop · crew tablet · guest phone</span><span>current build · synthetic demonstration property</span></div>
-<div class="hd" id="roles" style="margin-top:140px"><div class="reveal"><span class="label" style="display:block;margin-bottom:16px">For every role</span><h2 class="statement sm">Purpose-built for the floor, the desk, and the office.</h2></div></div>
+<div class="rolewrap"><div class="rolebg" aria-hidden="true"><img src="/assets/kept-web/roles-header.jpg" alt="" width="1760" height="587" loading="lazy" decoding="async"></div><div class="hd" id="roles"><div class="reveal"><span class="label" style="display:block;margin-bottom:16px">For every role</span><h2 class="statement sm">Purpose-built for the floor, the desk, and the office.</h2></div></div>
 <div class="nroles">
-<div class="nr reveal"><b><svg class="ic"><use href="#i-route"/></svg>Crew</b><p>See a next action, a route, and the evidence to capture — on a tablet that works offline.</p></div>
-<div class="nr reveal d1"><b><svg class="ic"><use href="#i-bed"/></svg>Front desk</b><p>Sees arrivals, departures, and requests with the dependencies already checked.</p></div>
-<div class="nr reveal d2"><b><svg class="ic"><use href="#i-scan"/></svg>Managers</b><p>See exceptions and tradeoffs ranked, with a receipt behind every decision.</p></div>
-<div class="nr reveal d3"><b><svg class="ic"><use href="#i-check"/></svg>Guests</b><p>See one clear status and a real alternative when plans change.</p></div>
-</div>
+<div class="nr reveal"><div class="shot"><img src="/assets/kept-web/roles/crew.jpg" alt="Hotel team member checking room readiness with a tablet" width="880" height="587" loading="lazy" decoding="async"></div><div class="txt"><b><svg class="ic"><use href="#i-route"/></svg>Crew</b><p>See a next action, a route, and the evidence to capture — on a tablet that works offline.</p></div></div>
+<div class="nr reveal d1"><div class="shot"><img src="/assets/kept-web/roles/front-desk.jpg" alt="Receptionist coordinating an arrival with a hotel guest" width="880" height="587" loading="lazy" decoding="async"></div><div class="txt"><b><svg class="ic"><use href="#i-bed"/></svg>Front desk</b><p>Sees arrivals, departures, and requests with the dependencies already checked.</p></div></div>
+<div class="nr reveal d2"><div class="shot"><img src="/assets/kept-web/roles/managers.jpg" alt="Hotel managers discussing an operational decision together" width="880" height="587" loading="lazy" decoding="async"></div><div class="txt"><b><svg class="ic"><use href="#i-scan"/></svg>Managers</b><p>See exceptions and tradeoffs ranked, with a receipt behind every decision.</p></div></div>
+<div class="nr reveal d3"><div class="shot"><img src="/assets/kept-web/roles/guests.jpg" alt="Guests receiving attentive service in a boutique hotel lounge" width="880" height="587" loading="lazy" decoding="async"></div><div class="txt"><b><svg class="ic"><use href="#i-check"/></svg>Guests</b><p>See one clear status and a real alternative when plans change.</p></div></div>
+</div></div>
 <div class="marq" style="margin-top:64px"><div>Live Promise Graph · outcome receipt · graduated autonomy: insight → recommend → draft → approve → automate within policy · Connect what exists. Coordinate what happens next. · Live Promise Graph · outcome receipt · graduated autonomy: insight → recommend → draft → approve → automate within policy · </div></div>
 </div></section>
 
