@@ -8,37 +8,36 @@
 <meta property="og:url" content="https://auxerion.vercel.app/moose">
 <meta property="og:title" content="MOOSE — Medical Office OS Environment. Close every loop.">
 <meta property="og:description" content="MOOSE is the operational control plane around the EHR — every signal becomes owned, due, verified work, with AI that removes the chasing and never removes the judgment.">
-<meta property="og:image" content="https://auxerion.vercel.app/assets/og/moose.jpg">
+<meta property="og:image" content="https://auxerion.vercel.app/assets/og/moose.jpg?v=2026-09">
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="630">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:title" content="MOOSE — Medical Office OS Environment. Close every loop.">
 <meta name="twitter:description" content="MOOSE is the operational control plane around the EHR — every signal becomes owned, due, verified work, with AI that removes the chasing and never removes the judgment.">
-<meta name="twitter:image" content="https://auxerion.vercel.app/assets/og/moose.jpg">
+<meta name="twitter:image" content="https://auxerion.vercel.app/assets/og/moose.jpg?v=2026-09">
 
-<link rel="icon" href="/assets/logos/moose-mark.png">
+<link rel="icon" href="/assets/logos/moose-mark-2026.png">
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400&display=swap">
 <link rel="stylesheet" href="/family.css"><link rel="stylesheet" href="/cinema.css"><link rel="stylesheet" href="/tour.css">
 <style>
 body{font-size:19px}
 .site-nav.solid{background:rgba(247,249,251,.86)}
-.hero{min-height:calc(100vh - var(--fambar-h));background:linear-gradient(180deg,#EAF3F5,#F7F9FB 60%)}
-.hero .bg img{filter:saturate(.7);opacity:1;transform:none}
-.hero .veil{position:absolute;inset:0;z-index:-2;background:linear-gradient(180deg,rgba(247,249,251,.35),rgba(247,249,251,.9) 55%,#F7F9FB 90%)}
-.hero .veil::after{content:"";position:absolute;inset:0;background:linear-gradient(90deg,rgba(247,249,251,.92),rgba(247,249,251,.3) 60%)}
-.hero .pulsebg{position:absolute;left:0;right:0;bottom:22%;height:120px;z-index:-1;opacity:.9;pointer-events:none}
+.hero{min-height:0;background:var(--bg)}
+/* full-bleed clinic banner: runs up behind the transparent nav, fades into the page ground at the bottom */
+.hero .banner{position:relative;width:100%;margin-top:-64px;aspect-ratio:2000/667;overflow:hidden;background:#EAF3F5}
+.hero .banner img{display:block;width:100%;height:100%;object-fit:cover;object-position:50% 0}
+.hero .banner::before{content:"";position:absolute;inset:0 0 auto 0;height:140px;background:linear-gradient(180deg,rgba(247,249,251,.82),rgba(247,249,251,0))}
+.hero .banner::after{content:"";position:absolute;inset:auto 0 0 0;height:34%;background:linear-gradient(180deg,rgba(247,249,251,0),var(--bg))}
+.hero .copy{padding-top:0;margin-top:clamp(-36px,-2.5vw,-16px)}
+@media(max-width:760px){.hero .banner{aspect-ratio:4/3}.hero .banner img{object-position:48% 30%}.hero .banner::before{height:90px}}
+.hero .pulsebg{position:absolute;left:0;right:0;bottom:8%;height:80px;z-index:1;opacity:.9;pointer-events:none}
 .hero .pulsebg path{fill:none;stroke:var(--accent);stroke-width:2;stroke-dasharray:1200;stroke-dashoffset:1200;animation:ekg 6s linear infinite;filter:drop-shadow(0 0 8px rgba(31,167,160,.5))}
 @keyframes ekg{to{stroke-dashoffset:-1200}}
-.hero h1{font-size:clamp(56px,10vw,150px);letter-spacing:-.045em;line-height:.92;color:var(--text)}
+.hero h1{font-size:clamp(52px,8.4vw,124px);letter-spacing:-.045em;line-height:.92;color:var(--text)}
 .hero h1 .a{color:var(--accent)}
 .hero .lede{color:var(--text2)}
 .hero .mline{font-family:"Space Grotesk",sans-serif;font-weight:600;font-size:clamp(16px,1.4vw,20px);letter-spacing:.02em;color:var(--text);display:flex;align-items:center;gap:14px;margin-top:8px}
 .hero .mline span{color:var(--text2);font-weight:500}
-.mascot{position:absolute;right:2vw;bottom:0;width:min(46vw,760px);z-index:-1;pointer-events:none;animation:float 8s ease-in-out infinite}
-@keyframes float{0%,100%{transform:translateY(0)}50%{transform:translateY(-14px)}}
-.mascot img{width:100%;display:block;filter:drop-shadow(0 30px 60px rgba(27,58,107,.25))}
-.mascot::before{content:"";position:absolute;left:12%;right:12%;bottom:6%;height:60%;border-radius:50%;background:radial-gradient(ellipse,rgba(31,167,160,.28),transparent 70%);filter:blur(30px);z-index:-1}
-@media(max-width:960px){.mascot{position:relative;right:auto;width:min(100%,520px);margin:0 auto -40px;order:2}}
 .stagebar{display:flex;gap:28px;flex-wrap:wrap;margin-top:56px;padding-top:20px;border-top:1px solid var(--line);font-family:var(--mono);font-size:12px;letter-spacing:.08em;text-transform:uppercase;color:var(--text2)}
 .stagebar .demo{margin-left:auto;display:inline-flex;align-items:center;gap:8px}
 .stagebar .demo i{width:8px;height:8px;border-radius:50%;background:var(--accent)}
@@ -130,24 +129,21 @@ body{font-size:19px}
 @media(max-width:860px){.inv .box{grid-template-columns:1fr;padding:32px 24px;gap:24px}}
 .contact{padding-block:180px 160px}
 .contact .big{color:var(--text)}
-.brand.product img{height:40px}
+.brand.product img{height:44px;width:auto}
 footer{color:var(--text2)}
 .disclose{font-family:var(--mono);font-size:11px;letter-spacing:.06em;text-transform:uppercase;color:var(--text2)}
 </style></head>
 <body data-brand="mo"><template id="__bundler_thumbnail"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><rect width="100" height="100" fill="#1B3A6B"/><text x="50" y="50" text-anchor="middle" dominant-baseline="central" font-family="Space Grotesk,system-ui,sans-serif" font-weight="700" font-size="40" fill="#1FA7A0">M</text></svg></template>
 <script src="/familybar.js"></script>
 <header class="site-nav"><span class="progress" aria-hidden="true"></span><div class="wrap">
-<a class="brand product" href="/moose" aria-label="MOOSE home"><img src="/assets/logos/moose-logo.webp" alt="MOOSE" width="516" height="150"><span class="by" style="align-self:flex-end;margin-bottom:6px">by Auxerion</span></a>
+<a class="brand product" href="/moose" aria-label="MOOSE home"><img src="/assets/logos/moose-logo-2026.webp" alt="MOOSE — healthier software for a brighter tomorrow" width="1140" height="300"><span class="by" style="align-self:flex-end;margin-bottom:6px">by Auxerion</span></a>
 <nav class="links" id="links" aria-label="Primary"><a href="#how">How it works</a><a href="#inside">Inside</a><a href="#roles">For every role</a><a href="#trust">Trust</a><a href="#investors">Investors</a><a href="#contact">Contact</a></nav>
 <a class="btn primary nav-cta" href="#contact">Request a pilot conversation</a>
 <button class="menu-btn" aria-expanded="false" aria-controls="links">Menu</button>
 </div></header>
 <main>
 <section class="hero" data-screen-label="Hero">
-<div class="bg" aria-hidden="true"><img src="https://images.unsplash.com/photo-1631217868264-e5b90bb7e133?auto=format&fit=crop&w=2000&q=70" alt=""></div>
-<div class="veil" aria-hidden="true"></div>
-<svg class="pulsebg" viewBox="0 0 1600 120" preserveAspectRatio="none" aria-hidden="true"><path d="M0 60H520L560 60L580 20L600 100L620 40L640 60H1000L1040 60L1060 30L1080 90L1100 60H1600"/></svg>
-<div class="mascot" aria-hidden="true"><img src="/assets/moose/mascot-scene.webp" alt="" width="1520" height="1013"></div>
+<div class="banner"><img src="/assets/moose/hero-clinic.webp" alt="A physician reviews a tablet with an older patient in a bright clinic lobby while staff and two dogs pass the Xu Urology front desk" width="2000" height="667" fetchpriority="high" decoding="async"><svg class="pulsebg" viewBox="0 0 1600 120" preserveAspectRatio="none" aria-hidden="true"><path d="M0 60H520L560 60L580 20L600 100L620 40L640 60H1000L1040 60L1060 30L1080 90L1100 60H1600"/></svg></div>
 <div class="wrap"><div class="copy">
 <div class="eyebrow reveal in"><span class="tag accent">MVP candidate</span><span class="tag">Limited pilot forming</span></div>
 <div class="mline reveal in">MOOSE <span>· Medical Office OS Environment</span></div>
