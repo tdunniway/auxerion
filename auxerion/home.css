@@ -15,6 +15,8 @@ body{overflow-x:hidden}
 .hero .cursor{position:absolute;left:0;top:0;width:700px;height:700px;border-radius:50%;background:radial-gradient(circle,rgba(79,124,255,.16),rgba(168,85,247,.06) 40%,transparent 65%);transform:translate(calc(var(--mx,-1000px) - 350px),calc(var(--my,-1000px) - 350px));pointer-events:none;z-index:-1;transition:transform .35s var(--ease);filter:blur(10px)}
 .hero .wrap{position:relative;width:100%;padding-bottom:36px}
 .hero .copy{max-width:940px;padding-top:120px}
+/* keep the headline on four lines at every desktop width so its right edge stays clear of the orbit labels */
+@media(min-width:961px){.hero .copy{max-width:min(940px,64vw)}}
 .hero h1{font-size:clamp(48px,8.4vw,124px);line-height:.96;letter-spacing:-.035em;margin:24px 0 32px;font-weight:600}
 .hero h1 em{font-style:normal}
 .hero h1 em span{background:var(--grad);-webkit-background-clip:text;background-clip:text;color:transparent;padding-right:.04em}
@@ -32,10 +34,11 @@ body{overflow-x:hidden}
 .cue span{width:1px;height:28px;background:linear-gradient(180deg,transparent,var(--text));animation:cue 1.8s ease-in-out infinite}
 @keyframes cue{0%{transform:scaleY(0);transform-origin:top}50%{transform:scaleY(1);transform-origin:top}51%{transform-origin:bottom}100%{transform:scaleY(0);transform-origin:bottom}}
 /* orbit */
-.orbit{position:absolute;right:-4vw;top:48%;width:min(88vmin,860px);aspect-ratio:1;transform:translateY(calc(-54% + var(--sy,0)*.1px));z-index:-1;pointer-events:none;mask-image:linear-gradient(90deg,transparent 0%,rgba(0,0,0,.4) 16%,#000 38%);-webkit-mask-image:linear-gradient(90deg,transparent 0%,rgba(0,0,0,.4) 16%,#000 38%)}
+.orbit{position:absolute;right:2vw;top:48%;width:min(80vmin,860px);aspect-ratio:1;transform:translateY(calc(-54% + var(--sy,0)*.1px));z-index:-1;pointer-events:none;mask-image:linear-gradient(90deg,transparent 0%,rgba(0,0,0,.4) 16%,#000 38%);-webkit-mask-image:linear-gradient(90deg,transparent 0%,rgba(0,0,0,.4) 16%,#000 38%)}
 .orbit svg{width:100%;height:100%;overflow:visible}
-/* laptops: a smaller orbit keeps the left-hand step labels clear of the headline's right edge */
-@media(max-width:1600px) and (min-width:961px){.orbit{width:min(76vmin,760px)}}
+/* the orbit sits fully inside the viewport (its right-hand labels were being clipped); on laptops it is
+   smaller again so the left-hand step labels stay clear of the headline's right edge */
+@media(max-width:1600px) and (min-width:961px){.orbit{width:min(70vmin,800px)}}
 .orbit .ring{fill:none;stroke:rgba(154,166,192,.4);stroke-width:1.5}
 .orbit .ring2{fill:none;stroke:rgba(154,166,192,.12);stroke-width:1;stroke-dasharray:2 10}
 .orbit .ring3{fill:none;stroke:url(#sig2);stroke-width:2;stroke-linecap:round}
