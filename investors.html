@@ -50,7 +50,35 @@
 @media(max-width:860px){.stage{grid-template-columns:1fr}}
 
 .thesisfig{margin:0 0 56px;border-radius:16px;overflow:hidden;border:1px solid var(--line)}
-.thesisfig img{width:100%;height:auto;display:block}</style></head>
+.thesisfig img{width:100%;height:auto;display:block}
+/* structure diagram: licence flows down from the parent, investment comes up per product */
+.structure{row-gap:0}
+.pcard{margin-top:34px}
+.pcard::after{content:"";position:absolute;left:50%;top:-34px;width:1px;height:34px;background:linear-gradient(180deg,rgba(124,155,255,.15),rgba(124,155,255,.75));pointer-events:none}
+.pcard .lic{position:absolute;left:50%;top:-34px;width:5px;height:5px;margin-left:-2px;border-radius:50%;background:var(--accent);box-shadow:0 0 10px 1px rgba(59,123,255,.8);animation:licflow 3.6s linear infinite}
+@keyframes licflow{0%{transform:translateY(0);opacity:0}12%{opacity:1}88%{opacity:1}100%{transform:translateY(34px);opacity:0}}
+.owners{grid-column:1/-1;display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:24px;margin-top:34px}
+.ow{position:relative;justify-self:center;display:inline-flex;align-items:center;gap:8px;padding:8px 14px;border:1px dashed var(--line);border-radius:999px;font-family:var(--mono);font-size:11px;letter-spacing:.06em;text-transform:uppercase;color:var(--text2)}
+.ow::before{content:"";position:absolute;left:50%;top:-34px;width:1px;height:34px;background:linear-gradient(180deg,rgba(154,166,192,.1),rgba(154,166,192,.5))}
+.ow i{width:6px;height:6px;border-radius:50%;background:var(--text2);display:block}
+.structnote{margin-top:28px;grid-column:1/-1;font-size:14px;color:var(--text2);text-align:center;max-width:52ch;justify-self:center}
+.structnote em{font-style:normal;color:var(--text)}
+@media(max-width:860px){.owners{grid-template-columns:1fr;gap:12px}.pcard::after,.ow::before,.pcard .lic{display:none}.pcard{margin-top:0}.owners{margin-top:16px}}
+@media(prefers-reduced-motion:reduce){.pcard .lic{display:none}}
+/* maturity comparison - each product's own stated status, no invented scale */
+.tracks{margin:56px 0 64px;display:grid;gap:10px}
+.thead,.tr{display:grid;grid-template-columns:minmax(110px,.7fr) minmax(0,1.5fr) 40px minmax(0,1.5fr);gap:16px;align-items:center}
+.thead{font-family:var(--mono);font-size:10.5px;letter-spacing:.09em;text-transform:uppercase;color:var(--text2);padding:0 18px 4px}
+.tr{padding:16px 18px;border:1px solid var(--line);border-radius:12px;background:var(--bg2);position:relative;overflow:hidden}
+.tr::before{content:"";position:absolute;left:0;top:0;bottom:0;width:3px;background:var(--pc)}
+.tr .who{font-family:"Space Grotesk",sans-serif;font-weight:600;font-size:19px;color:var(--pc)}
+.tr .now{display:inline-flex;align-items:center;gap:9px;font-size:14.5px}
+.tr .now i{width:8px;height:8px;border-radius:50%;background:var(--pc);flex:none;box-shadow:0 0 0 4px color-mix(in srgb,var(--pc) 18%,transparent)}
+.tr .arw{height:1px;background:linear-gradient(90deg,var(--line),var(--text2));position:relative}
+.tr .arw::after{content:"";position:absolute;right:0;top:-3px;border-left:6px solid var(--text2);border-top:3.5px solid transparent;border-bottom:3.5px solid transparent}
+.tr .next{font-size:14.5px;color:var(--text2)}
+@media(max-width:760px){.thead{display:none}.tr{grid-template-columns:1fr;gap:8px;padding:18px}.tr .arw{display:none}
+.tr .next::before{content:"next · ";font-family:var(--mono);font-size:11px;letter-spacing:.06em;text-transform:uppercase}}</style></head>
 <body data-brand="aux"><template id="__bundler_thumbnail"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><rect width="100" height="100" fill="#070B14"/><text x="50" y="50" text-anchor="middle" dominant-baseline="central" font-family="Space Grotesk,system-ui,sans-serif" font-weight="700" font-size="40" fill="#3B7BFF">A</text></svg></template>
 <script src="/familybar.js"></script>
 <header class="site-nav"><span class="progress" aria-hidden="true"></span><div class="wrap">
@@ -71,14 +99,17 @@
 <div class="hd"><div class="reveal"><h2 class="statement sm">Three product businesses.<br>One parent.</h2></div><p class="lede reveal d1">Investors interested in a specific product should start with that product's overview. Investors interested in the platform and the multi-vertical thesis should contact Troy directly.</p></div>
 <div class="structure">
 <div class="parent reveal"><img src="/assets/logos/auxerion-mark-2026.png" alt="" width="28" height="28" decoding="async" style="vertical-align:middle;margin-right:10px">AUXERION <small>shared technology · method · WorkOS</small></div>
-<a class="pcard reveal" href="/creativ8#investors"><span class="bar" style="background:var(--c8)"></span><img src="/assets/logos/creativ8-mark-2026.png" alt=""><span class="tag">Deep functional prototype</span><b>Creativ8</b><p>The living system for game development.</p><span class="go">Creativ8 investor overview <svg class="ic"><use href="#i-arrow"/></svg></span></a>
-<a class="pcard reveal d1" href="/moose#investors"><span class="bar" style="background:var(--mo)"></span><img src="/assets/logos/moose-mark-2026.png" alt="" width="384" height="384"><span class="tag">MVP candidate</span><b>MOOSE</b><p>Medical Office OS Environment. The operational control plane around the EHR.</p><span class="go">MOOSE investor overview <svg class="ic"><use href="#i-arrow"/></svg></span></a>
-<a class="pcard reveal d2" href="/kept#investors"><span class="bar" style="background:var(--ha)"></span><img src="/assets/logos/kept-mark.svg" alt=""><span class="tag">Investor demonstration</span><b>Kept</b><p>The operating layer that keeps every promise a hotel makes.</p><span class="go">Kept investor overview <svg class="ic"><use href="#i-arrow"/></svg></span></a>
+<a class="pcard reveal" href="/creativ8#investors"><span class="lic" aria-hidden="true"></span><span class="bar" style="background:var(--c8)"></span><img src="/assets/logos/creativ8-mark-2026.png" alt=""><span class="tag">Deep functional prototype</span><b>Creativ8</b><p>The living system for game development.</p><span class="go">Creativ8 investor overview <svg class="ic"><use href="#i-arrow"/></svg></span></a>
+<a class="pcard reveal d1" href="/moose#investors"><span class="lic" aria-hidden="true"></span><span class="bar" style="background:var(--mo)"></span><img src="/assets/logos/moose-mark-2026.png" alt="" width="384" height="384"><span class="tag">MVP candidate</span><b>MOOSE</b><p>Medical Office OS Environment. The operational control plane around the EHR.</p><span class="go">MOOSE investor overview <svg class="ic"><use href="#i-arrow"/></svg></span></a>
+<a class="pcard reveal d2" href="/kept#investors"><span class="lic" aria-hidden="true"></span><span class="bar" style="background:var(--ha)"></span><img src="/assets/logos/kept-mark.svg" alt=""><span class="tag">Investor demonstration</span><b>Kept</b><p>The operating layer that keeps every promise a hotel makes.</p><span class="go">Kept investor overview <svg class="ic"><use href="#i-arrow"/></svg></span></a>
+<div class="owners" role="group" aria-label="Each product raises from its own investors"><span class="ow"><i aria-hidden="true"></i>own investors</span><span class="ow"><i aria-hidden="true"></i>own investors</span><span class="ow"><i aria-hidden="true"></i>own investors</span></div>
+<p class="structnote">The parent licenses the shared technology <em>in</em>. Each product raises separately, so no cap table crosses another.</p>
 </div>
 </div></section>
 
 <section class="block" id="stage" data-screen-label="Stage"><div class="wrap">
 <div class="hd"><div class="reveal"><h2>Which product is furthest along?</h2></div><p class="lede reveal d1">They are at comparable stages, with different strengths.</p></div>
+<div class="tracks" role="group" aria-label="Each product's stated status and next milestone"><div class="thead" aria-hidden="true"><span>Product</span><span>Stated status today</span><span></span><span>Stated next milestone</span></div><div class="tr reveal" style="--pc:var(--c8)"><span class="who">Creativ8</span><span class="now"><i aria-hidden="true"></i>Deep functional prototype</span><span class="arw" aria-hidden="true"></span><span class="next">Early access forming</span></div><div class="tr reveal d1" style="--pc:var(--ha-on-dark)"><span class="who">Kept</span><span class="now"><i aria-hidden="true"></i>Investor demonstration</span><span class="arw" aria-hidden="true"></span><span class="next">Pilot property next</span></div><div class="tr reveal d2" style="--pc:var(--mo)"><span class="who">MOOSE</span><span class="now"><i aria-hidden="true"></i>MVP candidate</span><span class="arw" aria-hidden="true"></span><span class="next">Limited pilot forming</span></div></div>
 <div class="stage">
 <div class="reveal"><span class="tag" style="border-color:var(--c8);color:var(--c8)">Creativ8</span><b>The deepest build</b><p>Eight modules, twenty-six tools, one contract-tested object graph.</p></div>
 <div class="reveal d1"><span class="tag" style="border-color:var(--ha-on-dark);color:var(--ha-on-dark)">Kept</span><b>The most complete connected investor demonstration</b><p>Guided arrival, experience-recovery, and room-service journeys on a synthetic property.</p></div>
