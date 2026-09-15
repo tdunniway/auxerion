@@ -233,3 +233,13 @@ body{overflow-x:hidden}
 .wgraph .n1{left:16%;top:16%}.wgraph .n2{left:84%;top:16%}.wgraph .n3{left:9%;top:72%}
 .wgraph .n4{left:91%;top:72%}.wgraph .n5{left:50%;top:94%}
 @media(max-width:860px){.wgraph{display:none}}
+
+/* P2 bands and contact backdrops */
+.band{margin:56px 0 0;border-radius:16px;overflow:hidden;border:1px solid var(--line);position:relative;max-width:760px}
+.band img{width:100%;height:auto;display:block}
+.band figcaption{position:absolute;left:16px;bottom:12px;font-family:var(--mono);font-size:11px;letter-spacing:.06em;text-transform:uppercase;color:var(--text2);background:rgba(7,11,20,.8);padding:6px 10px;border-radius:4px}
+.contact{position:relative;overflow:hidden}
+.contact .wrap{position:relative;z-index:1}
+.ctbg{position:absolute;inset:0;pointer-events:none}
+.ctbg img{width:100%;height:100%;object-fit:cover;opacity:.22}
+.ctbg::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,var(--bg),rgba(7,11,20,.55) 40%,var(--bg))}

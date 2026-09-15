@@ -139,7 +139,8 @@ footer{color:var(--text2)}
 .story figure:hover img{transform:scale(1.04)}
 .story figcaption{position:absolute;left:0;right:0;bottom:0;padding:40px 16px 14px;font-size:13px;line-height:1.4}
 @media(max-width:860px){.story{grid-template-columns:1fr!important}.story figure.wide{grid-column:auto!important}.story img{aspect-ratio:16/10}}
-.story{grid-template-columns:repeat(3,minmax(0,1fr))}
+.story{grid-template-columns:repeat(2,minmax(0,1fr))}
+@media(min-width:1000px){.story{grid-template-columns:repeat(4,minmax(0,1fr))}}
 .story figcaption{color:#fff;background:linear-gradient(180deg,rgba(27,58,107,0),rgba(27,58,107,.88))}
 /* trust: four integration layers, with the write-back gate drawn */
 .layers{margin:56px 0 40px;display:grid;gap:8px;max-width:640px}
@@ -153,7 +154,16 @@ footer{color:var(--text2)}
 /* thesis: the gap between the artifact and the outcome */
 .arw .af{position:relative}
 .arw .af::after{content:"";position:absolute;right:-13px;top:50%;width:8px;height:1px;background:repeating-linear-gradient(90deg,var(--accent2) 0 2px,transparent 2px 4px);opacity:.7}
-@media(max-width:760px){.layers{max-width:none}.ly{grid-template-columns:28px 1fr;row-gap:4px}.ly .lp{grid-column:2}.gatebar{margin-left:0}}</style></head>
+@media(max-width:760px){.layers{max-width:none}.ly{grid-template-columns:28px 1fr;row-gap:4px}.ly .lp{grid-column:2}.gatebar{margin-left:0}}
+.band{margin:56px 0 0;border-radius:16px;overflow:hidden;border:1px solid var(--line);position:relative}
+.band img{width:100%;height:auto;display:block}
+.band figcaption{position:absolute;left:16px;bottom:12px;font-family:var(--mono);font-size:11px;letter-spacing:.06em;text-transform:uppercase;color:var(--text2);background:var(--bandcap,rgba(0,0,0,.7));padding:6px 10px;border-radius:4px}
+.trust .band{--bandcap:rgba(27,58,107,.82);max-width:640px}
+.contact{position:relative;overflow:hidden}
+.contact .wrap{position:relative;z-index:1}
+.ctbg{position:absolute;inset:0;pointer-events:none}
+.ctbg img{width:100%;height:100%;object-fit:cover;opacity:.26}
+.ctbg::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,var(--bg),rgba(247,249,251,.62) 40%,var(--bg))}</style></head>
 <body data-brand="mo"><template id="__bundler_thumbnail"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><rect width="100" height="100" fill="#1B3A6B"/><text x="50" y="50" text-anchor="middle" dominant-baseline="central" font-family="Space Grotesk,system-ui,sans-serif" font-weight="700" font-size="40" fill="#1FA7A0">M</text></svg></template>
 <script src="/familybar.js"></script>
 <header class="site-nav"><span class="progress" aria-hidden="true"></span><div class="wrap">
@@ -246,7 +256,7 @@ footer{color:var(--text2)}
 <article class="reveal d2"><span class="oring"><svg viewBox="0 0 64 64"><circle cx="32" cy="32" r="30"/></svg><svg class="ic"><use href="#i-chat"/></svg></span><h3>Every channel, one accountable conversation.</h3><p>Phone, fax, text, portal, and email classified into cases and tasks on one work graph.</p></article>
 <article class="reveal d3"><span class="oring"><svg viewBox="0 0 64 64"><circle cx="32" cy="32" r="30"/></svg><svg class="ic"><use href="#i-sparkles"/></svg></span><h3>AI removes chasing, not judgment.</h3><p>Classify, summarize, draft, extract, prioritize, explain — inside a governed, auditable workflow with human review at the right risk level.</p></article>
 </div>
-<div class="story"><figure class="reveal"><img src="/assets/moose/v2/closed-loop-handoff.jpg" alt="A handoff completed and set down, nothing left open" width="880" height="660" loading="lazy" decoding="async"><figcaption>Close every loop — the handoff is finished, not forwarded.</figcaption></figure><figure class="reveal d1"><img src="/assets/moose/v2/visit-readiness.jpg" alt="A readiness station prepared ahead of the day" width="880" height="660" loading="lazy" decoding="async"><figcaption>Visit readiness, settled before the visit rather than during it.</figcaption></figure><figure class="reveal d2"><img src="/assets/moose/v2/human-review.jpg" alt="A prepared item set out for a person to review and sign" width="880" height="660" loading="lazy" decoding="async"><figcaption>AI removes the chasing. A person still signs anything consequential.</figcaption></figure></div></div></section>
+<div class="story"><figure class="reveal"><img src="/assets/moose/v2/closed-loop-handoff.jpg" alt="A handoff completed and set down, nothing left open" width="880" height="660" loading="lazy" decoding="async"><figcaption>Close every loop — the handoff is finished, not forwarded.</figcaption></figure><figure class="reveal d1"><img src="/assets/moose/v2/visit-readiness.jpg" alt="A readiness station prepared ahead of the day" width="880" height="660" loading="lazy" decoding="async"><figcaption>Visit readiness, settled before the visit rather than during it.</figcaption></figure><figure class="reveal d2"><img src="/assets/moose/v2/human-review.jpg" alt="A prepared item set out for a person to review and sign" width="880" height="660" loading="lazy" decoding="async"><figcaption>AI removes the chasing. A person still signs anything consequential.</figcaption></figure><figure class="reveal d3"><img src="/assets/moose/v2/channels-one-conversation.jpg" alt="A phone, an envelope and a handset all wired into one folio" width="880" height="660" loading="lazy" decoding="async"><figcaption>Every channel, one accountable conversation.</figcaption></figure></div></div></section>
 
 <section class="block rolesec" id="roles" data-screen-label="For every role"><div class="wrap">
 <div class="hd"><div class="reveal"><h2 class="statement sm">One operational picture, focused differently for each role.</h2></div></div>
@@ -261,7 +271,8 @@ footer{color:var(--text2)}
 
 <section class="block trust" id="trust" data-screen-label="Trust"><div class="wrap">
 <div class="hd"><div class="reveal"><h2 class="statement sm">Explainable, reviewable, reversible.</h2></div><p class="lede reveal d1">Every AI action shows its reason and evidence, makes uncertainty visible, waits for human review at the right risk level, and is recorded with who, what, when, source, and outcome. Access is role-based and minimum-necessary. MOOSE is built HIPAA-first and integrates in layers — read context, coordinate work, document handoffs, and write back only when governed and supported. EHR-agnostic, with Epic as an important path.</p></div>
-<div class="layers" role="img" aria-label="MOOSE integrates in four layers: read context, coordinate work, document handoffs, and write back only when governed and supported, behind a human review gate"><div class="ly l1"><span class="lb">01</span><span class="lt">read context</span><span class="lp">passive</span></div><div class="ly l2"><span class="lb">02</span><span class="lt">coordinate work</span><span class="lp">inside MOOSE</span></div><div class="ly l3"><span class="lb">03</span><span class="lt">document handoffs</span><span class="lp">recorded</span></div><div class="gatebar"><svg class="ic" aria-hidden="true"><use href="#i-usercheck"/></svg>human review gate</div><div class="ly l4"><span class="lb">04</span><span class="lt">write back</span><span class="lp">only when governed and supported</span></div></div>
+<div class="layers" role="img" aria-label="MOOSE integrates in four layers: read context, coordinate work, document handoffs, and write back only when governed and supported, behind a human review gate"><div class="ly l1"><span class="lb">01</span><span class="lt">read context</span><span class="lp">passive</span></div><div class="ly l2"><span class="lb">02</span><span class="lt">coordinate work</span><span class="lp">inside MOOSE</span></div><div class="ly l3"><span class="lb">03</span><span class="lt">document handoffs</span><span class="lp">recorded</span></div><div class="gatebar"><svg class="ic" aria-hidden="true"><use href="#i-usercheck"/></svg>human review gate</div><div class="ly l4"><span class="lb">04</span><span class="lt">write back</span><span class="lp">only when governed and supported</span></div>
+<figure class="band reveal"><img src="/assets/moose/v2/trust-layers-folio.jpg" alt="An expanding folio, each divider a layer that can be opened and read" width="1200" height="900" loading="lazy" decoding="async"><figcaption>Illustration. The audit trail below is the live record.</figcaption></figure></div>
 <div class="gates">
 <div class="gate reveal"><b><svg class="ic"><use href="#i-eye"/></svg>Read context</b><p>Layer one.</p></div>
 <div class="gate reveal d1"><b><svg class="ic"><use href="#i-users"/></svg>Coordinate work</b><p>Layer two.</p></div>
@@ -282,7 +293,7 @@ footer{color:var(--text2)}
 <p>Independent medical practices face staffing shortages, payer friction, and administrative burden that grows every year, while the operational tooling around the EHR remains fragmented across phone systems, fax, portals, clearinghouses, and manual follow-up. MOOSE targets that operational layer as a governed, auditable system of action with a specialty-first go-to-market. The wedge is visit readiness and closed loops — visible to staff within days — with revenue assurance as the measurable consequence. The current build is an MVP candidate; the next milestone is a limited, carefully scoped urology test. Regulatory posture, pilot design, and pricing are supplied in the investor overview. MOOSE makes no clinical or outcome claims.</p>
 </div></div></section>
 
-<section class="block contact" id="contact" data-screen-label="Contact"><div class="halo" aria-hidden="true"><i></i><i></i><i></i></div><div class="wrap">
+<section class="block contact" id="contact" data-screen-label="Contact"><div class="ctbg" aria-hidden="true"><img src="/assets/moose/v2/pilot-conversation.jpg" alt="" width="1400" height="788" loading="lazy" decoding="async"></div><div class="halo" aria-hidden="true"><i></i><i></i><i></i></div><div class="wrap">
 <h2 class="reveal">Request a pilot conversation.</h2>
 <p class="lede reveal d1">We're looking for a small number of practices to shape MOOSE with us before wider release.</p>
 <a class="big reveal d2" href="mailto:troy@auxerion.com?subject=MOOSE%20pilot%20conversation"><svg class="ic"><use href="#i-mail"/></svg>troy@auxerion.com</a>

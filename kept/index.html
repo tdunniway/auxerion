@@ -173,7 +173,16 @@
 .gapnote .gl{flex:1;height:1px;background:linear-gradient(90deg,transparent,var(--line))}
 .gapnote .gl:last-child{background:linear-gradient(90deg,var(--line),transparent)}
 .gapnote .gt{font-family:var(--mono);font-size:11.5px;letter-spacing:.07em;text-transform:uppercase;color:var(--accent2)}
-@media(max-width:760px){.islands .sysc::before{display:none}}</style></head>
+@media(max-width:760px){.islands .sysc::before{display:none}}
+.band{margin:56px 0 0;border-radius:16px;overflow:hidden;border:1px solid var(--line);position:relative}
+.band img{width:100%;height:auto;display:block}
+.band figcaption{position:absolute;left:16px;bottom:12px;font-family:var(--mono);font-size:11px;letter-spacing:.06em;text-transform:uppercase;color:var(--text2);background:var(--bandcap,rgba(0,0,0,.7));padding:6px 10px;border-radius:4px}
+.night .band{--bandcap:rgba(15,26,24,.82);max-width:720px;margin-bottom:56px}
+.contact{position:relative;overflow:hidden}
+.contact .wrap{position:relative;z-index:1}
+.ctbg{position:absolute;inset:0;pointer-events:none}
+.ctbg img{width:100%;height:100%;object-fit:cover;opacity:.26}
+.ctbg::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,var(--bg),rgba(15,26,24,.55) 40%,var(--bg))}</style></head>
 <body data-brand="ha"><template id="__bundler_thumbnail"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><rect width="100" height="100" fill="#0F5C52"/><text x="50" y="50" text-anchor="middle" dominant-baseline="central" font-family="Space Grotesk,system-ui,sans-serif" font-weight="700" font-size="40" fill="#F6F1E8">K</text></svg></template>
 <script src="/familybar.js"></script>
 <header class="site-nav"><span class="progress" aria-hidden="true"></span><div class="wrap">
@@ -225,6 +234,8 @@
 <div class="st" style="--d:3.6s"><span class="ring"><svg class="ic"><use href="#i-users"/></svg></span><b>Coordinate</b><small>people and partners</small></div>
 <div class="st" style="--d:4.8s"><span class="ring"><svg class="ic"><use href="#i-usercheck"/></svg></span><b>Human approval</b><small>anything consequential</small></div>
 </div>
+
+<figure class="band reveal"><img src="/assets/kept-web/v2/experience-handoff.jpg" alt="A key handed across a jetty from one person to another" width="1200" height="900" loading="lazy" decoding="async"><figcaption>The handoff the guest never sees.</figcaption></figure>
 <div class="devices reveal" data-tilt>
 <div class="dev pc"><img src="/assets/screens/kept/hotel-today.webp" alt="Kept manager desktop — Today at Maravé, the hotel operating view" width="3200" height="2000" loading="lazy" decoding="async"></div>
 <div class="dev tab"><img src="/assets/screens/kept/worker-tablet.webp" alt="Kept crew tablet — route map with readiness checks and captured evidence" width="1840" height="1370" loading="lazy" decoding="async"></div>
@@ -282,7 +293,7 @@
 <article class="reveal d2"><span class="oring"><svg viewBox="0 0 64 64"><circle cx="32" cy="32" r="30"/></svg><svg class="ic"><use href="#i-zap"/></svg></span><h3>Recovery before disappointment.</h3><p>Weather, capacity, and supply problems become explained alternatives with the impact previewed, not apologies after the fact.</p></article>
 <article class="reveal d3"><span class="oring"><svg viewBox="0 0 64 64"><circle cx="32" cy="32" r="30"/></svg><svg class="ic"><use href="#i-filecheck"/></svg></span><h3>The outcome receipt.</h3><p>Requested, committed, accepted, executed, evidenced, acknowledged — the record that makes the operation auditable and the story provable.</p></article>
 </div>
-<div class="story"><figure class="reveal wide"><img src="/assets/kept-web/v2/weather-recovery.jpg" alt="A dinner moved under cover as weather turns, service continuing" width="1400" height="876" loading="lazy" decoding="async"><figcaption>Recovery before disappointment — the evening is moved, not cancelled.</figcaption></figure><figure class="reveal d1"><img src="/assets/kept-web/v2/promise-feasibility.jpg" alt="A service checked against what the day can actually carry" width="880" height="660" loading="lazy" decoding="async"><figcaption>Feasibility checked before the promise is made.</figcaption></figure><figure class="reveal d2"><img src="/assets/kept-web/v2/one-promise-many-owners.jpg" alt="Several departments working to one plan" width="880" height="495" loading="lazy" decoding="async"><figcaption>One commitment, many owners — each knowing their part of it.</figcaption></figure></div></div></section>
+<div class="story"><figure class="reveal wide"><img src="/assets/kept-web/v2/weather-recovery.jpg" alt="A dinner moved under cover as weather turns, service continuing" width="1400" height="876" loading="lazy" decoding="async"><figcaption>Recovery before disappointment — the evening is moved, not cancelled.</figcaption></figure><figure class="reveal d1"><img src="/assets/kept-web/v2/promise-feasibility.jpg" alt="A service checked against what the day can actually carry" width="880" height="660" loading="lazy" decoding="async"><figcaption>Feasibility checked before the promise is made.</figcaption></figure><figure class="reveal d2"><img src="/assets/kept-web/v2/one-promise-many-owners.jpg" alt="Several departments working to one plan" width="880" height="495" loading="lazy" decoding="async"><figcaption>One commitment, many owners — each knowing their part of it.</figcaption></figure><figure class="reveal d3"><img src="/assets/kept-web/v2/outcome-in-the-room.jpg" alt="The finished table photographed where it stands, as the evidence" width="880" height="660" loading="lazy" decoding="async"><figcaption>The outcome receipt — evidence captured in the room, not assumed.</figcaption></figure></div></div></section>
 
 <section class="block rooms" id="rooms" data-screen-label="Connected operating rooms"><div class="wrap">
 <div class="hd"><div class="reveal"><h2 class="statement sm">Food, bar, events, facilities, and finance operate as one coordinated operation.</h2></div><p class="lede reveal d1">One event plan moves prep, labor, bar stock, room turnover, and maintenance together. Forecasting reads the day before it happens. Receiving, waste, vendors, and invoices close the loop between what was planned, ordered, and delivered.</p></div>
@@ -305,7 +316,7 @@
 <p>Independent full-service hotels sit between enterprise platforms built for chains and point solutions that each own one slice — and none of them know whether the hotel kept its promise. Kept targets the operational layer above the PMS with a promise-centric model, purpose-built role experiences, graduated autonomy, and a manual-first path that opens properties without sophisticated systems, including in markets competitors serve poorly. The investor demonstration shows guided arrival, experience-recovery, and room-service journeys end to end on a synthetic property with private server records and outcome receipts; a pilot property is the next milestone. Market sizing, pricing, and pilot evidence are supplied in the investor overview.</p>
 </div></div></section>
 
-<section class="block contact" id="contact" data-screen-label="Contact"><div class="halo" aria-hidden="true"><i></i><i></i><i></i></div><div class="wrap">
+<section class="block contact" id="contact" data-screen-label="Contact"><div class="ctbg" aria-hidden="true"><img src="/assets/kept-web/v2/evening-ready.jpg" alt="" width="1400" height="788" loading="lazy" decoding="async"></div><div class="halo" aria-hidden="true"><i></i><i></i><i></i></div><div class="wrap">
 <h2 class="reveal">Request a demonstration.</h2>
 <p class="lede reveal d1">Guided arrival, experience-recovery, and room-service journeys, end to end, on a synthetic property.</p>
 <a class="big reveal d2" href="mailto:troy@auxerion.com?subject=Kept%20demonstration"><svg class="ic"><use href="#i-mail"/></svg>troy@auxerion.com</a>
