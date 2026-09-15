@@ -1,0 +1,198 @@
+{
+  "outDir": "assets/screens",
+  "defaults": {
+    "viewport": {
+      "width": 1600,
+      "height": 1000
+    },
+    "dsf": 2,
+    "quality": 0.84,
+    "wait": 2500,
+    "timezone": "America/Los_Angeles"
+  },
+  "screens": [
+    {
+      "product": "creativ8",
+      "name": "home",
+      "url": "https://creativ8-app.vercel.app/",
+      "initScript": "(()=>{const P='e56399eb-39a3-4ad8-9ad8-c684504c1aa7';localStorage.setItem('c8.activeProjectId',P);localStorage.setItem('c8_active_team_member:'+P,'f744bf7f-8865-4353-a4a1-0192507a01d0');localStorage.setItem('c8_tool_favorites:'+P,JSON.stringify(['viz','wiki','assembler','producer']));})()",
+      "wait": 6000,
+      "colorScheme": "dark"
+    },
+    {
+      "product": "creativ8",
+      "name": "viz",
+      "url": "https://creativ8-app.vercel.app/?openToolCap=full-canvas&openToolProject=e56399eb-39a3-4ad8-9ad8-c684504c1aa7",
+      "initScript": "(()=>{const P='e56399eb-39a3-4ad8-9ad8-c684504c1aa7';localStorage.setItem('c8.activeProjectId',P);localStorage.setItem('c8_active_team_member:'+P,'f744bf7f-8865-4353-a4a1-0192507a01d0');localStorage.setItem('c8_tool_favorites:'+P,JSON.stringify(['viz','wiki','assembler','producer']));})()",
+      "wait": 6000,
+      "colorScheme": "dark"
+    },
+    {
+      "product": "creativ8",
+      "name": "character-web",
+      "url": "https://creativ8-app.vercel.app/modules/viz/index.html?viewer=1&flow=83183958-3f24-4803-a7a4-b3c56a9eeea8",
+      "initScript": "(()=>{const P='e56399eb-39a3-4ad8-9ad8-c684504c1aa7';localStorage.setItem('c8.activeProjectId',P);localStorage.setItem('c8_active_team_member:'+P,'f744bf7f-8865-4353-a4a1-0192507a01d0');localStorage.setItem('c8_tool_favorites:'+P,JSON.stringify(['viz','wiki','assembler','producer']));})()",
+      "wait": 6000,
+      "colorScheme": "dark"
+    },
+    {
+      "product": "creativ8",
+      "name": "mission-network",
+      "url": "https://creativ8-app.vercel.app/modules/viz/index.html?viewer=1&flow=eec3add5-2354-411e-96ca-47a5254b8a76",
+      "initScript": "(()=>{const P='e56399eb-39a3-4ad8-9ad8-c684504c1aa7';localStorage.setItem('c8.activeProjectId',P);localStorage.setItem('c8_active_team_member:'+P,'f744bf7f-8865-4353-a4a1-0192507a01d0');localStorage.setItem('c8_tool_favorites:'+P,JSON.stringify(['viz','wiki','assembler','producer']));})()",
+      "wait": 6000,
+      "colorScheme": "dark"
+    },
+    {
+      "product": "creativ8",
+      "name": "wiki",
+      "url": "https://creativ8-app.vercel.app/?openWikiPage=3abf175b-6d1f-4e8a-b5fd-236cc8a8c0ba&openWikiProject=e56399eb-39a3-4ad8-9ad8-c684504c1aa7",
+      "initScript": "(()=>{const P='e56399eb-39a3-4ad8-9ad8-c684504c1aa7';localStorage.setItem('c8.activeProjectId',P);localStorage.setItem('c8_active_team_member:'+P,'f744bf7f-8865-4353-a4a1-0192507a01d0');localStorage.setItem('c8_tool_favorites:'+P,JSON.stringify(['viz','wiki','assembler','producer']));})()",
+      "wait": 6000,
+      "colorScheme": "dark",
+      "actions": [
+        {
+          "click": "button[aria-label=\"Maximize pane\"]",
+          "nth": 1,
+          "wait": 1500,
+          "optional": true
+        }
+      ]
+    },
+    {
+      "product": "creativ8",
+      "name": "assembler",
+      "url": "https://creativ8-app.vercel.app/?openToolCap=level-authoring-destination&openToolProject=e56399eb-39a3-4ad8-9ad8-c684504c1aa7",
+      "initScript": "(()=>{const P='e56399eb-39a3-4ad8-9ad8-c684504c1aa7';localStorage.setItem('c8.activeProjectId',P);localStorage.setItem('c8_active_team_member:'+P,'f744bf7f-8865-4353-a4a1-0192507a01d0');localStorage.setItem('c8_tool_favorites:'+P,JSON.stringify(['viz','wiki','assembler','producer']));})()",
+      "wait": 6000,
+      "colorScheme": "dark"
+    },
+    {
+      "product": "creativ8",
+      "name": "producer",
+      "url": "https://creativ8-app.vercel.app/?openToolCap=production-management&openToolProject=e56399eb-39a3-4ad8-9ad8-c684504c1aa7",
+      "initScript": "(()=>{const P='e56399eb-39a3-4ad8-9ad8-c684504c1aa7';localStorage.setItem('c8.activeProjectId',P);localStorage.setItem('c8_active_team_member:'+P,'f744bf7f-8865-4353-a4a1-0192507a01d0');localStorage.setItem('c8_tool_favorites:'+P,JSON.stringify(['viz','wiki','assembler','producer']));})()",
+      "wait": 6000,
+      "colorScheme": "dark"
+    },
+    {
+      "product": "creativ8",
+      "name": "manager",
+      "url": "https://creativ8-app.vercel.app/?openToolCap=executive-operations&openToolProject=e56399eb-39a3-4ad8-9ad8-c684504c1aa7",
+      "initScript": "(()=>{const P='e56399eb-39a3-4ad8-9ad8-c684504c1aa7';localStorage.setItem('c8.activeProjectId',P);localStorage.setItem('c8_active_team_member:'+P,'f744bf7f-8865-4353-a4a1-0192507a01d0');localStorage.setItem('c8_tool_favorites:'+P,JSON.stringify(['viz','wiki','assembler','producer']));})()",
+      "wait": 6000,
+      "colorScheme": "dark"
+    },
+    {
+      "product": "moose",
+      "name": "today-provider",
+      "url": "https://flowrightapp.vercel.app/home?scope=my_department&demoRole=provider"
+    },
+    {
+      "product": "moose",
+      "name": "command-center",
+      "url": "https://flowrightapp.vercel.app/launcher"
+    },
+    {
+      "product": "moose",
+      "name": "patients",
+      "url": "https://flowrightapp.vercel.app/patients"
+    },
+    {
+      "product": "moose",
+      "name": "tasks",
+      "url": "https://flowrightapp.vercel.app/tasks?view=my_work"
+    },
+    {
+      "product": "moose",
+      "name": "office",
+      "url": "https://flowrightapp.vercel.app/office"
+    },
+    {
+      "product": "kept",
+      "name": "hotel-today",
+      "url": "https://foodopsapp.vercel.app/hotel-today",
+      "cropSelector": "nav.demo-control-bar"
+    },
+    {
+      "product": "kept",
+      "name": "front-desk",
+      "url": "https://foodopsapp.vercel.app/demo/front-desk",
+      "cropSelector": "nav.demo-control-bar"
+    },
+    {
+      "product": "kept",
+      "name": "arrival-plan",
+      "url": "https://foodopsapp.vercel.app/demo/team-desktop?workflow=arrival",
+      "cropSelector": "nav.demo-control-bar"
+    },
+    {
+      "product": "kept",
+      "name": "restaurant-pos",
+      "url": "https://foodopsapp.vercel.app/demo/operations-restaurant",
+      "viewport": {
+        "width": 1280,
+        "height": 800
+      },
+      "cropSelector": "nav.demo-control-bar"
+    },
+    {
+      "product": "kept",
+      "name": "guest-website",
+      "url": "https://foodopsapp.vercel.app/demo/guest-website",
+      "cropSelector": "nav.demo-control-bar"
+    },
+    {
+      "product": "kept",
+      "name": "manager-tablet",
+      "url": "https://foodopsapp.vercel.app/demo/manager-tablet",
+      "viewport": {
+        "width": 1024,
+        "height": 768
+      },
+      "hide": "nav.demo-control-bar",
+      "clipSelector": ".tablet-demo-screen"
+    },
+    {
+      "product": "kept",
+      "name": "guest-tablet",
+      "url": "https://foodopsapp.vercel.app/demo/guest-tablet",
+      "viewport": {
+        "width": 1024,
+        "height": 768
+      },
+      "hide": "nav.demo-control-bar",
+      "clipSelector": ".gt2-device",
+      "clipInset": 12
+    },
+    {
+      "product": "kept",
+      "name": "worker-tablet",
+      "url": "https://foodopsapp.vercel.app/demo/worker-tablet",
+      "viewport": {
+        "width": 1024,
+        "height": 768
+      },
+      "hide": "nav.demo-control-bar",
+      "clipSelector": ".tablet-demo-screen"
+    },
+    {
+      "product": "kept",
+      "name": "guest-phone",
+      "url": "https://foodopsapp.vercel.app/demo/guest-phone",
+      "viewport": {
+        "width": 390,
+        "height": 824
+      },
+      "dsf": 3,
+      "mobile": true,
+      "hide": "nav.demo-control-bar",
+      "actions": [
+        {
+          "click": "text=My Stay",
+          "wait": 1500
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,49 @@
+/* Product screens tour — sticky device frame + scroll-driven steps (loads after cinema.css).
+   Markup: section.block.tour > .wrap > .hd + .tourgrid > (.tour-stage > .tour-frame > figure*N + .tour-cap) + ol.tour-steps > li.tour-step[data-cap] > button
+   Desktop: steps scroll on the left, the frame sticks on the right and cross-fades. Mobile: tour.js moves each figure into its step. */
+.tour{padding-block:140px 0;border-top:0}
+.tourgrid{display:grid;grid-template-columns:minmax(0,.72fr) minmax(0,1.5fr);gap:48px;margin-top:64px;align-items:start}
+.tour-stage{position:sticky;top:96px;z-index:0}
+.tour-stage::before{content:"";position:absolute;inset:12% -6% -8%;z-index:-1;border-radius:50%;background:radial-gradient(ellipse at 50% 60%,color-mix(in srgb,var(--accent) 32%,transparent),transparent 68%);filter:blur(42px);opacity:.9;pointer-events:none}
+.tour-frame{position:relative;aspect-ratio:16/10;border-radius:14px;overflow:hidden;background:#000;border:10px solid #101314;border-bottom-width:22px;box-shadow:0 40px 80px -30px rgba(0,0,0,.6),0 0 0 1px rgba(255,255,255,.08);transition:transform .8s var(--ease)}
+.tour-frame figure{position:absolute;inset:0;margin:0;opacity:0;z-index:1;transition:opacity .6s var(--ease)}
+.tour-frame figure.on{opacity:1;z-index:2}
+.tour-frame img{width:100%;height:100%;object-fit:cover;object-position:0 0;display:block;transform-origin:32% 22%}
+.tour-frame figure.on img{animation:tour-kb 16s var(--ease) both}
+@keyframes tour-kb{from{transform:scale(1)}to{transform:scale(1.035)}}
+.tour-cap{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap;margin-top:18px;font-family:var(--mono);font-size:11px;letter-spacing:.06em;text-transform:uppercase;color:var(--text2)}
+.tour-cap b{font-weight:400;color:var(--text);display:inline-flex;align-items:center;gap:8px}
+.tour-cap b::before{content:"";width:8px;height:8px;border-radius:50%;background:var(--accent);box-shadow:0 0 12px var(--accent)}
+.tour-steps{list-style:none;margin:0;padding:0;display:flex;flex-direction:column;counter-reset:tour}
+.tour-step{position:relative;min-height:clamp(150px,30vh,270px);display:flex;border-top:1px solid var(--line);counter-increment:tour}
+.tour-step:last-child{border-bottom:1px solid var(--line)}
+.tour-step::before{content:"";position:absolute;left:0;top:-1px;bottom:-1px;width:2px;background:var(--accent);transform:scaleY(0);transform-origin:top;transition:transform .5s var(--ease)}
+.tour-step.on::before{transform:scaleY(1)}
+.tour-step button{appearance:none;background:none;border:0;color:inherit;font:inherit;text-align:left;width:100%;cursor:pointer;display:flex;flex-direction:column;justify-content:center;gap:8px;padding:26px 8px 26px 28px;opacity:.42;transition:opacity .45s var(--ease),transform .45s var(--ease)}
+.tour-step.on button{opacity:1;transform:translateX(4px)}
+.tour-step button:hover{opacity:.85}.tour-step.on button:hover{opacity:1}
+.tour-step button:focus-visible{outline:2px solid var(--accent);outline-offset:-2px;border-radius:6px}
+.tour-step .k{font-family:var(--mono);font-size:11px;letter-spacing:.1em;text-transform:uppercase;color:var(--accent)}
+.tour-step .k::before{content:counter(tour,decimal-leading-zero) " · "}
+.tour-step .t{font-family:"Space Grotesk",sans-serif;font-weight:600;font-size:clamp(20px,1.9vw,27px);letter-spacing:-.02em;line-height:1.1}
+.tour-step .d{font-size:16px;line-height:1.5;color:var(--text2);max-width:26em}
+.tour-step figure{display:none}
+@media(max-width:860px){
+.tour{padding-block:96px 0}
+.tourgrid{grid-template-columns:1fr;gap:0;margin-top:40px}
+.tour-stage{display:none}
+.tour-step{min-height:0;flex-direction:column;border-top:0;padding-bottom:40px}
+.tour-step:last-child{border-bottom:0;padding-bottom:0}
+.tour-step::before{display:none}
+.tour-step figure{display:block;position:relative;aspect-ratio:16/10;margin:0 0 6px;border-radius:12px;overflow:hidden;background:#000;border:6px solid #101314;border-bottom-width:12px;box-shadow:0 30px 60px -30px rgba(0,0,0,.6),0 0 0 1px rgba(255,255,255,.08)}
+.tour-step figure img{width:100%;height:100%;object-fit:cover;object-position:0 0;display:block}
+.tour-step button{opacity:1;padding:16px 0 0;transform:none}
+}
+/* optional second row: two tablet frames (4:3) under the tour grid */
+.tour-duo{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:32px 24px;margin-top:88px}
+.tour-duo figure{margin:0}
+.tour-tab{aspect-ratio:4/3;border-radius:22px;overflow:hidden;background:#000;border:10px solid #101314;box-shadow:0 40px 80px -30px rgba(0,0,0,.6),0 0 0 1px rgba(255,255,255,.08);transition:transform .8s var(--ease)}
+.tour-tab img{width:100%;height:100%;object-fit:cover;display:block}
+.tour-duo figcaption{margin-top:18px;font-size:15.5px;color:var(--text2);max-width:32em}
+.tour-duo figcaption b{display:block;font-family:var(--mono);font-weight:400;font-size:11px;letter-spacing:.06em;text-transform:uppercase;color:var(--text);margin-bottom:6px}
+@media(max-width:760px){.tour-duo{grid-template-columns:1fr;gap:32px;margin-top:56px}}
