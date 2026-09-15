@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://auxerion.vercel.app/sitemap.xml
+Sitemap: https://auxerion.com/sitemap.xml
