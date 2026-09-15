@@ -139,7 +139,12 @@ body{background:#0D0C0A}
 .player figcaption a:hover{color:var(--accent)}
 .player figcaption .ic{width:14px;height:14px}
 @media(max-width:760px){.watch{padding-block:96px 0}.player{margin-top:40px}.ytbtn .play{width:62px;height:62px}.ytbtn .play svg{width:22px;height:22px}.ytbtn .meta{left:18px;right:18px;bottom:14px}.ytbtn .meta b{display:none}}
-</style></head>
+
+.builtby{position:relative;overflow:hidden}
+.builtby .wrap{position:relative;z-index:1}
+.bbbg{position:absolute;inset:0;pointer-events:none}
+.bbbg img{width:100%;height:100%;object-fit:cover;opacity:.38;object-position:50% 40%}
+.bbbg::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,var(--bg),rgba(13,12,10,.6) 35%,rgba(13,12,10,.75) 70%,var(--bg))}</style></head>
 <body data-brand="c8"><template id="__bundler_thumbnail"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><rect width="100" height="100" fill="#0D0C0A"/><text x="50" y="50" text-anchor="middle" dominant-baseline="central" font-family="Space Grotesk,system-ui,sans-serif" font-weight="700" font-size="30" fill="#F5A524">C8</text></svg></template>
 <script src="/familybar.js"></script>
 <header class="site-nav"><span class="progress" aria-hidden="true"></span><div class="wrap">
@@ -271,7 +276,7 @@ body{background:#0D0C0A}
 <div class="rcard reveal d3"><img src="/assets/creativ8/wardin.jpg" alt="Wardin, Neon Frontier character concept" loading="lazy"><div class="t"><b><svg class="ic"><use href="#i-scan"/></svg>Leadership</b><p>Sees live reality instead of status meetings.</p></div></div>
 </div><p class="label reveal" style="margin-top:20px;color:var(--text2)">Character art from Neon Frontier, the sample project that ships with Creativ8.</p></div></section>
 
-<section class="block builtby" data-screen-label="Built by"><div class="wrap"><div class="quote reveal"><span class="label" style="display:block;margin-bottom:20px;position:relative">Built by people who have shipped games</span><p>Creativ8 comes from decades of creative direction and production experience, applied to the problem every studio has and no tool has solved.</p><svg class="hx" viewBox="0 0 400 400" aria-hidden="true"><path d="M200 20L356 110L356 290L200 380L44 290L44 110Z"/></svg></div></div></section>
+<section class="block builtby" data-screen-label="Built by"><div class="bbbg" aria-hidden="true"><img src="/assets/creativ8/builtby-team.jpg" alt="" width="1983" height="793" loading="lazy" decoding="async"></div><div class="wrap"><div class="quote reveal"><span class="label" style="display:block;margin-bottom:20px;position:relative">Built by people who have shipped games</span><p>Creativ8 comes from decades of creative direction and production experience, applied to the problem every studio has and no tool has solved.</p><svg class="hx" viewBox="0 0 400 400" aria-hidden="true"><path d="M200 20L356 110L356 290L200 380L44 290L44 110Z"/></svg></div></div></section>
 
 <section class="block inv" id="investors" data-screen-label="Investors"><div class="wrap"><div class="box reveal">
 <div><span class="label" style="display:block;margin-bottom:16px">For investors</span><h2 style="margin-bottom:20px">Deep functional prototype. Early-access studio pilots next.</h2><a class="btn primary" href="mailto:troy@auxerion.com?subject=Creativ8%20investor%20overview">Creativ8 investor overview <svg class="ic"><use href="#i-arrow"/></svg></a></div>

@@ -86,6 +86,11 @@
 .aw .ic{color:var(--accent);margin-top:4px}
 .srcnote{margin-top:56px;border:1px solid var(--line);border-left:2px solid var(--accent);border-radius:0 12px 12px 0;padding:22px 26px;background:var(--bg2)}
 .srcnote p{font-size:14.5px;color:var(--text2)}
+.titlewall{position:relative;overflow:hidden}
+.titlewall .wrap{position:relative;z-index:1}
+.twbg{position:absolute;inset:0;pointer-events:none}
+.twbg img{width:100%;height:100%;object-fit:cover;opacity:.32}
+.twbg::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,var(--bg),rgba(7,11,20,.55) 30%,rgba(7,11,20,.7) 70%,var(--bg))}
 </style>
 <noscript><style>.reveal{opacity:1!important;transform:none!important}</style></noscript>
 </head>
@@ -191,7 +196,7 @@
 </div>
 </div></section>
 
-<section class="block" id="portfolio" data-screen-label="Portfolio"><div class="wrap">
+<section class="block titlewall" id="portfolio" data-screen-label="Portfolio"><div class="twbg" aria-hidden="true"><img src="/assets/auxerion/founder-title-wall.jpg" alt="" width="1774" height="887" loading="lazy" decoding="async"></div><div class="wrap">
 <div class="sec-head"><div class="label reveal"><span class="capline">Selected portfolio</span></div><h2 class="statement sm reveal">A representative slice of 150+ shipped products.</h2></div>
 <div class="creds">
 <div class="cred reveal"><div class="k"><svg class="ic"><use href="#i-zap"/></svg>Action &amp; shooters</div><ul><li>Tom Clancy's Rainbow Six: Vegas</li><li>Ratchet &amp; Clank Future: Tools of Destruction</li><li>Mercenaries: Playground of Destruction</li><li>Resistance: Fall of Man</li><li>Halo</li><li>GoldenEye: Rogue Agent</li><li>Ratchet: Deadlocked</li><li>James Bond 007: Nightfire</li></ul></div>

@@ -20,7 +20,9 @@
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400&display=swap">
 <link rel="stylesheet" href="/family.css"><link rel="stylesheet" href="/cinema.css">
 <style>
-.hero{min-height:82vh;background:radial-gradient(ellipse 60% 50% at 70% 30%,rgba(59,123,255,.14),transparent 60%),radial-gradient(ellipse 40% 40% at 20% 90%,rgba(168,85,247,.1),transparent 60%)}
+.hero{min-height:82vh;position:relative;overflow:hidden;background:radial-gradient(ellipse 60% 50% at 70% 30%,rgba(59,123,255,.14),transparent 60%),radial-gradient(ellipse 40% 40% at 20% 90%,rgba(168,85,247,.1),transparent 60%)}
+.hero .veil{position:absolute;inset:0;z-index:-2;background:linear-gradient(180deg,rgba(7,11,20,.55),rgba(7,11,20,.8) 60%,var(--bg))}
+.hero .veil::after{content:"";position:absolute;inset:0;background:linear-gradient(90deg,rgba(7,11,20,.85),transparent 62%)}
 .hero h1{font-size:clamp(44px,7vw,108px)}
 .structure{position:relative;margin-top:64px;display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:24px}
 .structure::before{content:"";position:absolute;left:16.6%;right:16.6%;top:-40px;height:1px;background:var(--line)}
@@ -56,7 +58,7 @@
 <button class="menu-btn" aria-expanded="false" aria-controls="links">Menu</button>
 </div></header>
 <main>
-<section class="hero" data-screen-label="Investors hero"><div class="wrap"><div class="copy">
+<section class="hero" data-screen-label="Investors hero"><div class="bg" aria-hidden="true"><img class="on" src="/assets/auxerion/investors-hero.jpg" alt="" width="1697" height="927" decoding="async"></div><div class="veil" aria-hidden="true"></div><div class="wrap"><div class="copy">
 <div class="eyebrow reveal in"><span class="tag">Investors</span></div>
 <h1 class="words"><span>Investing</span> <span>in</span> <span>Auxerion.</span></h1>
 <p class="lede reveal in d3">Auxerion is structured as a parent company with three product businesses. Each product raises and operates independently. The parent holds the shared technology and the method for applying it to new verticals.</p>

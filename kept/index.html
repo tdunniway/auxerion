@@ -150,7 +150,11 @@
 .wm{display:inline-flex;align-items:center;gap:10px}
 .wm svg{width:34px;height:34px}
 .disclose{font-family:var(--mono);font-size:11px;letter-spacing:.06em;text-transform:uppercase;color:var(--text2)}
-</style></head>
+
+.receipt{margin:64px 0 0;border-radius:16px;overflow:hidden;border:1px solid var(--line);position:relative}
+.receipt img{width:100%;height:auto;display:block}
+.receipt figcaption{position:absolute;left:18px;bottom:14px;font-family:var(--mono);font-size:11px;letter-spacing:.06em;text-transform:uppercase;color:var(--text2);background:rgba(246,241,232,.82);padding:6px 10px;border-radius:4px}
+@media(max-width:560px){.receipt{margin-top:40px}.receipt figcaption{position:static;display:block;background:none;padding:10px 0 0}}</style></head>
 <body data-brand="ha"><template id="__bundler_thumbnail"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><rect width="100" height="100" fill="#0F5C52"/><text x="50" y="50" text-anchor="middle" dominant-baseline="central" font-family="Space Grotesk,system-ui,sans-serif" font-weight="700" font-size="40" fill="#F6F1E8">K</text></svg></template>
 <script src="/familybar.js"></script>
 <header class="site-nav"><span class="progress" aria-hidden="true"></span><div class="wrap">
@@ -250,6 +254,7 @@
 <div class="cn ev" style="--k:4"><i><svg class="ic"><use href="#i-filecheck"/></svg></i><b>Evidenced</b><small>proof, not assumption</small></div>
 <div class="cn" style="--k:5"><i><svg class="ic"><use href="#i-check"/></svg></i><b>Acknowledged</b><small>guest</small></div>
 </div>
+<figure class="receipt reveal d1"><img src="/assets/kept-web/receipt-artifact.jpg" alt="A proof-of-completion card resting beside the keys, linen and rosemary it attests to" width="1870" height="841" loading="lazy" decoding="async"><figcaption>Illustration. The live receipt carries owner, approval, evidence and status.</figcaption></figure>
 <div class="pil">
 <article class="reveal"><span class="oring"><svg viewBox="0 0 64 64"><circle cx="32" cy="32" r="30"/></svg><svg class="ic"><use href="#i-shield"/></svg></span><h3>Promise feasibility before commitment.</h3><p>Check what the hotel can actually deliver — room, stay, team, supplies, partners, policy — then commit with confidence.</p></article>
 <article class="reveal d1"><span class="oring"><svg viewBox="0 0 64 64"><circle cx="32" cy="32" r="30"/></svg><svg class="ic"><use href="#i-users"/></svg></span><h3>One commitment, many owners.</h3><p>Guests see one status; the hotel sees the dependency chain and who owns each link. Finishing a task does not mark the promise kept; evidence does.</p></article>
