@@ -215,3 +215,21 @@ body{overflow-x:hidden}
 .contact .big{font-family:"Space Grotesk",sans-serif;font-weight:600;font-size:clamp(24px,4vw,56px);letter-spacing:-.03em;display:inline-flex;align-items:center;gap:20px;margin-top:40px;background:linear-gradient(var(--text),var(--text)) no-repeat 0 100%/100% 3px;padding-bottom:8px;transition:background-image .3s}
 .contact .big .ic{width:.8em;height:.8em;stroke-width:1.25}
 .contact .big:hover{background-image:var(--grad)}
+
+/* --- moved out of index.html, which has no inline <style> block --- */
+.hero .bg picture{display:contents}
+.plat{position:relative;overflow:hidden}
+.plat .wrap{position:relative;z-index:1}
+.platbg{position:absolute;inset:0;pointer-events:none}
+.platbg img{width:100%;height:100%;object-fit:cover;object-position:50% 45%;opacity:.28}
+.platbg::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,var(--bg),rgba(7,11,20,.6) 35%,rgba(7,11,20,.8) 75%,var(--bg))}
+/* WorkOS object graph - the five .knows lines below are the accessible text */
+.wgraph{position:relative;aspect-ratio:1.55;margin:32px 0 8px;max-width:520px}
+.wgraph .wl{position:absolute;inset:0;width:100%;height:100%}
+.wgraph .wl line{stroke:rgba(124,155,255,.4);stroke-width:1;vector-effect:non-scaling-stroke}
+.wgraph .wo{position:absolute;left:50%;top:50%;transform:translate(-50%,-50%);z-index:2;padding:10px 20px;border-radius:999px;background:var(--bg);border:1px solid rgba(124,155,255,.6);box-shadow:0 0 34px -6px rgba(99,80,255,.6);font-family:"Space Grotesk",sans-serif;font-weight:600;font-size:15px}
+.wgraph .wn{position:absolute;z-index:1;transform:translate(-50%,-50%);display:inline-flex;align-items:center;gap:7px;padding:7px 12px;border-radius:999px;background:var(--bg2);border:1px solid var(--line);font-family:var(--mono);font-size:11.5px;color:var(--text2);white-space:nowrap}
+.wgraph .wn i{width:5px;height:5px;border-radius:50%;background:#7c9bff;display:block}
+.wgraph .n1{left:16%;top:16%}.wgraph .n2{left:84%;top:16%}.wgraph .n3{left:9%;top:72%}
+.wgraph .n4{left:91%;top:72%}.wgraph .n5{left:50%;top:94%}
+@media(max-width:860px){.wgraph{display:none}}

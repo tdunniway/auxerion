@@ -91,6 +91,15 @@
 .twbg{position:absolute;inset:0;pointer-events:none}
 .twbg img{width:100%;height:100%;object-fit:cover;opacity:.32}
 .twbg::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,var(--bg),rgba(7,11,20,.55) 30%,rgba(7,11,20,.7) 70%,var(--bg))}
+/* career timeline - makes the overlap the copy claims actually visible */
+.tline{margin:40px 0 48px;position:relative}
+.tticks{position:relative;height:16px;font-family:var(--mono);font-size:10.5px;color:var(--text2)}
+.tticks span{position:absolute;left:var(--l);transform:translateX(-50%)}
+.tbars{position:relative;display:flex;flex-direction:column;gap:3px;padding-top:8px;border-top:1px solid var(--line)}
+.tb{position:relative;display:block;height:7px;margin-left:var(--l);width:var(--w);border-radius:999px;background:linear-gradient(90deg,#3B7BFF,#A855F7);opacity:.55;transition:opacity .25s}
+.tb:hover{opacity:1}
+.tnote{margin-top:14px;font-size:13px;color:var(--text2)}
+@media(max-width:620px){.tline{display:none}}
 </style>
 <noscript><style>.reveal{opacity:1!important;transform:none!important}</style></noscript>
 </head>
@@ -163,6 +172,7 @@
 <section class="block" id="record" data-screen-label="Operating record"><div class="wrap">
 <div class="sec-head"><div class="label reveal"><span class="capline">Operating record</span></div><h2 class="statement sm reveal">Studios built. Teams led. Products shipped.</h2><p class="lede reveal d1">Senior leadership across global publishers, platform companies, startups and education. Several founder, investor, advisory and teaching roles overlapped with the operating positions below.</p></div>
 
+<div class="tline" role="img" aria-label="Sixteen roles between 1994 and today, many running concurrently"><div class="tticks" aria-hidden="true"><span style="--l:0.00%">1994</span><span style="--l:18.18%">2000</span><span style="--l:36.36%">2006</span><span style="--l:54.55%">2012</span><span style="--l:72.73%">2018</span><span style="--l:90.91%">2024</span></div><div class="tbars" aria-hidden="true"><span class="tb" style="--l:0.00%;--w:15.15%" title="Lead Designer & Lead Animator (1994–1999)"></span><span class="tb" style="--l:15.15%;--w:9.09%" title="Worldwide Creative Director (1999–2002)"></span><span class="tb" style="--l:24.24%;--w:6.06%" title="Worldwide Creative Director (2002–2004)"></span><span class="tb" style="--l:30.30%;--w:3.03%" title="Project Director (2004–2005)"></span><span class="tb" style="--l:33.33%;--w:3.03%" title="Lead Game Designer (2005–2006)"></span><span class="tb" style="--l:36.36%;--w:3.03%" title="Lead Game Designer & Senior Producer (2006–2007)"></span><span class="tb" style="--l:39.39%;--w:3.03%" title="Design Director & Senior Creative Producer (2007–2008)"></span><span class="tb" style="--l:42.42%;--w:18.18%" title="EVP, General Manager & Executive Producer (2008–2014)"></span><span class="tb" style="--l:54.55%;--w:3.03%" title="Creative Director (2012–2013)"></span><span class="tb" style="--l:60.61%;--w:3.03%" title="General Manager & Studio Head (2014–2015)"></span><span class="tb" style="--l:60.61%;--w:33.33%" title="Executive Producer & Co-Founder (2014–2025)"></span><span class="tb" style="--l:69.70%;--w:30.30%" title="Vice President & Head of Game Design (2017–present)"></span><span class="tb" style="--l:75.76%;--w:6.06%" title="General Manager & Studio Head (2019–2021)"></span><span class="tb" style="--l:78.79%;--w:6.06%" title="General Manager & Co-Founder (2020–2022)"></span><span class="tb" style="--l:93.94%;--w:3.03%" title="Vice President, Game Design (2025–2026)"></span><span class="tb" style="--l:96.97%;--w:3.03%" title="Founder & Chief Executive Officer (2026–present)"></span></div><p class="tnote">Each bar is one role. Where bars sit side by side in the same years, those roles ran at the same time.</p></div>
 <div class="rail">
 <div class="role reveal"><div class="yr">2026 — present</div><div><b>Founder &amp; Chief Executive Officer</b><span class="co">Auxerion</span><p>Leads product, architecture and technology across three products and the shared operational core beneath them.</p></div></div>
 <div class="role reveal"><div class="yr">2017 — present</div><div><b>Vice President &amp; Head of Game Design</b><span class="co">CG Spectrum</span><p>Created and leads the online Game Design program and the wider game development department — program strategy, curriculum, quality standards and industry alignment.</p></div></div>

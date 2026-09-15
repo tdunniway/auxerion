@@ -49,7 +49,17 @@
 
 .methodfig{margin:0 0 56px;border-radius:16px;overflow:hidden;border:1px solid var(--line);position:relative}
 .methodfig img{width:100%;height:auto;display:block}
-.methodfig figcaption{position:absolute;left:16px;bottom:12px;font-family:var(--mono);font-size:11px;letter-spacing:.06em;text-transform:uppercase;color:var(--text2);background:rgba(7,11,20,.72);padding:6px 10px;border-radius:4px}</style></head>
+.methodfig figcaption{position:absolute;left:16px;bottom:12px;font-family:var(--mono);font-size:11px;letter-spacing:.06em;text-transform:uppercase;color:var(--text2);background:rgba(7,11,20,.72);padding:6px 10px;border-radius:4px}
+/* three verticals feeding one loop - the loop itself stays as the live pill row below */
+.loopdiag{margin-top:40px;position:relative}
+.feeds{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:16px}
+.fd{position:relative;justify-self:stretch;text-align:center;padding:12px 10px;border:1px solid var(--line);border-left:3px solid var(--pc);border-radius:10px;background:var(--bg2);font-family:var(--mono);font-size:12px;letter-spacing:.05em;text-transform:uppercase;color:var(--text2)}
+.fd::after{content:"";position:absolute;left:50%;bottom:-22px;width:1px;height:22px;background:linear-gradient(180deg,var(--pc),rgba(124,155,255,.35))}
+.joint{display:block;height:22px;margin-top:22px;border-top:1px solid rgba(124,155,255,.35);border-radius:0;position:relative}
+.joint::after{content:"";position:absolute;left:50%;top:-1px;width:1px;height:22px;background:rgba(124,155,255,.35)}
+.loopline{position:relative;justify-content:center}
+.loopline::before{content:"one operating loop";position:absolute;left:50%;transform:translateX(-50%);top:-46px;font-family:var(--mono);font-size:10.5px;letter-spacing:.09em;text-transform:uppercase;color:var(--text2)}
+@media(max-width:760px){.feeds{grid-template-columns:1fr;gap:8px}.fd::after,.joint{display:none}.loopline::before{display:none}.loopdiag{margin-bottom:8px}}</style></head>
 <body data-brand="aux"><template id="__bundler_thumbnail"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><rect width="100" height="100" fill="#070B14"/><text x="50" y="50" text-anchor="middle" dominant-baseline="central" font-family="Space Grotesk,system-ui,sans-serif" font-weight="700" font-size="40" fill="#3B7BFF">A</text></svg></template>
 <script src="/familybar.js"></script>
 <header class="site-nav"><span class="progress" aria-hidden="true"></span><div class="wrap">
@@ -85,6 +95,7 @@
 <section class="block" id="shared" data-screen-label="What they share"><div class="wrap"><figure class="methodfig reveal"><img src="/assets/auxerion/v2/operator-workshop.jpg" alt="A working session around one shared model, illustrative" width="1400" height="800" loading="lazy" decoding="async"><figcaption>Illustration of the working method, not a photograph of the team.</figcaption></figure></div><div class="wrap hd">
 <div class="reveal"><h2>Each product is purpose-built and operated as its own business with its own partners and investors.</h2></div>
 <div class="reveal d1"><p class="lede">What they share is one operating loop — signal, owned work, AI-prepared next step, human approval, evidence, verified outcome — and, increasingly, Auxerion's platform: WorkOS, a shared operational core designed to carry that loop into any vertical.</p>
+<div class="loopdiag" role="img" aria-label="Three product verticals feed one shared operating loop: signal, owned work, AI-prepared next step, human approval, evidence, verified outcome"><div class="feeds"><span class="fd" style="--pc:var(--c8)">game studios</span><span class="fd" style="--pc:var(--mo)">medical practices</span><span class="fd" style="--pc:var(--ha-on-dark)">hotels</span></div><span class="joint" aria-hidden="true"></span></div>
 <div class="loopline"><span><svg class="ic"><use href="#i-radio"/></svg>signal</span><span><svg class="ic"><use href="#i-users"/></svg>owned work</span><span><svg class="ic"><use href="#i-sparkles"/></svg>AI-prepared next step</span><span><svg class="ic"><use href="#i-usercheck"/></svg>human approval</span><span><svg class="ic"><use href="#i-filecheck"/></svg>evidence</span><span><svg class="ic"><use href="#i-check"/></svg>verified outcome</span></div></div>
 </div></section>
 
