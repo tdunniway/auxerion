@@ -154,7 +154,7 @@
 </div><div class="foot"><span>Each product's loop, in its own words, aligned to the shared model.</span><span class="rule">AI assists. People decide.</span></div></div>
 </div></section>
 
-<section class="block plat" id="platform" data-screen-label="Platform"><div class="wrap grid">
+<section class="block plat" id="platform" data-screen-label="Platform"><div class="platbg" aria-hidden="true"><img src="/assets/auxerion/v2/platform-foundation.jpg" alt="" width="1200" height="900" loading="lazy" decoding="async"></div><div class="wrap grid">
 <div class="reveal"><span class="label" style="display:block;margin-bottom:16px">The platform</span><h2>WorkOS: work understood as outcomes, not tasks.</h2><p class="lede">Beneath our products, we are developing a shared operational core. It knows what a team has committed to, who owns each step, what is blocked, what proof is required, and what "done" means. AI helps capture, prioritize, and prepare; people decide.</p>
 <ul class="knows"><li><svg class="ic"><use href="#i-task"/></svg>what a team has committed to</li><li><svg class="ic"><use href="#i-users"/></svg>who owns each step</li><li><svg class="ic"><use href="#i-branch"/></svg>what is blocked</li><li><svg class="ic"><use href="#i-filecheck"/></svg>what proof is required</li><li><svg class="ic"><use href="#i-check"/></svg>what "done" means</li></ul>
 <div class="actions"><a class="btn text" href="/company">How we build</a></div></div>
@@ -201,3 +201,8 @@
 <script src="/auxerion/home.js"></script>
 </body></html>
 .hero .bg picture{display:contents}
+.plat{position:relative;overflow:hidden}
+.plat .wrap{position:relative;z-index:1}
+.platbg{position:absolute;inset:0;pointer-events:none}
+.platbg img{width:100%;height:100%;object-fit:cover;object-position:50% 45%;opacity:.28}
+.platbg::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,var(--bg),rgba(7,11,20,.6) 35%,rgba(7,11,20,.8) 75%,var(--bg))}

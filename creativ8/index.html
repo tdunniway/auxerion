@@ -145,7 +145,18 @@ body{background:#0D0C0A}
 .bbbg{position:absolute;inset:0;pointer-events:none}
 .bbbg img{width:100%;height:100%;object-fit:cover;opacity:.38;object-position:50% 40%}
 .bbbg::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,var(--bg),rgba(13,12,10,.6) 35%,rgba(13,12,10,.75) 70%,var(--bg))}
-.hero .bg picture{display:contents}</style></head>
+.hero .bg picture{display:contents}
+.story{display:grid;gap:16px;margin-top:56px}
+.story figure{position:relative;border-radius:14px;overflow:hidden;border:1px solid var(--line);margin:0}
+.story img{width:100%;height:100%;object-fit:cover;display:block;aspect-ratio:4/3;transition:transform 1.2s var(--ease)}
+.story figure:hover img{transform:scale(1.04)}
+.story figcaption{position:absolute;left:0;right:0;bottom:0;padding:40px 16px 14px;font-size:13px;line-height:1.4}
+@media(max-width:860px){.story{grid-template-columns:1fr!important}.story figure.wide{grid-column:auto!important}.story img{aspect-ratio:16/10}}
+.story{grid-template-columns:repeat(2,minmax(0,1fr))}
+.story figcaption{color:#F6F2EA;background:linear-gradient(180deg,rgba(13,12,10,0),rgba(13,12,10,.92))}
+.anatomy{margin:56px 0 0;border-radius:16px;overflow:hidden;border:1px solid var(--line);position:relative}
+.anatomy img{width:100%;height:auto;display:block}
+.anatomy figcaption{position:absolute;left:16px;bottom:12px;font-family:var(--mono);font-size:11px;letter-spacing:.06em;text-transform:uppercase;color:var(--text2);background:rgba(13,12,10,.78);padding:6px 10px;border-radius:4px}</style></head>
 <body data-brand="c8"><template id="__bundler_thumbnail"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><rect width="100" height="100" fill="#0D0C0A"/><text x="50" y="50" text-anchor="middle" dominant-baseline="central" font-family="Space Grotesk,system-ui,sans-serif" font-weight="700" font-size="30" fill="#F5A524">C8</text></svg></template>
 <script src="/familybar.js"></script>
 <header class="site-nav"><span class="progress" aria-hidden="true"></span><div class="wrap">
@@ -217,6 +228,7 @@ body{background:#0D0C0A}
 <div class="st" style="--d:3s"><span class="ring"><svg class="ic"><use href="#i-usercheck"/></svg></span><b>Review affected commitments</b><small>human review</small></div>
 <div class="st" style="--d:4.5s"><span class="ring"><svg class="ic"><use href="#i-filecheck"/></svg></span><b>Keep the why</b><small>decision record</small></div>
 </div>
+<figure class="anatomy reveal d1"><img src="/assets/creativ8/v2/smart-object-anatomy.jpg" alt="One character held as a physical object with its design, tasks and decisions attached around it" width="1200" height="900" loading="lazy" decoding="async"><figcaption>A Smart Object, made tangible. The live graph above is the product view.</figcaption></figure>
 </div></section>
 
 <section class="block mods" id="modules" data-screen-label="Eight workspaces"><div class="modbg" aria-hidden="true"><img src="/assets/creativ8/workspaces-header.jpg" alt="" width="1760" height="587" loading="lazy" decoding="async"></div><div class="wrap">
@@ -266,7 +278,8 @@ body{background:#0D0C0A}
 <article class="reveal d1"><div class="num">02</div><h3>Design as the game's control model.</h3><p>Coverage, dependency, gap, and impact checks so the design finds the conflict before it reaches production.</p></article>
 <article class="reveal d2"><div class="num">03</div><h3>Every task knows why it exists.</h3><p>Briefs, pipelines, and schedules trace back to the design intent that created them; drift is detected, not discovered.</p></article>
 <article class="reveal d3"><div class="num">04</div><h3>AI assists. People decide.</h3><p>Project-grounded, source-linked AI beside every role — drafting, suggesting, summarizing — with human approval before anything changes.</p></article>
-</div></div></section>
+</div>
+<div class="story"><figure class="reveal"><img src="/assets/creativ8/v2/design-control-model.jpg" alt="A blockout and its design sheet held side by side on a workbench" width="880" height="660" loading="lazy" decoding="async"><figcaption>Design as the control model — coverage, dependency and impact, checked against the build.</figcaption></figure><figure class="reveal d1"><img src="/assets/creativ8/v2/human-review.jpg" alt="Generated options laid out for a person to choose between" width="880" height="660" loading="lazy" decoding="async"><figcaption>AI assists. A person still chooses, and the choice is recorded.</figcaption></figure></div></div></section>
 
 <section class="block rolesec" id="roles" data-screen-label="For every role"><div class="wrap">
 <div class="hd"><div class="reveal"><h2 class="statement sm">Every role sees the same truth through the view it needs.</h2></div></div>

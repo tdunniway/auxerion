@@ -155,7 +155,17 @@
 .receipt img{width:100%;height:auto;display:block}
 .receipt figcaption{position:absolute;left:18px;bottom:14px;font-family:var(--mono);font-size:11px;letter-spacing:.06em;text-transform:uppercase;color:var(--text2);background:rgba(246,241,232,.82);padding:6px 10px;border-radius:4px}
 @media(max-width:560px){.receipt{margin-top:40px}.receipt figcaption{position:static;display:block;background:none;padding:10px 0 0}}
-.hero .bg picture{display:contents}</style></head>
+.hero .bg picture{display:contents}
+.story{display:grid;gap:16px;margin-top:56px}
+.story figure{position:relative;border-radius:14px;overflow:hidden;border:1px solid var(--line);margin:0}
+.story img{width:100%;height:100%;object-fit:cover;display:block;aspect-ratio:4/3;transition:transform 1.2s var(--ease)}
+.story figure:hover img{transform:scale(1.04)}
+.story figcaption{position:absolute;left:0;right:0;bottom:0;padding:40px 16px 14px;font-size:13px;line-height:1.4}
+@media(max-width:860px){.story{grid-template-columns:1fr!important}.story figure.wide{grid-column:auto!important}.story img{aspect-ratio:16/10}}
+.story{grid-template-columns:repeat(2,minmax(0,1fr))}
+.story figure.wide{grid-column:1 / -1}
+.story figure.wide img{aspect-ratio:16/10}
+.story figcaption{color:#F6F1E8;background:linear-gradient(180deg,rgba(15,26,24,0),rgba(15,26,24,.9))}</style></head>
 <body data-brand="ha"><template id="__bundler_thumbnail"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><rect width="100" height="100" fill="#0F5C52"/><text x="50" y="50" text-anchor="middle" dominant-baseline="central" font-family="Space Grotesk,system-ui,sans-serif" font-weight="700" font-size="40" fill="#F6F1E8">K</text></svg></template>
 <script src="/familybar.js"></script>
 <header class="site-nav"><span class="progress" aria-hidden="true"></span><div class="wrap">
@@ -261,7 +271,8 @@
 <article class="reveal d1"><span class="oring"><svg viewBox="0 0 64 64"><circle cx="32" cy="32" r="30"/></svg><svg class="ic"><use href="#i-users"/></svg></span><h3>One commitment, many owners.</h3><p>Guests see one status; the hotel sees the dependency chain and who owns each link. Finishing a task does not mark the promise kept; evidence does.</p></article>
 <article class="reveal d2"><span class="oring"><svg viewBox="0 0 64 64"><circle cx="32" cy="32" r="30"/></svg><svg class="ic"><use href="#i-zap"/></svg></span><h3>Recovery before disappointment.</h3><p>Weather, capacity, and supply problems become explained alternatives with the impact previewed, not apologies after the fact.</p></article>
 <article class="reveal d3"><span class="oring"><svg viewBox="0 0 64 64"><circle cx="32" cy="32" r="30"/></svg><svg class="ic"><use href="#i-filecheck"/></svg></span><h3>The outcome receipt.</h3><p>Requested, committed, accepted, executed, evidenced, acknowledged — the record that makes the operation auditable and the story provable.</p></article>
-</div></div></section>
+</div>
+<div class="story"><figure class="reveal wide"><img src="/assets/kept-web/v2/weather-recovery.jpg" alt="A dinner moved under cover as weather turns, service continuing" width="1400" height="876" loading="lazy" decoding="async"><figcaption>Recovery before disappointment — the evening is moved, not cancelled.</figcaption></figure><figure class="reveal d1"><img src="/assets/kept-web/v2/promise-feasibility.jpg" alt="A service checked against what the day can actually carry" width="880" height="660" loading="lazy" decoding="async"><figcaption>Feasibility checked before the promise is made.</figcaption></figure><figure class="reveal d2"><img src="/assets/kept-web/v2/one-promise-many-owners.jpg" alt="Several departments working to one plan" width="880" height="495" loading="lazy" decoding="async"><figcaption>One commitment, many owners — each knowing their part of it.</figcaption></figure></div></div></section>
 
 <section class="block rooms" id="rooms" data-screen-label="Connected operating rooms"><div class="wrap">
 <div class="hd"><div class="reveal"><h2 class="statement sm">Food, bar, events, facilities, and finance operate as one coordinated operation.</h2></div><p class="lede reveal d1">One event plan moves prep, labor, bar stock, room turnover, and maintenance together. Forecasting reads the day before it happens. Receiving, waste, vendors, and invoices close the loop between what was planned, ordered, and delivered.</p></div>

@@ -132,7 +132,15 @@ body{font-size:19px}
 .brand.product img{height:44px;width:auto}
 footer{color:var(--text2)}
 .disclose{font-family:var(--mono);font-size:11px;letter-spacing:.06em;text-transform:uppercase;color:var(--text2)}
-</style></head>
+
+.story{display:grid;gap:16px;margin-top:56px}
+.story figure{position:relative;border-radius:14px;overflow:hidden;border:1px solid var(--line);margin:0}
+.story img{width:100%;height:100%;object-fit:cover;display:block;aspect-ratio:4/3;transition:transform 1.2s var(--ease)}
+.story figure:hover img{transform:scale(1.04)}
+.story figcaption{position:absolute;left:0;right:0;bottom:0;padding:40px 16px 14px;font-size:13px;line-height:1.4}
+@media(max-width:860px){.story{grid-template-columns:1fr!important}.story figure.wide{grid-column:auto!important}.story img{aspect-ratio:16/10}}
+.story{grid-template-columns:repeat(3,minmax(0,1fr))}
+.story figcaption{color:#fff;background:linear-gradient(180deg,rgba(27,58,107,0),rgba(27,58,107,.88))}</style></head>
 <body data-brand="mo"><template id="__bundler_thumbnail"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><rect width="100" height="100" fill="#1B3A6B"/><text x="50" y="50" text-anchor="middle" dominant-baseline="central" font-family="Space Grotesk,system-ui,sans-serif" font-weight="700" font-size="40" fill="#1FA7A0">M</text></svg></template>
 <script src="/familybar.js"></script>
 <header class="site-nav"><span class="progress" aria-hidden="true"></span><div class="wrap">
@@ -224,7 +232,8 @@ footer{color:var(--text2)}
 <article class="reveal d1"><span class="oring"><svg viewBox="0 0 64 64"><circle cx="32" cy="32" r="30"/></svg><svg class="ic"><use href="#i-task"/></svg></span><h3>Visit readiness before the visit.</h3><p>Insurance, authorization, records, orders, and confirmation checked ahead of time; exceptions surfaced with an owner.</p></article>
 <article class="reveal d2"><span class="oring"><svg viewBox="0 0 64 64"><circle cx="32" cy="32" r="30"/></svg><svg class="ic"><use href="#i-chat"/></svg></span><h3>Every channel, one accountable conversation.</h3><p>Phone, fax, text, portal, and email classified into cases and tasks on one work graph.</p></article>
 <article class="reveal d3"><span class="oring"><svg viewBox="0 0 64 64"><circle cx="32" cy="32" r="30"/></svg><svg class="ic"><use href="#i-sparkles"/></svg></span><h3>AI removes chasing, not judgment.</h3><p>Classify, summarize, draft, extract, prioritize, explain — inside a governed, auditable workflow with human review at the right risk level.</p></article>
-</div></div></section>
+</div>
+<div class="story"><figure class="reveal"><img src="/assets/moose/v2/closed-loop-handoff.jpg" alt="A handoff completed and set down, nothing left open" width="880" height="660" loading="lazy" decoding="async"><figcaption>Close every loop — the handoff is finished, not forwarded.</figcaption></figure><figure class="reveal d1"><img src="/assets/moose/v2/visit-readiness.jpg" alt="A readiness station prepared ahead of the day" width="880" height="660" loading="lazy" decoding="async"><figcaption>Visit readiness, settled before the visit rather than during it.</figcaption></figure><figure class="reveal d2"><img src="/assets/moose/v2/human-review.jpg" alt="A prepared item set out for a person to review and sign" width="880" height="660" loading="lazy" decoding="async"><figcaption>AI removes the chasing. A person still signs anything consequential.</figcaption></figure></div></div></section>
 
 <section class="block rolesec" id="roles" data-screen-label="For every role"><div class="wrap">
 <div class="hd"><div class="reveal"><h2 class="statement sm">One operational picture, focused differently for each role.</h2></div></div>
