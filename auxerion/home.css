@@ -124,7 +124,7 @@ body{overflow-x:hidden}
 .panel.mo .pic{background:#E6F4F3}.panel.mo .marq{color:#1FA7A0;border-color:rgba(31,167,160,.3)}
 .panel.ha{background:#F6F1E8;color:#1E2321}.panel.ha .tag{border-color:#0F5C52;color:#0F5C52}.panel.ha .go{background:#0F5C52;color:#FFFDF8}.panel.ha .pic::after{content:"";position:absolute;inset:0;background:linear-gradient(90deg,#F6F1E8,transparent 40%)}
 .panel.ha .pname{font-family:"Fraunces","Space Grotesk",Georgia,serif;font-weight:500;letter-spacing:-.01em}
-.panel.ha .pic{background:#DDD3C3}.panel.ha .marq{color:#0F5C52;border-color:rgba(15,92,82,.3)}
+.panel.ha .pic{background:#DDD3C3}.panel.ha .pic img{object-position:78% 50%}.panel.ha .marq{color:#0F5C52;border-color:rgba(15,92,82,.3)}
 @media(max-width:860px){.panel{grid-template-columns:1fr;min-height:0}.panel .pic{aspect-ratio:16/10;order:-1}.panel .pic::after{display:none}.panel .txt{padding:32px 24px 72px}.panel .logo{height:44px;margin-bottom:8px}.panel .cap{bottom:auto;top:12px}}
 /* LOOP */
 .loopsec{padding-block:160px 140px;position:relative;overflow:hidden;border-top:0;margin-top:140px}
