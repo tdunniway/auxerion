@@ -25,12 +25,11 @@ body{font-size:19px}
 .hero{min-height:0;background:var(--bg)}
 /* full-bleed clinic banner: runs up behind the transparent nav, fades into the page ground at the bottom */
 .hero .banner{position:relative;width:100%;margin-top:-64px;aspect-ratio:2000/667;overflow:hidden;background:#EAF3F5}
-.hero .banner picture{display:contents}
-.hero .banner img{display:block;width:100%;height:100%;object-fit:cover;object-position:50% 50%}
+.hero .banner img{display:block;width:100%;height:100%;object-fit:cover;object-position:50% 0}
 .hero .banner::before{content:"";position:absolute;inset:0 0 auto 0;height:140px;background:linear-gradient(180deg,rgba(247,249,251,.82),rgba(247,249,251,0))}
 .hero .banner::after{content:"";position:absolute;inset:auto 0 0 0;height:34%;background:linear-gradient(180deg,rgba(247,249,251,0),var(--bg))}
 .hero .copy{padding-top:0;margin-top:clamp(-36px,-2.5vw,-16px)}
-@media(max-width:760px){.hero .banner{aspect-ratio:4/3}.hero .banner img{object-position:50% 50%}.hero .banner::before{height:90px}}
+@media(max-width:760px){.hero .banner{aspect-ratio:4/3}.hero .banner img{object-position:48% 30%}.hero .banner::before{height:90px}}
 .hero .pulsebg{position:absolute;left:0;right:0;bottom:8%;height:80px;z-index:1;opacity:.9;pointer-events:none}
 .hero .pulsebg path{fill:none;stroke:var(--accent);stroke-width:2;stroke-dasharray:1200;stroke-dashoffset:1200;animation:ekg 6s linear infinite;filter:drop-shadow(0 0 8px rgba(31,167,160,.5))}
 @keyframes ekg{to{stroke-dashoffset:-1200}}
@@ -152,7 +151,7 @@ footer{color:var(--text2)}
 </div></header>
 <main>
 <section class="hero" data-screen-label="Hero">
-<div class="banner"><picture><source media="(max-width:760px)" srcset="/assets/moose/v2/hero-practice-banner-mobile.jpg" width="1086" height="815"><img src="/assets/moose/v2/hero-practice-banner.jpg" alt="A cutaway of a practice in motion: supply area, reception desk and back office working as one floor" width="2000" height="667" fetchpriority="high" decoding="async"></picture><svg class="pulsebg" viewBox="0 0 1600 120" preserveAspectRatio="none" aria-hidden="true"><path d="M0 60H520L560 60L580 20L600 100L620 40L640 60H1000L1040 60L1060 30L1080 90L1100 60H1600"/></svg></div>
+<div class="banner"><img src="/assets/moose/hero-clinic.webp" alt="A physician reviews a tablet with an older patient in a bright clinic lobby while staff and two dogs pass the Xu Urology front desk" width="2000" height="667" fetchpriority="high" decoding="async"><svg class="pulsebg" viewBox="0 0 1600 120" preserveAspectRatio="none" aria-hidden="true"><path d="M0 60H520L560 60L580 20L600 100L620 40L640 60H1000L1040 60L1060 30L1080 90L1100 60H1600"/></svg></div>
 <div class="wrap"><div class="copy">
 <div class="eyebrow reveal in"><span class="tag accent">MVP candidate</span><span class="tag">Limited pilot forming</span></div>
 <div class="mline reveal in">MOOSE <span>· Medical Office OS Environment</span></div>
