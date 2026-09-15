@@ -140,7 +140,20 @@ footer{color:var(--text2)}
 .story figcaption{position:absolute;left:0;right:0;bottom:0;padding:40px 16px 14px;font-size:13px;line-height:1.4}
 @media(max-width:860px){.story{grid-template-columns:1fr!important}.story figure.wide{grid-column:auto!important}.story img{aspect-ratio:16/10}}
 .story{grid-template-columns:repeat(3,minmax(0,1fr))}
-.story figcaption{color:#fff;background:linear-gradient(180deg,rgba(27,58,107,0),rgba(27,58,107,.88))}</style></head>
+.story figcaption{color:#fff;background:linear-gradient(180deg,rgba(27,58,107,0),rgba(27,58,107,.88))}
+/* trust: four integration layers, with the write-back gate drawn */
+.layers{margin:56px 0 40px;display:grid;gap:8px;max-width:640px}
+.ly{display:grid;grid-template-columns:34px 1fr auto;gap:14px;align-items:center;padding:14px 18px;border-radius:10px;border:1px solid rgba(246,241,232,.16);background:rgba(246,241,232,.04)}
+.ly .lb{font-family:var(--mono);font-size:11px;color:#5FD6CE}
+.ly .lt{font-weight:600;font-size:16px;color:#fff}
+.ly .lp{font-family:var(--mono);font-size:11px;letter-spacing:.05em;text-transform:uppercase;color:#B7C3D6}
+.ly.l4{border-color:rgba(95,214,206,.5);background:rgba(95,214,206,.08)}
+.gatebar{display:inline-flex;align-items:center;gap:9px;justify-self:start;margin:2px 0 2px 34px;padding:7px 14px;border:1px dashed rgba(95,214,206,.65);border-radius:999px;font-family:var(--mono);font-size:11px;letter-spacing:.06em;text-transform:uppercase;color:#5FD6CE}
+.gatebar .ic{width:14px;height:14px}
+/* thesis: the gap between the artifact and the outcome */
+.arw .af{position:relative}
+.arw .af::after{content:"";position:absolute;right:-13px;top:50%;width:8px;height:1px;background:repeating-linear-gradient(90deg,var(--accent2) 0 2px,transparent 2px 4px);opacity:.7}
+@media(max-width:760px){.layers{max-width:none}.ly{grid-template-columns:28px 1fr;row-gap:4px}.ly .lp{grid-column:2}.gatebar{margin-left:0}}</style></head>
 <body data-brand="mo"><template id="__bundler_thumbnail"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><rect width="100" height="100" fill="#1B3A6B"/><text x="50" y="50" text-anchor="middle" dominant-baseline="central" font-family="Space Grotesk,system-ui,sans-serif" font-weight="700" font-size="40" fill="#1FA7A0">M</text></svg></template>
 <script src="/familybar.js"></script>
 <header class="site-nav"><span class="progress" aria-hidden="true"></span><div class="wrap">
@@ -173,10 +186,10 @@ footer{color:var(--text2)}
 <section class="block thesis" data-screen-label="Thesis"><div class="wrap">
 <div class="hd"><div class="reveal"><h2 class="statement sm">Medical offices create artifacts. Patients need outcomes.</h2></div><p class="lede reveal d1">MOOSE is the system of action that gets the work closed. The EHR stays the source of clinical truth.</p></div>
 <div class="arrows">
-<div class="arw reveal"><span>Referral received</span><svg class="ic"><use href="#i-arrow"/></svg><span>patient scheduled</span></div>
-<div class="arw reveal d1"><span>Authorization submitted</span><svg class="ic"><use href="#i-arrow"/></svg><span>service approved</span></div>
-<div class="arw reveal d2"><span>Result posted</span><svg class="ic"><use href="#i-arrow"/></svg><span>patient informed</span></div>
-<div class="arw reveal d3"><span>Claim filed</span><svg class="ic"><use href="#i-arrow"/></svg><span>payment resolved</span></div>
+<div class="arw reveal"><span class="af">Referral received</span><svg class="ic"><use href="#i-arrow"/></svg><span>patient scheduled</span></div>
+<div class="arw reveal d1"><span class="af">Authorization submitted</span><svg class="ic"><use href="#i-arrow"/></svg><span>service approved</span></div>
+<div class="arw reveal d2"><span class="af">Result posted</span><svg class="ic"><use href="#i-arrow"/></svg><span>patient informed</span></div>
+<div class="arw reveal d3"><span class="af">Claim filed</span><svg class="ic"><use href="#i-arrow"/></svg><span>payment resolved</span></div>
 </div>
 <div class="split reveal"><div><span class="label">EHR</span><b>Source of clinical truth.</b></div><div><span class="label">MOOSE</span><b>System of action.</b></div></div>
 </div></section>
@@ -248,6 +261,7 @@ footer{color:var(--text2)}
 
 <section class="block trust" id="trust" data-screen-label="Trust"><div class="wrap">
 <div class="hd"><div class="reveal"><h2 class="statement sm">Explainable, reviewable, reversible.</h2></div><p class="lede reveal d1">Every AI action shows its reason and evidence, makes uncertainty visible, waits for human review at the right risk level, and is recorded with who, what, when, source, and outcome. Access is role-based and minimum-necessary. MOOSE is built HIPAA-first and integrates in layers — read context, coordinate work, document handoffs, and write back only when governed and supported. EHR-agnostic, with Epic as an important path.</p></div>
+<div class="layers" role="img" aria-label="MOOSE integrates in four layers: read context, coordinate work, document handoffs, and write back only when governed and supported, behind a human review gate"><div class="ly l1"><span class="lb">01</span><span class="lt">read context</span><span class="lp">passive</span></div><div class="ly l2"><span class="lb">02</span><span class="lt">coordinate work</span><span class="lp">inside MOOSE</span></div><div class="ly l3"><span class="lb">03</span><span class="lt">document handoffs</span><span class="lp">recorded</span></div><div class="gatebar"><svg class="ic" aria-hidden="true"><use href="#i-usercheck"/></svg>human review gate</div><div class="ly l4"><span class="lb">04</span><span class="lt">write back</span><span class="lp">only when governed and supported</span></div></div>
 <div class="gates">
 <div class="gate reveal"><b><svg class="ic"><use href="#i-eye"/></svg>Read context</b><p>Layer one.</p></div>
 <div class="gate reveal d1"><b><svg class="ic"><use href="#i-users"/></svg>Coordinate work</b><p>Layer two.</p></div>

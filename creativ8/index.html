@@ -156,7 +156,18 @@ body{background:#0D0C0A}
 .story figcaption{color:#F6F2EA;background:linear-gradient(180deg,rgba(13,12,10,0),rgba(13,12,10,.92))}
 .anatomy{margin:56px 0 0;border-radius:16px;overflow:hidden;border:1px solid var(--line);position:relative}
 .anatomy img{width:100%;height:auto;display:block}
-.anatomy figcaption{position:absolute;left:16px;bottom:12px;font-family:var(--mono);font-size:11px;letter-spacing:.06em;text-transform:uppercase;color:var(--text2);background:rgba(13,12,10,.78);padding:6px 10px;border-radius:4px}</style></head>
+.anatomy figcaption{position:absolute;left:16px;bottom:12px;font-family:var(--mono);font-size:11px;letter-spacing:.06em;text-transform:uppercase;color:var(--text2);background:rgba(13,12,10,.78);padding:6px 10px;border-radius:4px}
+/* the one hard number set on the page, drawn */
+.arch{display:flex;align-items:stretch;gap:0;margin:0 0 40px;flex-wrap:wrap}
+.ac{flex:1;min-width:150px;padding:22px 20px;border:1px solid var(--line);border-radius:12px;background:#171512;text-align:center}
+.ac b{display:block;font-family:"Space Grotesk",sans-serif;font-weight:600;font-size:clamp(34px,4vw,52px);line-height:1;color:var(--accent)}
+.ac span{display:block;margin-top:8px;font-family:var(--mono);font-size:11.5px;letter-spacing:.06em;text-transform:uppercase;color:var(--text2)}
+.ac em{display:block;margin-top:8px;font-style:normal;font-size:12px;color:var(--text2)}
+.ac.one{border-color:var(--accent);box-shadow:0 0 40px -14px rgba(245,165,36,.65)}
+.aj{flex:0 0 40px;align-self:center;height:1px;background:linear-gradient(90deg,var(--line),var(--accent));position:relative}
+.aj::after{content:"";position:absolute;right:0;top:-3px;border-left:6px solid var(--accent);border-top:3.5px solid transparent;border-bottom:3.5px solid transparent}
+@media(max-width:700px){.arch{flex-direction:column}.aj{flex:0 0 22px;width:1px;height:22px;align-self:center;background:linear-gradient(180deg,var(--line),var(--accent))}
+.aj::after{right:auto;left:-3px;top:auto;bottom:0;border-left:3.5px solid transparent;border-right:3.5px solid transparent;border-top:6px solid var(--accent)}}</style></head>
 <body data-brand="c8"><template id="__bundler_thumbnail"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><rect width="100" height="100" fill="#0D0C0A"/><text x="50" y="50" text-anchor="middle" dominant-baseline="central" font-family="Space Grotesk,system-ui,sans-serif" font-weight="700" font-size="30" fill="#F5A524">C8</text></svg></template>
 <script src="/familybar.js"></script>
 <header class="site-nav"><span class="progress" aria-hidden="true"></span><div class="wrap">
@@ -292,7 +303,8 @@ body{background:#0D0C0A}
 
 <section class="block builtby" data-screen-label="Built by"><div class="bbbg" aria-hidden="true"><img src="/assets/creativ8/builtby-team.jpg" alt="" width="1983" height="793" loading="lazy" decoding="async"></div><div class="wrap"><div class="quote reveal"><span class="label" style="display:block;margin-bottom:20px;position:relative">Built by people who have shipped games</span><p>Creativ8 comes from decades of creative direction and production experience, applied to the problem every studio has and no tool has solved.</p><svg class="hx" viewBox="0 0 400 400" aria-hidden="true"><path d="M200 20L356 110L356 290L200 380L44 290L44 110Z"/></svg></div></div></section>
 
-<section class="block inv" id="investors" data-screen-label="Investors"><div class="wrap"><div class="box reveal">
+<section class="block inv" id="investors" data-screen-label="Investors"><div class="wrap"><div class="arch" role="img" aria-label="Eight modules and twenty-six tools resolve to one contract-tested object graph"><div class="ac"><b>8</b><span>modules</span></div><span class="aj" aria-hidden="true"></span><div class="ac"><b>26</b><span>tools</span></div><span class="aj" aria-hidden="true"></span><div class="ac one"><b>1</b><span>shared object graph</span><em>contract-tested end to end</em></div></div>
+<div class="box reveal">
 <div><span class="label" style="display:block;margin-bottom:16px">For investors</span><h2 style="margin-bottom:20px">Deep functional prototype. Early-access studio pilots next.</h2><a class="btn primary" href="mailto:troy@auxerion.com?subject=Creativ8%20investor%20overview">Creativ8 investor overview <svg class="ic"><use href="#i-arrow"/></svg></a></div>
 <p>Game development is a large, global, creative industry that still runs its most important operational work on general-purpose documents and spreadsheets. Creativ8 targets the studio's core loop — design to production — with an AI-native product that has no direct modern equivalent. The current build is a deep functional prototype: eight modules, twenty-six tools, one shared object graph, contract-tested end to end. The beachhead is mid-size and independent studios, where the pain is sharpest and adoption decisions are fast; the plan is early-access studio pilots, then broader testing, then public launch.</p>
 </div></div></section>
