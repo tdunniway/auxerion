@@ -37,10 +37,15 @@
 .person .li:hover{color:var(--text)}
 .person .li svg{width:16px;height:16px;flex:0 0 auto}
 @media(max-width:560px){.person{grid-template-columns:1fr;gap:18px;padding:24px}.person>img{width:104px;height:104px}}
-/* founder strip */
-.lead{display:grid;grid-template-columns:minmax(0,1fr) auto;gap:40px;align-items:center;margin-top:24px;padding:40px;border:1px solid var(--line);border-radius:16px;background:var(--bg2)}
-@media(max-width:760px){.lead{grid-template-columns:1fr;padding:28px;gap:24px}}
-.lead p{color:var(--text2)}
+/* a section holding a single person runs full width */
+.people.solo{grid-template-columns:1fr;margin-top:40px}
+/* the lead card carries a larger portrait so it reads first */
+.person.pfeat{grid-template-columns:200px minmax(0,1fr);gap:32px;padding:34px}
+.person.pfeat>img{width:200px;height:200px}
+.person.pfeat b{font-size:28px}
+.person.pfeat p{font-size:16.5px}
+@media(max-width:560px){.person.pfeat{grid-template-columns:1fr;padding:24px}.person.pfeat>img{width:132px;height:132px}}
+.person .btn{margin-top:18px}
 </style></head>
 <body data-brand="aux"><template id="__bundler_thumbnail"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><rect width="100" height="100" fill="#070B14"/><text x="50" y="50" text-anchor="middle" dominant-baseline="central" font-family="Space Grotesk,system-ui,sans-serif" font-weight="700" font-size="40" fill="#3B7BFF">A</text></svg></template>
 <script src="/familybar.js"></script>
@@ -56,7 +61,20 @@
 <div class="eyebrow reveal in"><span class="tag">Team</span><span class="live"><i></i>AI assists. People decide.</span></div>
 <h1 class="words"><span>Operators</span> <span>first.</span></h1>
 <p class="lede reveal in d3">Auxerion is built by people who have run the kind of work it makes software for. Engineering that holds up under load, creative direction for products used at scale, operations across very different industries, and the commercial work of getting them adopted.</p>
-</div></div><a class="cue" href="#people" aria-label="Scroll"><span></span></a></section>
+</div></div><a class="cue" href="#leadership" aria-label="Scroll"><span></span></a></section>
+
+<section class="block" id="leadership" data-screen-label="Leadership"><div class="wrap">
+<div class="people solo">
+<article class="person pfeat reveal">
+<img src="/assets/team/troy-dunniway.webp" alt="Troy Dunniway" width="600" height="600" fetchpriority="high" decoding="async">
+<div>
+<b>Troy Dunniway</b><span class="job">Founder &amp; Chief Executive Officer</span>
+<p>Troy founded Auxerion and leads product, architecture and technology across the three products and the shared platform beneath them. Three decades of building and running global studios and product teams sit behind the way the company works, including organizations grown to 250 people and teams coordinated across more than 25 countries. He started the company because the operational software he needed never existed.</p>
+<a class="btn primary" href="/founder">Full background <svg class="ic"><use href="#i-arrow"/></svg></a>
+</div>
+</article>
+</div>
+</div></section>
 
 <section class="block" id="people" data-screen-label="Executive team"><div class="wrap">
 <div class="hd"><div class="reveal"><div class="signal draw" style="margin-bottom:28px"></div><h2 class="statement sm">The executive team.</h2></div><p class="lede reveal d1">A small group, deliberately. Each has spent a career in environments where handoffs fail loudly, where the work continues long after launch, and where a tool that adds steps gets abandoned. That is the problem Auxerion exists to solve.</p></div>
@@ -101,12 +119,18 @@
 </div>
 </div></section>
 
-<section class="block" id="lead" data-screen-label="Founder"><div class="wrap">
-<div class="lead reveal">
-<div><span class="label" style="display:block;margin-bottom:14px">Founder &amp; CEO</span><h2 style="margin-bottom:14px">Troy Dunniway.</h2><p>Troy founded Auxerion and leads product, architecture and technology across the three products and the shared platform beneath them. Three decades of building and running global studios and product teams sit behind the way the company works.</p></div>
-<a class="btn primary" href="/founder">Full background <svg class="ic"><use href="#i-arrow"/></svg></a>
+<section class="block" id="moose" data-screen-label="MOOSE team"><div class="wrap">
+<div class="hd"><div class="reveal"><div class="signal draw" style="margin-bottom:28px"></div><h2 class="statement sm">The MOOSE team.</h2></div><p class="lede reveal d1">MOOSE is shaped by the way a urology practice actually runs. That grounding comes from the clinic floor rather than from a whiteboard.</p></div>
+<div class="people solo">
+<article class="person reveal">
+<img src="/assets/team/weiwei-xu.webp" alt="Dr. Weiwei Xu" width="600" height="600" loading="lazy" decoding="async">
+<div>
+<b>Dr. Weiwei Xu, MD</b><span class="job">Urologist</span>
+<p>Dr. Xu is a urologist in Castro Valley, California, affiliated with Eden Medical Center, St. Rose Hospital and San Leandro Surgery Center. She took her medical degree at the Lewis Katz School of Medicine at Temple University and has been in practice for more than twenty years, with expertise that includes kidney removal surgery. The daily operational reality of a working practice, the referrals, authorizations, results and follow-ups that have to close, is what MOOSE is designed around.</p>
 </div>
-<p class="disclose reveal d1" style="margin-top:24px;font-family:var(--mono);font-size:11px;letter-spacing:.06em;text-transform:uppercase;color:var(--text2)">Partners exist per product and are introduced in product-level conversations.</p>
+</article>
+</div>
+<p class="disclose reveal d1" style="margin-top:24px;font-family:var(--mono);font-size:11px;letter-spacing:.06em;text-transform:uppercase;color:var(--text2)">Further partners are introduced in product-level conversations.</p>
 </div></section>
 
 <section class="block contact" id="contact" data-screen-label="Contact"><div class="halo" aria-hidden="true"><i></i><i></i><i></i></div><div class="wrap">
