@@ -1,0 +1,778 @@
+<!DOCTYPE html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>WorkOS: the operational core beneath every Auxerion product.</title>
+<meta name="description" content="WorkOS is Auxerion's shared operational core. It models work as outcomes with owners, dependencies, proof and completion rules, so one engine can run game development, medical practice operations and hotel operations without forking.">
+<link rel="canonical" href="https://auxerion.com/workos">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Auxerion">
+<meta property="og:url" content="https://auxerion.com/workos">
+<meta property="og:title" content="WorkOS: the operational core beneath every Auxerion product.">
+<meta property="og:description" content="One engine. Three industries. WorkOS models work as outcomes with owners, dependencies, proof and completion rules, so a person can finish their step while the system decides whether the work is done.">
+<meta property="og:image" content="https://auxerion.com/assets/og/workos.jpg?v=2026-09">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="WorkOS: the operational core beneath every Auxerion product.">
+<meta name="twitter:description" content="One engine. Three industries. Work understood as outcomes, not tasks.">
+<meta name="twitter:image" content="https://auxerion.com/assets/og/workos.jpg?v=2026-09">
+
+<link rel="icon" href="/assets/logos/workos-mark-2026.svg">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap">
+<link rel="stylesheet" href="/family.css"><link rel="stylesheet" href="/cinema.css"><link rel="stylesheet" href="/tour.css">
+<style>
+/* ---- WorkOS page: the blueprint skin. Structural, mono-forward, no photography. ---- */
+body{font-size:18px}
+.site-nav.solid{background:color-mix(in srgb,var(--bg) 88%,transparent)}
+.brand .by{color:var(--text2)}
+
+/* blueprint field */
+.grid-field{position:absolute;inset:0;z-index:-3;pointer-events:none;
+  background-image:linear-gradient(var(--line) 1px,transparent 1px),linear-gradient(90deg,var(--line) 1px,transparent 1px);
+  background-size:72px 72px;opacity:.5;
+  mask-image:radial-gradient(ellipse 80% 70% at 50% 40%,#000 20%,transparent 78%)}
+.glowfield{position:absolute;inset:0;z-index:-2;pointer-events:none;
+  background:radial-gradient(ellipse 60% 50% at 18% 30%,color-mix(in srgb,var(--accent) 20%,transparent),transparent 70%),
+             radial-gradient(ellipse 50% 45% at 82% 68%,color-mix(in srgb,var(--accent2) 14%,transparent),transparent 70%)}
+
+/* hero */
+.hero{min-height:calc(100vh - var(--fambar-h))}
+.hero h1{font-size:clamp(46px,7.6vw,112px);letter-spacing:-.04em}
+.hero h1 em{font-style:normal;background:var(--grad);-webkit-background-clip:text;background-clip:text;color:transparent}
+.hero .lede{max-width:33em}
+.hero .strip{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:14px;margin-top:64px;padding:22px 0 30px;border-top:1px solid var(--line)}
+.hero .strip div{display:flex;flex-direction:column;gap:7px;font-family:"Space Grotesk",sans-serif;font-weight:600;font-size:clamp(17px,1.4vw,21px);letter-spacing:-.01em}
+.hero .strip small{font-family:var(--mono);font-size:11px;font-weight:400;letter-spacing:.09em;text-transform:uppercase;color:var(--text2);display:flex;align-items:center;gap:8px}
+.hero .strip i{width:7px;height:7px;border-radius:50%;flex:none}
+@media(max-width:760px){.hero .strip{grid-template-columns:1fr;gap:20px}}
+
+/* hero lattice graphic */
+.lat{position:absolute;right:3vw;top:48%;transform:translateY(-50%);width:min(56vmin,560px);aspect-ratio:1;z-index:-1;pointer-events:none;opacity:.9}
+.lat svg{width:100%;height:100%;overflow:visible}
+.lat .e{stroke:color-mix(in srgb,var(--accent) 45%,transparent);stroke-width:1.25;fill:none}
+.lat .n{fill:var(--bg2);stroke:var(--text2);stroke-width:1.5}
+.lat .n.live{stroke:var(--accent2);fill:color-mix(in srgb,var(--accent2) 18%,var(--bg2))}
+.lat .hub{fill:color-mix(in srgb,var(--accent) 22%,var(--bg2));stroke:var(--accent);stroke-width:2}
+.lat .pulse{stroke:var(--accent2);stroke-width:2;fill:none;stroke-dasharray:6 210;animation:flow 5.5s linear infinite}
+.lat .pulse:nth-of-type(2){animation-delay:1.4s}.lat .pulse:nth-of-type(3){animation-delay:2.8s}
+@keyframes flow{to{stroke-dashoffset:-216}}
+.lat text{font-family:var(--mono);font-size:10px;fill:var(--text2);letter-spacing:.08em;text-transform:uppercase}
+@media(max-width:1100px){.lat{opacity:.28;right:-12vw}}
+
+/* thesis / rule */
+.rule{position:relative;overflow:hidden}
+.rule .q{font-family:"Space Grotesk",sans-serif;font-weight:600;font-size:clamp(30px,4.4vw,64px);line-height:1.06;letter-spacing:-.035em;max-width:17em}
+.rule .q b{font-weight:600;background:var(--grad);-webkit-background-clip:text;background-clip:text;color:transparent}
+.rule .egs{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:0;margin-top:72px;border-top:1px solid var(--line)}
+.rule .eg{padding:30px 28px 30px 0;border-right:1px solid var(--line)}
+.rule .eg:last-child{border-right:0}
+.rule .eg:not(:first-child){padding-left:28px}
+.rule .eg .who{font-family:var(--mono);font-size:11px;letter-spacing:.09em;text-transform:uppercase;color:var(--accent);margin-bottom:12px;display:block}
+.rule .eg p{font-size:16.5px;color:var(--text2)}
+.rule .eg p b{color:var(--text);font-weight:600}
+@media(max-width:860px){.rule .egs{grid-template-columns:1fr}.rule .eg{border-right:0;border-bottom:1px solid var(--line);padding:26px 0}.rule .eg:not(:first-child){padding-left:0}.rule .eg:last-child{border-bottom:0}}
+
+/* contrast columns */
+.vs{display:grid;grid-template-columns:minmax(0,.82fr) minmax(0,1.18fr);gap:0;margin-top:56px;border:1px solid var(--line);border-radius:var(--rc);overflow:hidden}
+.vs>div{padding:34px 30px;background:var(--bg2)}
+.vs>div:first-child{border-right:1px solid var(--line);background:transparent}
+.vs h3{font-size:18px;margin-bottom:20px}
+.vs .label{display:block;margin-bottom:14px}
+.vs ul{list-style:none;margin:0;padding:0;display:flex;flex-direction:column;gap:11px}
+.vs li{font-family:var(--mono);font-size:13.5px;color:var(--text2);display:flex;align-items:center;gap:11px}
+.vs li::before{content:"";width:5px;height:5px;border-radius:50%;background:var(--text2);flex:none;opacity:.5}
+.vs>div:last-child li{color:var(--text)}
+.vs>div:last-child li::before{background:var(--accent2);opacity:1;box-shadow:0 0 10px var(--accent2)}
+@media(max-width:760px){.vs{grid-template-columns:1fr}.vs>div:first-child{border-right:0;border-bottom:1px solid var(--line)}}
+
+/* object model */
+.model{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:1px;margin-top:56px;background:var(--line);border:1px solid var(--line);border-radius:var(--rc);overflow:hidden}
+.model span{background:var(--bg);padding:20px 18px;font-family:var(--mono);font-size:12.5px;color:var(--text2);letter-spacing:.02em;transition:background .2s,color .2s}
+.model span:hover{background:var(--bg2);color:var(--text)}
+.model span b{display:block;font-family:"Space Grotesk",sans-serif;font-weight:600;font-size:15px;color:var(--text);letter-spacing:0;margin-bottom:5px}
+@media(max-width:960px){.model{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media(max-width:520px){.model{grid-template-columns:1fr}}
+
+/* schematic surface screens: diagrams built in markup, never photographs */
+.tour-frame{background:var(--bg2);border-color:#120C22}
+.ui{position:absolute;inset:0;display:grid;grid-template-columns:132px 1fr;font-size:11px;background:var(--bg2);overflow:hidden}
+.ui .rail{border-right:1px solid var(--line);padding:14px 12px;display:flex;flex-direction:column;gap:5px;background:color-mix(in srgb,var(--bg) 60%,var(--bg2))}
+.ui .rail .lg{display:flex;align-items:center;gap:7px;font-family:"Space Grotesk",sans-serif;font-weight:600;font-size:12px;margin-bottom:12px;letter-spacing:.02em}
+.ui .rail .lg i{width:14px;height:14px;border-radius:3px;background:var(--grad);flex:none}
+.ui .rail a{padding:6px 9px;border-radius:5px;color:var(--text2);font-size:11px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.ui .rail a.on{background:color-mix(in srgb,var(--accent) 18%,transparent);color:var(--text);box-shadow:inset 2px 0 0 var(--accent)}
+.ui .body{display:flex;flex-direction:column;min-width:0;overflow:hidden}
+.ui .top{display:flex;align-items:center;gap:10px;padding:11px 16px;border-bottom:1px solid var(--line);flex:none}
+.ui .top b{font-family:"Space Grotesk",sans-serif;font-size:13px;font-weight:600}
+.ui .top .pill{margin-left:auto;font-family:var(--mono);font-size:9.5px;letter-spacing:.07em;text-transform:uppercase;border:1px solid var(--line);border-radius:3px;padding:3px 7px;color:var(--text2)}
+.ui .pane{padding:14px 16px;display:flex;flex-direction:column;gap:9px;min-height:0;overflow:hidden}
+.ui .cols{display:grid;grid-template-columns:1fr 172px;gap:0;flex:1;min-height:0}
+.ui .cols>.pane:last-child{border-left:1px solid var(--line);background:color-mix(in srgb,var(--bg) 45%,var(--bg2))}
+.ui .k{font-family:var(--mono);font-size:9px;letter-spacing:.11em;text-transform:uppercase;color:var(--text2)}
+.ui .row{border:1px solid var(--line);border-radius:6px;padding:9px 11px;background:var(--bg);display:flex;flex-direction:column;gap:5px}
+.ui .row.hot{border-color:color-mix(in srgb,var(--accent) 55%,transparent);box-shadow:0 0 0 1px color-mix(in srgb,var(--accent) 22%,transparent),0 6px 20px -10px var(--accent)}
+.ui .row .t{font-weight:600;font-size:11.5px;color:var(--text);line-height:1.3}
+.ui .row .m{display:flex;gap:7px;align-items:center;flex-wrap:wrap;font-family:var(--mono);font-size:9px;color:var(--text2);letter-spacing:.04em}
+.ui .chip{border:1px solid var(--line);border-radius:3px;padding:2px 6px;font-family:var(--mono);font-size:8.5px;letter-spacing:.06em;text-transform:uppercase;color:var(--text2);white-space:nowrap}
+.ui .chip.ok{border-color:#2A7D63;color:#4ADEA0}
+.ui .chip.warn{border-color:#8A6A24;color:#E8B44A}
+.ui .chip.stop{border-color:#8A3A3A;color:#F08585}
+.ui .chip.ai{border-color:var(--accent2);color:var(--accent2)}
+.ui .bar{height:4px;border-radius:2px;background:var(--line);overflow:hidden}
+.ui .bar i{display:block;height:100%;background:var(--grad)}
+.ui .counts{display:grid;grid-template-columns:repeat(4,1fr);gap:8px}
+.ui .ct{border:1px solid var(--line);border-radius:6px;padding:9px 10px;background:var(--bg)}
+.ui .ct b{display:block;font-family:"Space Grotesk",sans-serif;font-size:19px;font-weight:600;line-height:1;margin-bottom:5px}
+.ui .ct.a b{color:#F08585}.ui .ct.b b{color:#E8B44A}.ui .ct.c b{color:var(--accent2)}
+.ui .stages{display:grid;grid-template-columns:repeat(4,1fr);gap:8px;flex:1;min-height:0}
+.ui .stg{border:1px solid var(--line);border-radius:6px;background:var(--bg);padding:8px;display:flex;flex-direction:column;gap:6px;min-height:0;overflow:hidden}
+.ui .stg .h{font-family:var(--mono);font-size:8.5px;letter-spacing:.08em;text-transform:uppercase;color:var(--accent);padding-bottom:6px;border-bottom:1px solid var(--line)}
+.ui .stp{border:1px solid var(--line);border-radius:4px;padding:6px 7px;font-size:10px;color:var(--text2);background:var(--bg2);line-height:1.3}
+.ui .stp.sel{border-color:var(--accent);color:var(--text)}
+.ui .dep{display:flex;align-items:center;gap:6px;font-family:var(--mono);font-size:8.5px;color:var(--text2)}
+.ui .dep::before{content:"";width:16px;height:1px;background:var(--accent);flex:none}
+.ui .why{border-left:2px solid var(--accent2);padding-left:10px;font-size:10.5px;color:var(--text2);line-height:1.45}
+.ui .acts{display:flex;gap:6px;margin-top:2px}
+.ui .acts span{border-radius:4px;padding:4px 9px;font-size:9.5px;font-weight:600;font-family:var(--body)}
+.ui .acts .p{background:var(--accent);color:var(--on-accent)}
+.ui .acts .s{border:1px solid var(--line);color:var(--text2)}
+@media(max-width:1180px){.ui{grid-template-columns:104px 1fr}.ui .cols{grid-template-columns:1fr 142px}}
+@media(max-width:860px){
+.ui{font-size:10px;grid-template-columns:1fr}
+.ui .rail{display:none}
+.ui .counts,.ui .stages{grid-template-columns:repeat(2,minmax(0,1fr))}
+.ui .stages{gap:6px}
+.ui .cols{grid-template-columns:1fr}
+.ui .cols>.pane:last-child{border-left:0;border-top:1px solid var(--line)}
+.ui .pane{padding:11px 12px;gap:7px}
+/* the schematics carry real structure, so give them a taller frame than a 16:10 photo needs */
+.tour-step figure{aspect-ratio:3/4}
+}
+@media(max-width:420px){.hero .eyebrow .live{display:none}}
+
+/* three vocabularies */
+.vocab{display:grid;grid-template-columns:150px repeat(3,minmax(0,1fr));gap:1px;margin-top:56px;background:var(--line);border:1px solid var(--line);border-radius:var(--rc);overflow:hidden;font-family:var(--mono);font-size:12.5px}
+.vocab>*{background:var(--bg);padding:15px 16px;color:var(--text2)}
+.vocab .hd{background:var(--bg2);display:flex;flex-direction:column;gap:5px}
+.vocab .hd b{font-family:"Space Grotesk",sans-serif;font-size:17px;font-weight:600;letter-spacing:-.01em;color:var(--text);display:flex;align-items:center;gap:9px}
+.vocab .hd b i{width:9px;height:9px;border-radius:50%;flex:none}
+.vocab .hd small{font-size:10px;letter-spacing:.08em;text-transform:uppercase}
+.vocab .fld{background:var(--bg2);color:var(--text2);font-size:10.5px;letter-spacing:.09em;text-transform:uppercase;display:flex;align-items:center}
+.vocab .core{color:var(--text);background:color-mix(in srgb,var(--accent) 9%,var(--bg))}
+@media(max-width:900px){
+.vocab{grid-template-columns:1fr;font-size:13px}
+.vocab>*{padding-left:22px}
+.vocab .fld{background:color-mix(in srgb,var(--accent) 10%,var(--bg));color:var(--text);border-top:1px solid var(--line);padding-left:16px}
+/* stacked, the columns lose their headers, so a colour spine keeps each value attached to its product */
+.vocab>*:nth-child(4n+2){box-shadow:inset 3px 0 0 var(--c8)}
+.vocab>*:nth-child(4n+3){box-shadow:inset 3px 0 0 var(--mo)}
+.vocab>*:nth-child(4n){box-shadow:inset 3px 0 0 var(--ha-on-dark)}
+}
+
+/* seams */
+.seams{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:28px 32px;margin-top:52px;border-top:1px solid var(--line);padding-top:38px}
+.seam .n{font-family:var(--mono);font-size:12px;color:var(--accent2);display:block;margin-bottom:10px}
+.seam h3{font-size:17px;margin-bottom:8px;font-family:var(--mono);font-weight:500;letter-spacing:0}
+.seam p{font-size:15.5px;color:var(--text2)}
+@media(max-width:860px){.seams{grid-template-columns:1fr 1fr}}
+@media(max-width:560px){.seams{grid-template-columns:1fr}}
+
+/* status ledger */
+.ledger{border:1px solid var(--line);border-radius:var(--rc);background:var(--bg2);overflow:hidden;margin-top:48px}
+.ledger .r{display:grid;grid-template-columns:minmax(0,1.1fr) minmax(0,2fr) 128px;gap:20px;padding:17px 26px;border-bottom:1px solid var(--line);align-items:center}
+.ledger .r:last-child{border-bottom:0}
+.ledger .r b{font-family:"Space Grotesk",sans-serif;font-size:15.5px;font-weight:600}
+.ledger .r p{font-size:14.5px;color:var(--text2)}
+.ledger .st{font-family:var(--mono);font-size:10.5px;letter-spacing:.08em;text-transform:uppercase;text-align:right;white-space:nowrap}
+.ledger .st.on{color:#4ADEA0}.ledger .st.part{color:#E8B44A}.ledger .st.next{color:var(--text2)}
+@media(max-width:760px){.ledger .r{grid-template-columns:1fr;gap:7px;padding:18px 20px}.ledger .st{text-align:left}}
+
+/* compounding */
+.comp{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:0;margin-top:60px;border:1px solid var(--line);border-radius:var(--rc);overflow:hidden}
+.comp>div{padding:34px 28px;border-right:1px solid var(--line);background:var(--bg2);position:relative}
+.comp>div:last-child{border-right:0}
+.comp .idx{font-family:var(--mono);font-size:11px;color:var(--accent);letter-spacing:.1em;display:block;margin-bottom:16px}
+.comp h3{font-size:19px;margin-bottom:10px}
+.comp p{font-size:15.5px;color:var(--text2)}
+.comp .meter{height:3px;background:var(--line);margin-top:22px;border-radius:2px;overflow:hidden}
+.comp .meter i{display:block;height:100%;background:var(--grad)}
+@media(max-width:860px){.comp{grid-template-columns:1fr}.comp>div{border-right:0;border-bottom:1px solid var(--line)}.comp>div:last-child{border-bottom:0}}
+
+/* note box */
+.note{border:1px solid var(--line);border-left:3px solid var(--accent2);border-radius:0 var(--rc) var(--rc) 0;background:var(--bg2);padding:26px 30px;margin-top:48px}
+.note .label{display:block;margin-bottom:12px}
+.note p{font-size:16.5px;color:var(--text2);max-width:52em}
+.note p b{color:var(--text);font-weight:600}
+
+
+/* ============ photography ============ */
+.hero .bg{position:absolute;inset:-6% 0;z-index:-5}
+.hero .bg img{width:100%;height:100%;object-fit:cover;object-position:64% 50%;filter:hue-rotate(24deg) saturate(1.08) contrast(1.02)}
+.hero .veil{position:absolute;inset:0;z-index:-4;
+  background:linear-gradient(90deg,var(--bg) 6%,color-mix(in srgb,var(--bg) 96%,transparent) 42%,color-mix(in srgb,var(--bg) 62%,transparent) 60%,color-mix(in srgb,var(--bg) 14%,transparent) 82%,transparent 100%)}
+.hero .veil::after{content:"";position:absolute;inset:0;
+  background:linear-gradient(180deg,var(--bg) 0%,color-mix(in srgb,var(--bg) 20%,transparent) 18%,transparent 46%,color-mix(in srgb,var(--bg) 85%,transparent) 88%,var(--bg) 100%)}
+@media(max-width:860px){.hero .bg img{object-position:72% 50%}.hero .veil{background:linear-gradient(90deg,var(--bg) 20%,color-mix(in srgb,var(--bg) 70%,transparent) 100%)}}
+
+.figwide{margin:72px 0 0;position:relative}
+.figwide .shot{position:relative;border-radius:var(--rc);overflow:hidden;border:1px solid var(--line);background:var(--bg2)}
+.figwide .shot img{width:100%;height:auto;display:block}
+.figwide .shot::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,transparent 55%,color-mix(in srgb,var(--bg) 78%,transparent) 100%);pointer-events:none}
+.figwide figcaption{display:flex;gap:18px;flex-wrap:wrap;justify-content:space-between;margin-top:16px;
+  font-family:var(--mono);font-size:11px;letter-spacing:.07em;text-transform:uppercase;color:var(--text2)}
+.figwide figcaption b{font-weight:400;color:var(--text);display:inline-flex;align-items:center;gap:9px}
+.figwide figcaption b::before{content:"";width:7px;height:7px;border-radius:50%;background:var(--accent2);box-shadow:0 0 10px var(--accent2);flex:none}
+.figwide .split2{position:absolute;inset:0;display:grid;grid-template-columns:1fr 1fr;pointer-events:none}
+.figwide .split2 span{align-self:end;margin:0 0 26px;padding:0 28px;font-family:"Space Grotesk",sans-serif;font-weight:600;
+  font-size:clamp(15px,1.5vw,21px);letter-spacing:-.01em;color:#fff;text-shadow:0 2px 18px rgba(0,0,0,.92)}
+.figwide .split2 span:last-child{text-align:right}
+.figwide .split2 span i{display:block;font-style:normal;font-family:var(--mono);font-size:10px;font-weight:400;
+  letter-spacing:.1em;text-transform:uppercase;opacity:.82;margin-bottom:7px}
+@media(max-width:620px){.figwide .split2{display:none}}
+
+/* ============ infographic shell ============ */
+.gfx{margin-top:60px;border:1px solid var(--line);border-radius:var(--rc);padding:38px 34px 34px;position:relative;overflow:hidden;
+  background:linear-gradient(180deg,color-mix(in srgb,var(--accent) 5%,var(--bg2)),var(--bg2))}
+.gfx>.cap{display:flex;align-items:center;gap:11px;font-family:var(--mono);font-size:10.5px;letter-spacing:.11em;
+  text-transform:uppercase;color:var(--text2);margin-bottom:30px}
+.gfx>.cap::before{content:"";width:26px;height:1px;background:var(--accent);flex:none}
+.gfx .foot{margin-top:28px;padding-top:20px;border-top:1px solid var(--line);font-size:15px;color:var(--text2);max-width:58em}
+.gfx .foot b{color:var(--text);font-weight:600}
+@media(max-width:620px){.gfx{padding:28px 20px 24px}}
+
+/* --- A: step completion vs workflow completion --- */
+.chain{display:flex;align-items:flex-start;gap:0;position:relative}
+.chain .st{flex:1;display:flex;flex-direction:column;align-items:center;gap:9px;position:relative;min-width:0;text-align:center}
+.chain .st::before{content:"";position:absolute;top:17px;left:-50%;width:100%;height:1.5px;background:var(--line);z-index:0}
+.chain .st:first-child::before{display:none}
+.chain .st.done::before,.chain .st.here::before{background:var(--accent)}
+.chain .dot{flex:none;width:34px;height:34px;border-radius:50%;border:1.5px solid var(--line);background:var(--bg);
+  display:grid;place-items:center;position:relative;z-index:1;font-family:var(--mono);font-size:11px;color:var(--text2)}
+.chain .st.done .dot{border-color:var(--accent);background:color-mix(in srgb,var(--accent) 32%,var(--bg));color:#fff}
+.chain .st.here .dot{width:44px;height:44px;border-color:var(--accent2);border-width:2px;
+  background:color-mix(in srgb,var(--accent2) 26%,var(--bg));color:#fff;
+  box-shadow:0 0 0 6px color-mix(in srgb,var(--accent2) 14%,transparent),0 0 34px -6px var(--accent2);margin-top:-5px}
+.chain .st.here::before{top:22px}
+.chain svg.tick{width:15px;height:15px;fill:none;stroke:currentColor;stroke-width:2.6;stroke-linecap:round;stroke-linejoin:round}
+.chain .lb{font-family:var(--mono);font-size:10px;letter-spacing:.05em;color:var(--text2);line-height:1.35;padding:0 4px}
+.chain .st.here .lb{color:var(--text)}
+.chain .st.open .dot{border-style:dashed}
+.chain{padding-top:52px}
+.chain .st .tag{position:absolute;bottom:calc(100% + 12px);left:50%;transform:translateX(-50%);white-space:nowrap;
+  display:inline-flex;align-items:center;gap:8px;border:1px solid var(--accent2);border-radius:5px;padding:6px 12px;
+  font-family:var(--mono);font-size:10.5px;letter-spacing:.06em;text-transform:uppercase;color:var(--accent2);
+  background:color-mix(in srgb,var(--accent2) 12%,var(--bg));z-index:2}
+.chain .st .tag::after{content:"";position:absolute;top:100%;left:50%;transform:translateX(-50%);
+  border:5px solid transparent;border-top-color:var(--accent2)}
+.chain .st .tag svg{width:13px;height:13px;fill:none;stroke:currentColor;stroke-width:2.6;stroke-linecap:round;stroke-linejoin:round}
+@media(max-width:860px){.chain{padding-top:0}
+.chain .st{flex-wrap:wrap}
+.chain .st .tag{position:static;transform:none;order:3;width:100%;margin:9px 0 2px 48px;white-space:normal;line-height:1.4}
+.chain .st .tag::after{display:none}}
+.callout{margin:0 0 14px;display:flex;justify-content:center}
+.callout span{display:inline-flex;align-items:center;gap:9px;border:1px solid var(--accent2);border-radius:5px;
+  padding:6px 13px;font-family:var(--mono);font-size:10.5px;letter-spacing:.06em;text-transform:uppercase;
+  color:var(--accent2);background:color-mix(in srgb,var(--accent2) 10%,transparent)}
+.gauge{margin-top:38px}
+.gauge .hdr{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap;font-family:var(--mono);font-size:11px;
+  letter-spacing:.07em;text-transform:uppercase;color:var(--text2);margin-bottom:11px}
+.gauge .hdr em{font-style:normal;color:#F0A0A0}
+.gauge .track{height:12px;border-radius:6px;background:var(--line);overflow:hidden;position:relative}
+.gauge .track i{display:block;height:100%;width:38%;background:var(--grad);border-radius:6px}
+.blockers{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:12px;margin-top:20px}
+.blockers span{border:1px solid var(--line);border-left:2px solid #C4635E;border-radius:0 5px 5px 0;padding:11px 13px;
+  font-family:var(--mono);font-size:10.5px;color:var(--text2);line-height:1.45;background:var(--bg)}
+.blockers span b{display:block;color:var(--text);font-weight:500;margin-bottom:4px;letter-spacing:.05em;text-transform:uppercase;font-size:9.5px}
+@media(max-width:860px){
+.chain{flex-direction:column;align-items:stretch;gap:0}
+.chain .st{flex-direction:row;align-items:center;gap:14px;text-align:left;padding:7px 0}
+.chain .st::before{top:-50%;left:16px;width:1.5px;height:100%}
+.chain .st.here::before{left:21px}
+.chain .st.here .dot{margin-top:0}
+.chain .lb{padding:0;font-size:12px}
+.callout{justify-content:flex-start;margin-left:6px}
+.blockers{grid-template-columns:1fr 1fr}
+}
+@media(max-width:520px){.blockers{grid-template-columns:1fr}}
+
+/* --- B: the graph the engine actually holds --- */
+.wg{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:14px;position:relative}
+.wg .stg{border:1px solid var(--line);border-radius:8px;background:var(--bg);padding:14px;display:flex;flex-direction:column;gap:10px}
+.wg .stg>.h{font-family:var(--mono);font-size:10px;letter-spacing:.1em;text-transform:uppercase;color:var(--accent);
+  padding-bottom:10px;border-bottom:1px solid var(--line);display:flex;justify-content:space-between;gap:8px}
+.wg .stg>.h em{font-style:normal;color:var(--text2)}
+.wg .nd{border:1px solid var(--line);border-radius:6px;padding:10px 11px;background:var(--bg2);display:flex;flex-direction:column;gap:8px}
+.wg .nd.on{border-color:var(--accent2);box-shadow:0 0 0 1px color-mix(in srgb,var(--accent2) 26%,transparent)}
+.wg .nd .t{font-size:12.5px;font-weight:600;color:var(--text);line-height:1.3}
+.wg .pips{display:flex;gap:6px;flex-wrap:wrap}
+.wg .pip{display:inline-flex;align-items:center;gap:5px;font-family:var(--mono);font-size:9px;letter-spacing:.05em;
+  text-transform:uppercase;color:var(--text2);border:1px solid var(--line);border-radius:3px;padding:2px 6px}
+.wg .pip i{width:6px;height:6px;flex:none}
+.wg .pip.own i{border-radius:50%;background:var(--accent)}
+.wg .pip.dep i{background:none;border-top:1px solid #7FB3E8;border-bottom:1px solid #7FB3E8;height:5px}
+.wg .pip.prf i{border-radius:1px;background:#4ADEA0}
+.wg .pip.hnd i{border-radius:1px;background:var(--accent2);transform:rotate(45deg)}
+.wg .hand{grid-column:1/-1;display:flex;align-items:center;gap:14px;margin:4px 0 0;
+  font-family:var(--mono);font-size:10px;letter-spacing:.09em;text-transform:uppercase;color:var(--accent2)}
+.wg .hand::before,.wg .hand::after{content:"";height:1px;background:linear-gradient(90deg,transparent,var(--accent2),transparent);flex:1}
+.gate{margin-top:16px;display:grid;grid-template-columns:minmax(0,1fr) auto;gap:20px;align-items:center;
+  border:1px solid var(--line);border-radius:8px;background:var(--bg);padding:16px 20px}
+.gate .rules{display:flex;gap:9px;flex-wrap:wrap}
+.gate .rules span{font-family:var(--mono);font-size:10px;letter-spacing:.05em;text-transform:uppercase;
+  border:1px solid var(--line);border-radius:3px;padding:4px 8px;color:var(--text2)}
+.gate .rules span.met{border-color:#2A7D63;color:#4ADEA0}
+.gate .rules span.unmet{border-color:#8A3A3A;color:#F08585}
+.gate .verdict{font-family:"Space Grotesk",sans-serif;font-weight:600;font-size:15px;color:#F08585;white-space:nowrap;
+  display:flex;align-items:center;gap:10px}
+.gate .verdict i{width:9px;height:9px;border-radius:50%;background:#F08585;box-shadow:0 0 12px #F08585;flex:none}
+.wglegend{display:flex;gap:18px;flex-wrap:wrap;margin-top:18px;font-family:var(--mono);font-size:10px;
+  letter-spacing:.05em;text-transform:uppercase;color:var(--text2)}
+.wglegend span{display:inline-flex;align-items:center;gap:7px}
+.wglegend i{width:7px;height:7px;flex:none}
+.wglegend i.own{border-radius:50%;background:var(--accent)}
+.wglegend i.dep{border-top:1px solid #7FB3E8;border-bottom:1px solid #7FB3E8;height:5px;width:10px}
+.wglegend i.prf{border-radius:1px;background:#4ADEA0}
+.wglegend i.hnd{border-radius:1px;background:var(--accent2);transform:rotate(45deg)}
+@media(max-width:760px){.wg{grid-template-columns:1fr}.gate{grid-template-columns:1fr;gap:14px}}
+
+/* --- C: the layer stack --- */
+.stack3{display:flex;flex-direction:column;gap:0}
+.stack3 .plates{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:12px}
+.stack3 .pl{border:1px solid var(--line);border-top:3px solid var(--pc,var(--accent));border-radius:7px;
+  background:var(--bg);padding:15px 15px 16px;display:flex;flex-direction:column;gap:9px}
+.stack3 .pl.future{border-style:dashed;opacity:.62}
+.stack3 .pl b{font-family:"Space Grotesk",sans-serif;font-size:16px;font-weight:600;letter-spacing:-.01em;color:var(--text)}
+.stack3 .pl small{font-family:var(--mono);font-size:9.5px;letter-spacing:.09em;text-transform:uppercase;color:var(--text2)}
+.stack3 .pl .vocab2{display:flex;flex-wrap:wrap;gap:5px;margin-top:2px}
+.stack3 .pl .vocab2 span{font-family:var(--mono);font-size:9.5px;letter-spacing:.03em;border:1px solid var(--line);
+  border-radius:3px;padding:2px 6px;color:var(--text2)}
+.stack3 .conn{display:grid;grid-template-columns:repeat(7,minmax(0,1fr));gap:8px;padding:26px 0;position:relative}
+.stack3 .conn::before{content:"";position:absolute;left:0;right:0;top:0;height:26px;
+  background:repeating-linear-gradient(90deg,transparent 0 3px,color-mix(in srgb,var(--accent) 45%,transparent) 3px 4px);
+  -webkit-mask-image:linear-gradient(180deg,#000,transparent);mask-image:linear-gradient(180deg,#000,transparent)}
+.stack3 .conn::after{content:"";position:absolute;left:0;right:0;bottom:0;height:26px;
+  background:repeating-linear-gradient(90deg,transparent 0 3px,color-mix(in srgb,var(--accent) 45%,transparent) 3px 4px);
+  -webkit-mask-image:linear-gradient(0deg,#000,transparent);mask-image:linear-gradient(0deg,#000,transparent)}
+.stack3 .seam2{border:1px solid color-mix(in srgb,var(--accent) 40%,var(--line));border-radius:5px;padding:9px 7px;
+  text-align:center;background:color-mix(in srgb,var(--accent) 9%,var(--bg));font-family:var(--mono);font-size:9.5px;
+  letter-spacing:.02em;color:var(--text);line-height:1.3}
+.stack3 .core2{border:1px solid var(--accent);border-radius:8px;padding:22px 22px 20px;
+  background:linear-gradient(180deg,color-mix(in srgb,var(--accent) 16%,var(--bg2)),var(--bg2));
+  box-shadow:0 0 44px -18px var(--accent)}
+.stack3 .core2 .t{display:flex;align-items:baseline;gap:14px;flex-wrap:wrap;margin-bottom:14px}
+.stack3 .core2 .t b{font-family:"Space Grotesk",sans-serif;font-size:21px;font-weight:600;letter-spacing:-.015em}
+.stack3 .core2 .t small{font-family:var(--mono);font-size:10px;letter-spacing:.09em;text-transform:uppercase;color:var(--text2)}
+.stack3 .core2 .objs{display:flex;flex-wrap:wrap;gap:6px}
+.stack3 .core2 .objs span{font-family:var(--mono);font-size:10.5px;border:1px solid color-mix(in srgb,var(--accent) 40%,var(--line));
+  border-radius:3px;padding:3px 8px;color:var(--text2)}
+.stack3 .core2 .neg{margin-top:15px;font-family:var(--mono);font-size:10.5px;letter-spacing:.05em;color:var(--text2);
+  display:flex;align-items:center;gap:9px}
+.stack3 .core2 .neg::before{content:"";width:16px;height:1px;background:#C4635E;flex:none}
+@media(max-width:900px){.stack3 .conn{grid-template-columns:repeat(4,minmax(0,1fr));gap:7px}}
+@media(max-width:760px){.stack3 .plates{grid-template-columns:1fr 1fr}.stack3 .conn{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media(max-width:460px){.stack3 .plates{grid-template-columns:1fr}}
+
+.contact{background:var(--bg2)}
+</style>
+</head>
+<body data-brand="wo">
+<script src="/familybar.js"></script>
+
+<header class="site-nav"><span class="progress" aria-hidden="true"></span><div class="wrap">
+<a class="brand product" href="/workos" aria-label="WorkOS by Auxerion"><img src="/assets/logos/workos-mark-2026.svg" alt="" width="34" height="34" decoding="async"><span>WorkOS<span class="by">The Auxerion core</span></span></a>
+<nav class="links" id="links" aria-label="Primary"><a href="#why">Why it exists</a><a href="#engine">WorkGraph</a><a href="#surfaces">Surfaces</a><a href="#reuse">One core, three products</a><a href="#status">What is real</a><a href="#contact">Contact</a></nav>
+<a class="btn primary nav-cta" href="mailto:troy@auxerion.com?subject=WorkOS%20platform%20briefing">Platform briefing</a>
+<button class="menu-btn" type="button" aria-expanded="false" aria-controls="links">Menu</button>
+</div></header>
+
+<main>
+
+<!-- ============ HERO ============ -->
+<section class="hero" data-screen-label="Hero">
+<div class="bg" aria-hidden="true"><img src="/assets/auxerion/v2/hero-connected-world.jpg" alt="" width="1672" height="941" decoding="async" fetchpriority="high"></div>
+<div class="veil" aria-hidden="true"></div>
+<div class="grid-field" aria-hidden="true" style="opacity:.22"></div>
+<div class="wrap"><div class="copy">
+<div class="eyebrow reveal in"><span class="tag accent">Foundation v1 · running</span><span class="tag">Platform, not a product</span><span class="live"><i></i>internal core</span></div>
+<h1 class="words"><span>Done</span> <span>is</span> <span>a</span> <span><em>system</em></span> <span>decision.</span></h1>
+<p class="lede reveal d1">WorkOS is the shared operational core beneath Creativ8, MOOSE and Kept. It models work as outcomes with owners, dependencies, proof and completion rules, so a person can finish their step while the system decides whether the work is actually done.</p>
+<div class="actions reveal d2"><a class="btn primary lg" href="#reuse">How three products share one core <svg class="ic"><use href="#i-arrow"/></svg></a><a class="btn secondary lg" href="#status">What is real today</a></div>
+<div class="strip reveal d3">
+<div><small><i style="background:var(--c8)"></i>Creativ8</small>Feature delivery</div>
+<div><small><i style="background:var(--mo)"></i>MOOSE</small>Patient visit</div>
+<div><small><i style="background:var(--ha-on-dark)"></i>Kept</small>Guest promise</div>
+</div>
+</div></div><a class="cue" href="#why" aria-label="Scroll"><span></span></a></section>
+
+<div class="marq" aria-hidden="true"><div>outcome · owner · definition of ready · dependency · handoff · approval · proof requirement · definition of done · exception · health · audit · outcome · owner · definition of ready · dependency · handoff · approval · proof requirement · definition of done · exception · health · audit · </div></div>
+
+<!-- ============ WHY ============ -->
+<section class="block" id="why" style="padding-block:120px 0;border-top:0" data-screen-label="Why it exists"><div class="wrap">
+<div class="hd">
+<div class="reveal"><div class="signal draw" style="margin-bottom:28px"></div><h2 class="statement">A checkbox is not a commitment.</h2></div>
+<p class="lede reveal d1">Every team already has task tools, and none of them know when the work is finished. A task app tracks a title, an assignee, a due date and a status. That is enough to feel organised and not enough to run an operation. The moment work crosses two people, three systems and one shift change, the tool stops describing reality and the team starts running on memory, group chats and whoever cares most.</p>
+</div>
+<div class="vs reveal">
+<div>
+<span class="label">What task tools model</span>
+<h3>Four fields and a checkbox.</h3>
+<ul><li>task</li><li>assignee</li><li>due date</li><li>status</li></ul>
+<p class="small muted" style="margin-top:26px">Everything else is carried by the people involved, in their heads, until one of them is off shift.</p>
+</div>
+<div>
+<span class="label">What an operation actually has</span>
+<h3>Everything the checkbox hides.</h3>
+<ul><li>outcome</li><li>owners, by step and by role</li><li>definition of ready</li><li>dependencies and external blockers</li><li>handoffs between people and shifts</li><li>approvals</li><li>required proof</li><li>definition of done</li><li>exceptions and risk</li><li>completion rules</li></ul>
+</div>
+</div>
+
+<figure class="figwide reveal">
+<div class="shot"><img src="/assets/auxerion/chaos-to-order.jpg" alt="On the left, operators working from paper, sticky notes and disconnected screens. On the right, the same teams working from one shared picture of the work." width="1672" height="941" loading="lazy" decoding="async">
+<div class="split2" aria-hidden="true"><span><i>Without a core</i>Work held in heads, chats and paper.</span><span><i>With one</i>The same work, held by the system.</span></div></div>
+<figcaption><b>The gap WorkOS closes</b><span>Auxerion · all three industries</span></figcaption>
+</figure>
+<div class="note reveal">
+<span class="label">The failure this causes</span>
+<p>Work is marked <b>done</b> when one person's portion is done. The visit is booked but the authorisation never came back. The table is seated but the allergy note never reached the kitchen. The feature is merged but nobody ran the review. Nothing was neglected and nothing is finished, because <b>no system was holding the whole commitment</b>.</p>
+</div>
+</div></section>
+
+<!-- ============ THE RULE ============ -->
+<section class="block rule" data-screen-label="The rule"><div class="grid-field" aria-hidden="true" style="opacity:.3"></div><div class="wrap">
+<div class="reveal"><span class="label" style="display:block;margin-bottom:24px">The central rule</span>
+<p class="q">One person can complete their step. Only the system can determine whether the <b>full workflow is truly done.</b></p></div>
+
+<div class="gfx reveal">
+<span class="cap">Step completion is not workflow completion</span>
+<div class="chain">
+<div class="st done"><span class="dot"><svg class="tick" viewBox="0 0 24 24"><path d="M5 12.5 10 17.5 19 7"/></svg></span><span class="lb">Requested</span></div>
+<div class="st done"><span class="dot"><svg class="tick" viewBox="0 0 24 24"><path d="M5 12.5 10 17.5 19 7"/></svg></span><span class="lb">Ready</span></div>
+<div class="st done"><span class="dot"><svg class="tick" viewBox="0 0 24 24"><path d="M5 12.5 10 17.5 19 7"/></svg></span><span class="lb">Assigned</span></div>
+<div class="st here"><span class="tag"><svg class="tick" viewBox="0 0 24 24"><path d="M5 12.5 10 17.5 19 7"/></svg> One person finishes here &middot; 14:02</span><span class="dot"><svg class="tick" viewBox="0 0 24 24"><path d="M5 12.5 10 17.5 19 7"/></svg></span><span class="lb">Step performed</span></div>
+<div class="st open"><span class="dot">05</span><span class="lb">Dependency</span></div>
+<div class="st open"><span class="dot">06</span><span class="lb">Handoff</span></div>
+<div class="st open"><span class="dot">07</span><span class="lb">Proof</span></div>
+<div class="st open"><span class="dot">08</span><span class="lb">Approval</span></div>
+</div>
+<div class="gauge">
+<div class="hdr"><span>Workflow completion</span><span>38% &middot; <em>not done</em></span></div>
+<div class="track"><i></i></div>
+</div>
+<div class="blockers">
+<span><b>Dependency</b>The external confirmation has not come back.</span>
+<span><b>Handoff</b>The next owner has not acknowledged it.</span>
+<span><b>Proof</b>The required evidence has not been filed.</span>
+<span><b>Approval</b>The accountable reviewer has not signed.</span>
+</div>
+<p class="foot">Four of the eight things this outcome depends on are still open, and <b>not one of them belongs to the person who just finished.</b> A task tool would show this row as done and move on.</p>
+</div>
+<div class="egs">
+<div class="eg reveal"><span class="who">Medical practice</span><p>A medical assistant finishes vitals. <b>The visit is not done.</b> The order, the authorisation, the result and the follow-up are still open, and each of them belongs to someone else.</p></div>
+<div class="eg reveal d1"><span class="who">Hotel operations</span><p>A host seats the table. <b>The promise is not kept.</b> Prep, stock, the room turnover and the partner confirmation all sit underneath a single sentence said to a guest.</p></div>
+<div class="eg reveal d2"><span class="who">Game development</span><p>An engineer merges the feature. <b>The delivery is not done.</b> Review, build, integration, sign-off and the wiki entry are the rest of the same commitment.</p></div>
+</div>
+</div></section>
+
+<!-- ============ ENGINE ============ -->
+<section class="block" id="engine" data-screen-label="WorkGraph"><div class="wrap">
+<div class="hd">
+<div class="reveal"><span class="label" style="display:block;margin-bottom:16px">The engine · WorkGraph</span><h2 class="statement sm">The core does not know what a patient is.</h2></div>
+<p class="lede reveal d1">That is the whole discipline. WorkGraph models outcomes, steps, owners, dependencies, handoffs, proof and exceptions, and nothing else. It has never heard of a patient, a reservation, a room, a table, a build or a bug. Industry language arrives later, through configuration, and it is the reason one engine can run three businesses without forking into three engines.</p>
+</div>
+<div class="model reveal">
+<span><b>WorkflowTemplate</b>the reusable shape of a process</span>
+<span><b>WorkflowInstance</b>one live run of it, with health</span>
+<span><b>Stage · Step</b>progression, not a flat list</span>
+<span><b>Assignment</b>owners by person and by role</span>
+<span><b>Dependency</b>what must land first, inside or outside</span>
+<span><b>Handoff</b>the transfer between people and shifts</span>
+<span><b>Approval</b>the yes that has to be a person's</span>
+<span><b>ProofRequirement</b>what evidence done requires</span>
+<span><b>ProofArtifact</b>the evidence that was actually filed</span>
+<span><b>ExceptionRecord</b>the blocker, named and owned</span>
+<span><b>AuditEvent</b>who, what, when, from where</span>
+<span><b>Recommendation</b>what the AI proposed, and why</span>
+</div>
+
+<div class="gfx reveal">
+<span class="cap">One workflow instance, as WorkGraph holds it</span>
+<div class="wg">
+<div class="stg"><span class="h">01 Intake<em>complete</em></span>
+<div class="nd"><span class="t">Request captured</span><span class="pips"><span class="pip own"><i></i>owner</span><span class="pip prf"><i></i>proof filed</span></span></div>
+<div class="nd"><span class="t">Readiness confirmed</span><span class="pips"><span class="pip own"><i></i>role</span><span class="pip dep"><i></i>dependency met</span></span></div>
+</div>
+<div class="stg"><span class="h">02 Execute<em>in progress</em></span>
+<div class="nd on"><span class="t">Work performed</span><span class="pips"><span class="pip own"><i></i>owner</span><span class="pip prf"><i></i>proof due</span><span class="pip hnd"><i></i>hands off</span></span></div>
+<div class="nd"><span class="t">Dependency cleared</span><span class="pips"><span class="pip dep"><i></i>external</span><span class="pip own"><i></i>unassigned</span></span></div>
+</div>
+<div class="stg"><span class="h">03 Close<em>not started</em></span>
+<div class="nd"><span class="t">Evidence filed</span><span class="pips"><span class="pip prf"><i></i>proof required</span></span></div>
+<div class="nd"><span class="t">Approval recorded</span><span class="pips"><span class="pip own"><i></i>accountable</span></span></div>
+</div>
+<div class="hand">handoff &middot; day owner to evening owner &middot; not yet acknowledged</div>
+</div>
+<div class="gate">
+<div class="rules"><span class="unmet">all steps complete</span><span class="unmet">proof filed</span><span class="unmet">approvals recorded</span><span class="met">no open exceptions</span><span class="unmet">handoffs acknowledged</span></div>
+<span class="verdict"><i></i>Not complete</span>
+</div>
+<div class="wglegend"><span><i class="own"></i>owner</span><span><i class="dep"></i>dependency</span><span><i class="prf"></i>proof</span><span><i class="hnd"></i>handoff</span></div>
+<p class="foot">Owners, dependencies, proof and handoffs are <b>first-class objects, not fields on a task.</b> That is what lets the completion rule at the bottom be a decision the system makes, rather than an opinion a person clicks.</p>
+</div>
+<div class="note reveal">
+<span class="label">How this was checked</span>
+<p>The neutrality is enforced, not aspirational. A search of the three core packages, <b>workgraph-core</b>, <b>workos-ui</b> and <b>workos-ai</b>, returns <b>zero</b> occurrences of patient, reservation, guest, room, table, menu, clinic, hotel, feature or bug. Every vertical word in the system lives in a profile, an adapter or a surface slot.</p>
+</div>
+</div></section>
+
+<!-- ============ SURFACES (tour) ============ -->
+<section class="block tour" id="surfaces" data-screen-label="Surfaces"><div class="wrap">
+<div class="hd">
+<div class="reveal"><span class="label" style="display:block;margin-bottom:16px">Four surfaces</span><h2 class="statement sm">Same engine. Four places to stand.</h2></div>
+<p class="lede reveal d1">Progressive disclosure is the rule: the person doing the work sees one thing to do and why it matters; the manager sees risk, ownership and recovery; the administrator sees the process itself as an object they can edit. The diagrams below are drawings rather than screen captures. The foundation runs; its visual layer is still being built.</p>
+</div>
+<div class="tourgrid">
+<ol class="tour-steps reveal">
+<li class="tour-step" data-cap="My Day · frontline surface"><button type="button"><span class="k">My Day</span><span class="t">What to do now, and why it matters.</span><span class="d">Now, Next, Due today, Waiting, Handoffs, Done. Every item opens the same detail panel: why it matters, what ready means, what done means, what proof is required, and what it is waiting on.</span></button></li>
+<li class="tour-step" data-cap="Mission Control · manager surface"><button type="button"><span class="k">Mission Control</span><span class="t">Risk, before it becomes failure.</span><span class="d">At-risk workflows, blocked steps, unassigned work, pending handoffs and missing proof, counted at the top. Every number opens the exact work behind it, with a health score and a recovery option.</span></button></li>
+<li class="tour-step" data-cap="Process Designer · admin surface"><button type="button"><span class="k">Process Designer</span><span class="t">The process, as an object you can edit.</span><span class="d">Stages, steps, dependencies, proof requirements and completion rules, in draft and published states. Deliberately a strong first pass rather than a BPMN suite. The process is configuration, never a code change.</span></button></li>
+<li class="tour-step" data-cap="WorkPilot · AI seam"><button type="button"><span class="k">WorkPilot</span><span class="t">AI prepares. A person decides.</span><span class="d">Recommendations carry their reason and their evidence. The AI may capture, prioritise, draft and warn; it never becomes the authority on whether something is done. Every suggestion is logged with what a human did about it.</span></button></li>
+</ol>
+<div class="tour-stage reveal d1"><div class="tour-frame" data-tilt>
+
+<!-- My Day -->
+<figure>
+<div class="ui">
+<div class="rail"><span class="lg"><i></i>WorkOS</span><a class="on">My Day</a><a>Mission Control</a><a>Workflows</a><a>Process Designer</a><a>WorkPilot</a></div>
+<div class="body">
+<div class="top"><b>My Day</b><span class="pill">generic profile</span></div>
+<div class="cols">
+<div class="pane">
+<span class="k">Now</span>
+<div class="row hot"><span class="t">Confirm external dependency before stage 3 opens</span><span class="m"><span class="chip warn">due 14:30</span><span class="chip">owner · you</span><span class="chip">proof required</span></span></div>
+<span class="k">Next</span>
+<div class="row"><span class="t">Prepare handoff packet for the evening owner</span><span class="m"><span class="chip">17:00</span><span class="chip">handoff</span></span></div>
+<span class="k">Waiting · blocked</span>
+<div class="row"><span class="t">Approval pending from accountable reviewer</span><span class="m"><span class="chip stop">blocked</span><span class="chip">2d 4h</span></span></div>
+</div>
+<div class="pane">
+<span class="k">Definition of done</span>
+<div class="row"><span class="t">Dependency confirmed, evidence filed, next owner acknowledged.</span></div>
+<span class="k">Proof required</span>
+<div class="row"><span class="m"><span class="chip">file</span><span class="chip">note</span></span><span class="t">Not yet filed</span></div>
+<span class="k">Workflow</span>
+<div class="bar"><i style="width:63%"></i></div>
+<span class="m k">63% · 5 of 8 steps</span>
+</div>
+</div>
+</div>
+</div>
+</figure>
+
+<!-- Mission Control -->
+<figure>
+<div class="ui">
+<div class="rail"><span class="lg"><i></i>WorkOS</span><a>My Day</a><a class="on">Mission Control</a><a>Workflows</a><a>Process Designer</a><a>WorkPilot</a></div>
+<div class="body">
+<div class="top"><b>Mission Control</b><span class="pill">seeded scenario</span></div>
+<div class="pane">
+<div class="counts">
+<div class="ct a"><b>4</b><span class="k">At risk</span></div>
+<div class="ct b"><b>7</b><span class="k">Blocked</span></div>
+<div class="ct c"><b>3</b><span class="k">Missing proof</span></div>
+<div class="ct"><b>2</b><span class="k">Unassigned</span></div>
+</div>
+<span class="k">At-risk workflows</span>
+<div class="row hot"><span class="t">Critical path blocked by an external dependency</span><div class="bar"><i style="width:34%"></i></div><span class="m"><span class="chip stop">health 34</span><span class="chip">owner unassigned</span><span class="chip ai">recovery proposed</span></span></div>
+<div class="row"><span class="t">Handoff not acknowledged across shift boundary</span><div class="bar"><i style="width:58%"></i></div><span class="m"><span class="chip warn">health 58</span><span class="chip">overdue 1d</span></span></div>
+<div class="row"><span class="t">Proof requirement unmet at completion gate</span><div class="bar"><i style="width:71%"></i></div><span class="m"><span class="chip warn">health 71</span><span class="chip">1 artifact missing</span></span></div>
+</div>
+</div>
+</div>
+</figure>
+
+<!-- Process Designer -->
+<figure>
+<div class="ui">
+<div class="rail"><span class="lg"><i></i>WorkOS</span><a>My Day</a><a>Mission Control</a><a>Workflows</a><a class="on">Process Designer</a><a>WorkPilot</a></div>
+<div class="body">
+<div class="top"><b>Process Designer</b><span class="pill">draft · v3</span></div>
+<div class="pane">
+<span class="k">Template · stages and steps</span>
+<div class="stages">
+<div class="stg"><span class="h">01 Intake</span><span class="stp">Request captured</span><span class="stp">Readiness checked</span></div>
+<div class="stg"><span class="h">02 Prepare</span><span class="stp sel">Dependency confirmed</span><span class="stp">Resources held</span><span class="dep">blocks 03</span></div>
+<div class="stg"><span class="h">03 Execute</span><span class="stp">Work performed</span><span class="stp">Handoff acknowledged</span></div>
+<div class="stg"><span class="h">04 Close</span><span class="stp">Proof filed</span><span class="stp">Approval recorded</span><span class="dep">gate</span></div>
+</div>
+<span class="k">Step · dependency confirmed</span>
+<div class="row"><span class="m"><span class="chip">ready when · intake complete</span><span class="chip">done when · evidence filed</span><span class="chip ok">proof · file, note</span><span class="chip">owner · role</span></span></div>
+</div>
+</div>
+</div>
+</figure>
+
+<!-- WorkPilot -->
+<figure>
+<div class="ui">
+<div class="rail"><span class="lg"><i></i>WorkOS</span><a>My Day</a><a>Mission Control</a><a>Workflows</a><a>Process Designer</a><a class="on">WorkPilot</a></div>
+<div class="body">
+<div class="top"><b>WorkPilot</b><span class="pill">advisory only</span></div>
+<div class="pane">
+<span class="k">Recommendations</span>
+<div class="row hot"><span class="m"><span class="chip ai">reassign</span><span class="chip">confidence 0.82</span></span><span class="t">Move the blocked step to the covering owner for this shift.</span><p class="why">Because: the named owner is off-shift for 9h, the step is on the critical path, and the covering role has completed this step 14 times.</p><span class="acts"><span class="p">Approve</span><span class="s">Dismiss</span></span></div>
+<div class="row"><span class="m"><span class="chip ai">risk</span><span class="chip">confidence 0.67</span></span><span class="t">This workflow will miss its completion window.</span><p class="why">Because: two dependencies are unconfirmed and the remaining steps have never completed in under 6h.</p></div>
+<span class="k">Never automatic</span>
+<div class="row"><span class="t">Approvals, completion and anything consequential require a person. Every suggestion is logged with the human response.</span></div>
+</div>
+</div>
+</div>
+</figure>
+
+</div><div class="tour-cap"><b>My Day · frontline surface</b><span>schematic · foundation v1 · not a screen capture</span></div></div>
+</div></div></section>
+
+<!-- ============ REUSE: the leverage section ============ -->
+<section class="block" id="reuse" data-screen-label="One core, three products"><div class="grid-field" aria-hidden="true" style="opacity:.35"></div><div class="wrap">
+<div class="hd">
+<div class="reveal"><span class="label" style="display:block;margin-bottom:16px">One core, three products</span><h2 class="statement sm">The same engine, wearing three vocabularies.</h2></div>
+<p class="lede reveal d1">This is the whole reason Auxerion can build deeply for three industries at once. Creativ8, MOOSE and Kept are not three codebases that resemble each other. They are three configurations of one engine, and the row that matters is the last one: underneath the language, it is the same object.</p>
+</div>
+
+<div class="vocab reveal">
+<span class="fld">Product</span>
+<span class="hd"><b><i style="background:var(--c8)"></i>Creativ8</b><small>Game development</small></span>
+<span class="hd"><b><i style="background:var(--mo)"></i>MOOSE</b><small>Medical practice</small></span>
+<span class="hd"><b><i style="background:var(--ha-on-dark)"></i>Kept</b><small>Hotel operations</small></span>
+
+<span class="fld">The outcome</span>
+<span>Feature delivered</span>
+<span>Visit completed</span>
+<span>Promise kept</span>
+
+<span class="fld">Domain object</span>
+<span>feature_delivery</span>
+<span>patient_visit</span>
+<span>guest_service</span>
+
+<span class="fld">A step</span>
+<span>Review passed</span>
+<span>Authorisation returned</span>
+<span>Room released</span>
+
+<span class="fld">A handoff</span>
+<span>Design to engineering</span>
+<span>Front desk to clinical</span>
+<span>Day shift to evening</span>
+
+<span class="fld">Proof of done</span>
+<span>Build artifact, review note</span>
+<span>Signed note, result on file</span>
+<span>Service photo, room check</span>
+
+<span class="fld">Surface slot</span>
+<span>Project, build, wiki, smart object</span>
+<span>Patient, appointment, provider</span>
+<span>Guest, room, reservation, partner</span>
+
+<span class="fld core">In the core</span>
+<span class="core">WorkflowInstance · Step · Owner · Dependency · Handoff · ProofRequirement</span>
+<span class="core">WorkflowInstance · Step · Owner · Dependency · Handoff · ProofRequirement</span>
+<span class="core">WorkflowInstance · Step · Owner · Dependency · Handoff · ProofRequirement</span>
+</div>
+
+
+<div class="gfx reveal">
+<span class="cap">Where each product plugs in</span>
+<div class="stack3">
+<div class="plates">
+<div class="pl" style="--pc:var(--c8)"><b>Creativ8</b><small>Game development</small><span class="vocab2"><span>feature_delivery</span><span>build artifact</span><span>review note</span><span>wiki</span></span></div>
+<div class="pl" style="--pc:var(--mo)"><b>MOOSE</b><small>Medical practice</small><span class="vocab2"><span>patient_visit</span><span>signed note</span><span>result on file</span><span>provider</span></span></div>
+<div class="pl" style="--pc:var(--ha-on-dark)"><b>Kept</b><small>Hotel operations</small><span class="vocab2"><span>guest_service</span><span>room check</span><span>service photo</span><span>partner</span></span></div>
+<div class="pl future" style="--pc:var(--text2)"><b>Next vertical</b><small>Not yet built</small><span class="vocab2"><span>its own object</span><span>its own proof</span><span>its own panels</span></span></div>
+</div>
+<div class="conn">
+<span class="seam2">AppProfile</span><span class="seam2">DomainRegistry</span><span class="seam2">TemplatePacks</span><span class="seam2">ProofTypeRegistry</span><span class="seam2">Adapters</span><span class="seam2">CapabilityFlags</span><span class="seam2">SurfaceSlots</span>
+</div>
+<div class="core2">
+<span class="t"><b>WorkGraph</b><small>the shared engine &middot; vertical-neutral</small></span>
+<span class="objs"><span>WorkflowTemplate</span><span>WorkflowInstance</span><span>Stage</span><span>Step</span><span>Assignment</span><span>Dependency</span><span>Handoff</span><span>Approval</span><span>ProofRequirement</span><span>ProofArtifact</span><span>ExceptionRecord</span><span>AuditEvent</span></span>
+<span class="neg">knows nothing about: a patient &middot; a reservation &middot; a room &middot; a table &middot; a build &middot; a bug</span>
+</div>
+</div>
+<p class="foot">Every connection in this diagram runs one way. <b>Products reach down through the seams; the core never reaches up.</b> That single constraint is what keeps a fourth vertical a configuration exercise instead of a fourth codebase.</p>
+</div>
+<div class="sec-head" style="margin-top:96px;margin-bottom:0"><span class="label reveal">The seams</span>
+<div class="reveal"><h2 style="font-size:clamp(26px,2.4vw,34px)">Seven ways in. None of them is a fork.</h2></div></div>
+<div class="seams">
+<div class="seam reveal"><span class="n">01</span><h3>AppProfile</h3><p>Name, brand, theme tokens, icon family, role labels, navigation, enabled modules, default views. One object defines what the product is called and how it looks.</p></div>
+<div class="seam reveal d1"><span class="n">02</span><h3>DomainRegistry</h3><p>Maps neutral concepts onto industry terms. This is where <span class="mono">domainObjectType</span> becomes a patient visit, a guest service or a feature delivery.</p></div>
+<div class="seam reveal d2"><span class="n">03</span><h3>TemplatePacks</h3><p>Industry and team process libraries layered on top of the generic base, so a new customer starts from real workflows rather than an empty builder.</p></div>
+<div class="seam reveal"><span class="n">04</span><h3>ProofTypeRegistry</h3><p>What counts as evidence here. A screenshot and a build artifact in one product; a signature and a room check in another. The completion rule is shared; the proof is not.</p></div>
+<div class="seam reveal d1"><span class="n">05</span><h3>Adapters</h3><p>Ingest domain records into neutral work objects and map context back out. Three exist today: Creativ8, MedTech and FoodTech, each with contract tests proving it never contaminates the core.</p></div>
+<div class="seam reveal d2"><span class="n">06</span><h3>CapabilityFlags</h3><p>Runtime toggles for Process Designer, AI recommendations, handoff board, audit timeline, schedule and training. A product ships the surfaces it has earned.</p></div>
+<div class="seam reveal"><span class="n">07</span><h3>SurfaceSlots</h3><p>Safe extension points inside the shared detail shell, where a product adds its own context panels without touching shared layout or engine logic.</p></div>
+</div>
+
+<div class="note reveal">
+<span class="label">The rule that keeps it true</span>
+<p><b>Reuse through extension, not forks.</b> A product may add a profile, an adapter, a template pack, a proof type or a slot. It may not edit the shared engine to make its own case work. The day one product patches the core for itself is the day Auxerion has three codebases again.</p>
+</div>
+</div></section>
+
+<!-- ============ COMPOUNDING ============ -->
+<section class="block" data-screen-label="Why it compounds"><div class="wrap">
+<div class="hd">
+<div class="reveal"><h2 class="statement sm">Each vertical costs less than the last.</h2></div>
+<p class="lede reveal d1">A shared core is only worth its overhead if the fourth product is cheaper than the third. That is the test WorkOS is built to pass, and it is the test we expect to be held to.</p>
+</div>
+<div class="comp">
+<div class="reveal"><span class="idx">FIRST</span><h3>The vertical pays for the core.</h3><p>The engine, the surfaces, the proof model and the audit trail are all built once, inside the first product that needs them. Expensive, and correctly so.</p><div class="meter"><i style="width:100%"></i></div></div>
+<div class="reveal d1"><span class="idx">SECOND &amp; THIRD</span><h3>The vertical pays for its own language.</h3><p>A profile, a registry, an adapter, a template pack, a set of proof types and a handful of context panels. The workflow engine, the manager surface and the audit trail arrive already built and already tested.</p><div class="meter"><i style="width:44%"></i></div></div>
+<div class="reveal d2"><span class="idx">FOURTH ONWARD</span><h3>The vertical is a configuration exercise.</h3><p>Facilities, staffing, education, professional services. Each one is a domain vocabulary and a set of templates on a core that three real businesses have already hardened.</p><div class="meter"><i style="width:22%"></i></div></div>
+</div>
+
+<figure class="figwide reveal">
+<div class="shot"><img src="/assets/auxerion/horizon.jpg" alt="Operators from several industries looking out over a landscape where one lit thread runs through a game world, a clinic and a resort." width="1672" height="941" loading="lazy" decoding="async"></div>
+<figcaption><b>One thread, and room for the next one</b><span>Auxerion &middot; the case for a shared core</span></figcaption>
+</figure>
+<div class="note reveal">
+<span class="label">Stated plainly</span>
+<p>This is a <b>design target, not a measured result</b>. Creativ8, MOOSE and Kept are each at a different stage, and none has yet been migrated onto the foundation end to end. The claim on this page is that the architecture is built to make that migration additive, and the adapters, contract tests and neutrality checks exist so the claim can be checked rather than believed.</p>
+</div>
+</div></section>
+
+<!-- ============ STATUS ============ -->
+<section class="block" id="status" data-screen-label="What is real"><div class="wrap">
+<div class="hd">
+<div class="reveal"><span class="label" style="display:block;margin-bottom:16px">What is real today · foundation v1</span><h2 class="statement sm">Running, tested, honest about the rest.</h2></div>
+<p class="lede reveal d1">Auxerion labels every product by what it actually is. WorkOS is a working foundation with a mock-first data layer: the architecture, the engine and the extension model are real and under test; the production backend, the integrations and the visual polish are the next phase.</p>
+</div>
+<div class="ledger reveal">
+<div class="r"><b>Monorepo foundation</b><p>Eight shared packages and one runnable Next.js reference app, wired with pnpm and Turborepo.</p><span class="st on">Running</span></div>
+<div class="r"><b>WorkGraph engine</b><p>Completion logic, dependency resolution, blocker evaluation, proof requirements, handoff state and health scoring, as pure TypeScript with no UI and no industry.</p><span class="st on">Running · tested</span></div>
+<div class="r"><b>Automated coverage</b><p>Ninety-four tests across thirty-one files, covering the engine, profile validation, adapter contracts, mock services, the AI contract layer and every product surface.</p><span class="st on">94 passing</span></div>
+<div class="r"><b>Vertical adapters</b><p>Creativ8, MedTech and FoodTech adapters, each proven by contract test to map domain records into neutral objects without leaking terms into the core.</p><span class="st on">3 of 3</span></div>
+<div class="r"><b>Product surfaces</b><p>My Day, Mission Control, Workflows, workflow detail, Process Designer and WorkPilot, running against seeded scenarios for blocked steps, missing proof, failed handoffs and critical-path risk.</p><span class="st part">First pass</span></div>
+<div class="r"><b>Data layer</b><p>Typed mock services behind the same contracts a real backend will implement, with a provider-backed session seam and a session audit trail already in place.</p><span class="st part">Mock-first</span></div>
+<div class="r"><b>Production backend, auth, integrations</b><p>Database, identity, permissions and external connectors fit behind the contracts the foundation already defines. Not started.</p><span class="st next">Next phase</span></div>
+<div class="r"><b>Sold separately</b><p>WorkOS is internal infrastructure. It is what makes Creativ8, MOOSE and Kept possible; it is not a fourth thing to buy.</p><span class="st next">No</span></div>
+</div>
+</div></section>
+
+<!-- ============ CONTACT ============ -->
+<section class="block contact" id="contact" data-screen-label="Contact"><div class="grid-field" aria-hidden="true" style="opacity:.4"></div><div class="halo" aria-hidden="true"><i></i><i></i><i></i></div><div class="wrap">
+<h2 class="reveal">The architecture is<br>the argument.</h2>
+<p class="lede reveal d1">For investors asking how one company builds credibly for three industries, and for technical partners who want to see the core rather than the pitch, we will walk you through it directly.</p>
+<a class="big reveal d2" href="mailto:troy@auxerion.com?subject=WorkOS%20platform%20briefing"><svg class="ic"><use href="#i-mail"/></svg>troy@auxerion.com</a>
+</div></section>
+
+</main>
+
+<footer><div class="wrap"><div class="top">
+<a class="brand" href="/" aria-label="Auxerion"><img class="ic-mark" src="/assets/logos/auxerion-mark-2026.png" alt="" width="24" height="24" decoding="async"><span style="font-size:13px">AUXERION</span></a>
+<nav class="family" aria-label="Auxerion family"><a href="/"><span class="dot" style="background:var(--ax)"></span>Auxerion</a><a href="/creativ8"><span class="dot" style="background:var(--c8)"></span>Creativ8</a><a href="/moose"><span class="dot" style="background:var(--mo)"></span>MOOSE</a><a href="/kept"><span class="dot" style="background:var(--ha-on-dark)"></span>Kept</a><a href="/workos" aria-current="true"><span class="dot" style="background:var(--accent2)"></span>WorkOS</a></nav>
+<div><a href="mailto:troy@auxerion.com">troy@auxerion.com</a></div></div>
+<div class="bottom"><span>© 2026 Auxerion · WorkOS is Auxerion's shared operational core</span><span>auxerion.com/workos</span></div></div></footer>
+
+<script src="/icons.js"></script><script src="/family.js"></script><script src="/cinema.js"></script><script src="/tour.js"></script>
+</body></html>
