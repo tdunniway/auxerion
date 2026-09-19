@@ -44,14 +44,16 @@ p{margin:0;text-wrap:pretty}
 .ft.on::before{opacity:.75}
 .ft .tx{display:flex;flex-direction:column;gap:2px;min-width:0;text-shadow:0 1px 8px rgba(0,0,0,.6)}
 .ft .tx b,.ft .tx small{white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
-.ft .tx b{font-family:"Space Grotesk",sans-serif;font-weight:600;font-size:16px;letter-spacing:.04em;line-height:1}
+.ft .tx b{font-family:"Space Grotesk",sans-serif;font-weight:600;font-size:24px;letter-spacing:.02em;line-height:1.05}
 .ft .tx small{font-family:var(--body);font-size:11px;letter-spacing:.1em;text-transform:uppercase;color:rgba(255,255,255,.8)}
 .ft.on .tx small{color:#fff}
 .ft:focus-visible{outline:2px solid #fff;outline-offset:-4px}
 /* below ~1000px the subtitle no longer fits beside a full-size mark: drop it, keep the mark large */
-@media(max-width:1240px){.ft{padding:0 16px;gap:11px}.ft .tx small{display:none}}
-@media(max-width:1000px){.ft{padding:0 12px;gap:9px}.ft .mk{width:40px;height:40px}.ft .tx b{font-size:14px}}
-@media(max-width:760px){:root{--fambar-h:56px}.ft{padding:0 8px;gap:7px}.ft .mk{width:30px;height:30px}.ft .tx b{font-size:12px;letter-spacing:.02em}}
+@media(max-width:1240px){.ft{padding:0 16px;gap:11px}.ft .tx small{display:none}.ft .tx b{font-size:22px}}
+@media(max-width:1000px){.ft{padding:0 12px;gap:9px}.ft .mk{width:38px;height:38px}.ft .tx b{font-size:19px}}
+@media(max-width:900px){.ft{gap:8px}.ft .mk{width:34px;height:34px}.ft .tx b{font-size:17px}}
+@media(max-width:760px){:root{--fambar-h:56px}.ft{padding:0 8px;gap:7px}.ft .mk{width:30px;height:30px}.ft .tx b{font-size:16px;letter-spacing:.01em}}
+@media(max-width:660px){.ft{padding:0 6px;gap:6px}.ft .mk{width:28px;height:28px}.ft .tx b{font-size:13px}}
 @media(max-width:560px){.ft{justify-content:center;padding:0 6px;gap:0}.ft .mk{width:28px;height:28px}.ft .tx{position:absolute;width:1px;height:1px;margin:-1px;padding:0;overflow:hidden;clip-path:inset(50%);white-space:nowrap;border:0}}
 /* too narrow for logo + name: show the mark alone, keep the name for screen readers */
 @media(max-width:440px){.ft .mk{width:24px;height:24px}}
