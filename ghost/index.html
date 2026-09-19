@@ -1,0 +1,362 @@
+<!DOCTYPE html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>GHOST — Your invisible operations partner | Auxerion</title>
+<meta name="description" content="GHOST is the AI-native operating layer for independent hotels. It sees the whole property, checks what every promise depends on, and proves what happened, with a person approving every consequential move.">
+<link rel="canonical" href="https://auxerion.com/ghost">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Auxerion">
+<meta property="og:url" content="https://auxerion.com/ghost">
+<meta property="og:title" content="GHOST — Your invisible operations partner | Auxerion">
+<meta property="og:description" content="GHOST is the AI-native operating layer for independent hotels. It sees the whole property, checks what every promise depends on, and proves what happened, with a person approving every consequential move.">
+<meta property="og:image" content="https://auxerion.com/assets/og/ghost.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="GHOST — Your invisible operations partner | Auxerion">
+<meta name="twitter:description" content="GHOST is the AI-native operating layer for independent hotels. It sees the whole property, checks what every promise depends on, and proves what happened, with a person approving every consequential move.">
+<meta name="twitter:image" content="https://auxerion.com/assets/og/ghost.jpg">
+
+<link rel="icon" href="/assets/logos/ghost-mark-2026.png">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,600;1,9..144,400;1,9..144,600&family=Source+Sans+3:wght@400;600&display=swap">
+<link rel="stylesheet" href="/family.css"><link rel="stylesheet" href="/cinema.css"><link rel="stylesheet" href="/tour.css">
+<style>
+/* GHOST brand package v1: Midnight ground, Ivory text, Brass accent,
+   Fraunces display over Source Sans 3. Palette tokens live on the "ha" skin
+   in family.css; this sheet only handles what this page draws itself. */
+:root{--mono:"Source Sans 3",system-ui,sans-serif}
+body[data-brand="ha"] h1,body[data-brand="ha"] h2{font-weight:600;letter-spacing:-.02em}
+h2,.statement{line-height:1.05}
+/* Hush peeks over the footer's top edge, right-aligned, and nowhere else. */
+footer{position:relative}
+.hushpeek{position:absolute;right:max(var(--gutter),4vw);top:-46px;width:64px;height:auto;opacity:0;animation:hush-in .3s ease-out forwards;pointer-events:none}
+@media(prefers-reduced-motion:reduce){.hushpeek{animation:none;opacity:1}}
+@media(max-width:560px){.hushpeek{width:48px;top:-34px}}
+.label,.hero .strip small,.devcap,.gapnote .gt{font-weight:600;letter-spacing:.25em}
+h3,.sysc b,.nr b,.chain .cn b{font-family:"Source Sans 3",system-ui,sans-serif}
+.btn.primary{background:var(--brass);color:var(--midnight,#0F1216);border-radius:8px}
+.btn.secondary{border:1px solid rgba(243,237,226,.4);color:var(--ivory);border-radius:8px}
+.site-nav.solid{background:rgba(15,18,22,.88)}
+.brand.product .wm .ic-mark{width:38px;height:38px;object-fit:contain}
+.hero .kicker{font-family:var(--body);font-weight:600;font-size:clamp(15px,1.2vw,17px);color:var(--brass);margin-top:20px;max-width:36em}
+.site-nav:not(.solid) .brand,.site-nav:not(.solid) .links a,.site-nav:not(.solid) .menu-btn{color:var(--ivory)}.site-nav:not(.solid) .brand .by{color:var(--slate)}.site-nav:not(.solid) .menu-btn{border-color:rgba(243,237,226,.4)}.site-nav:not(.solid) .links:not(.open) a{color:var(--ivory)}
+.hero{min-height:calc(100vh - var(--fambar-h));color:var(--ivory)}
+.hero .bg img{opacity:1;transform:none;filter:saturate(.92) brightness(.82)}
+.hero .veil{position:absolute;inset:0;z-index:-2;background:linear-gradient(180deg,rgba(15,18,22,.5),rgba(15,18,22,.42) 40%,rgba(15,18,22,.88) 75%,#0F1216 100%)}
+.hero .veil::after{content:"";position:absolute;inset:0;background:linear-gradient(90deg,rgba(15,18,22,.78),rgba(15,18,22,.1) 62%)}
+.hero .wrap{padding-bottom:0}
+.hero .copy{padding-top:120px}
+.hero h1{font-family:"Fraunces",Georgia,serif;font-weight:600;font-size:clamp(46px,7.4vw,108px);letter-spacing:-.02em;line-height:1.05;color:var(--ivory)}
+.hero h1 i{font-style:italic;font-weight:600;color:var(--brass)}
+.hero .lede{color:var(--ivory);opacity:.86}
+.hero .tag{border-color:rgba(243,237,226,.45);color:var(--ivory)}.hero .tag.accent{border-color:var(--brass);color:var(--brass)}
+.hero .live{color:var(--slate)}.hero .live i{background:var(--phantom);box-shadow:0 0 12px var(--phantom)}
+.hero .cue span{background:linear-gradient(180deg,transparent,var(--ivory))}
+.hero .strip{display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:12px;margin-top:64px;padding:20px 0 28px;border-top:1px solid rgba(243,237,226,.2)}
+.hero .strip div{font-family:"Fraunces",serif;font-size:clamp(16px,1.25vw,19px);color:var(--ivory);display:flex;flex-direction:column;gap:6px}
+.hero .strip small{font-family:var(--body);font-size:10.5px;text-transform:uppercase;color:var(--brass)}
+@media(max-width:960px){.hero .strip{grid-template-columns:1fr 1fr}}
+/* promise ring hero graphic, with the mascot inside it */
+.pring{position:absolute;right:4vw;top:50%;transform:translateY(-52%);width:min(58vmin,560px);aspect-ratio:1;z-index:-1;pointer-events:none}
+.pring svg{width:100%;height:100%;overflow:visible}
+.pring .r{fill:none;stroke:rgba(243,237,226,.3);stroke-width:1.5}
+/* The brand rules give the mascot a fade and nothing else: no bounce, no loop. */
+.pring .ghost{position:absolute;left:50%;top:50%;width:56%;height:auto;transform:translate(-50%,-56%);opacity:0;animation:hush-in .3s ease-out .4s forwards;filter:drop-shadow(0 24px 48px rgba(15,18,22,.6))}
+@keyframes hush-in{to{opacity:1}}
+@media(prefers-reduced-motion:reduce){.pring .ghost{animation:none;opacity:1}}
+.pring .dot{fill:var(--brass);filter:drop-shadow(0 0 14px rgba(198,164,105,.9))}
+.pring .orb{fill:var(--phantom);filter:drop-shadow(0 0 10px rgba(191,217,210,.9))}
+.pring text{font-family:var(--body);font-weight:600;font-size:11px;fill:var(--slate);letter-spacing:.14em;text-transform:uppercase}
+@media(max-width:960px){.pring{display:none}}
+/* problem */
+.prob{padding-block:140px 0;border-top:0}
+.prob .statement{font-family:"Fraunces",serif;font-weight:600;letter-spacing:-.02em}
+.systems{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:16px;margin-top:64px}
+.sysc{padding:28px;border:1px solid var(--line);border-radius:14px;background:var(--bg2);position:relative;overflow:hidden}
+.sysc b{display:flex;align-items:center;gap:10px;font-family:"Source Sans 3",sans-serif;font-weight:600;font-size:18px;margin-bottom:8px}
+.sysc b .ic{color:var(--accent)}
+.sysc p{font-size:15.5px;color:var(--text2)}
+.sysc::after{content:"";position:absolute;right:-1px;top:20%;bottom:20%;width:1px;background:repeating-linear-gradient(180deg,var(--accent2) 0 6px,transparent 6px 12px);opacity:.6}
+.sysc:last-child::after{display:none}
+@media(max-width:760px){.systems{grid-template-columns:1fr}}
+.gallery{display:grid;grid-template-columns:repeat(12,1fr);grid-auto-rows:120px;gap:12px;margin-top:64px}
+.gallery figure{margin:0;border-radius:14px;overflow:hidden;position:relative}
+.gallery img{width:100%;height:100%;object-fit:cover;transition:transform 1.4s var(--ease)}
+.gallery figure:hover img{transform:scale(1.05)}
+.gallery figcaption{position:absolute;left:16px;bottom:14px;font-family:"Fraunces",serif;font-size:20px;color:#F3EDE2;text-shadow:0 2px 20px rgba(0,0,0,.5)}
+.gallery figcaption small{display:block;font-family:var(--mono);font-size:10px;letter-spacing:.08em;text-transform:uppercase;opacity:.8}
+.g1{grid-column:1/8;grid-row:1/4}.g2{grid-column:8/13;grid-row:1/3}.g3{grid-column:8/11;grid-row:3/5}.g4{grid-column:11/13;grid-row:3/5}.g5{grid-column:1/8;grid-row:4/5}
+@media(max-width:760px){.gallery{grid-auto-rows:90px}.g1{grid-column:1/13;grid-row:1/3}.g2{grid-column:1/7;grid-row:3/5}.g3{grid-column:7/13;grid-row:3/5}.g4{grid-column:1/7;grid-row:5/6}.g5{grid-column:7/13;grid-row:5/6}}
+/* NIGHT: how it works + roles */
+/* The page already sits on Midnight, so this section lifts to Fog instead of
+   dropping to black, and keeps its own quiet brass and phantom wash. */
+.night{margin-top:140px;background:var(--fog);color:var(--ivory);border-top:1px solid var(--line);border-bottom:1px solid var(--line);padding-block:140px;position:relative;overflow:hidden}
+.night::before{content:"";position:absolute;inset:0;background:radial-gradient(ellipse 50% 50% at 80% 10%,rgba(198,164,105,.14),transparent 60%),radial-gradient(ellipse 40% 40% at 10% 90%,rgba(191,217,210,.1),transparent 60%);pointer-events:none}
+.night .wrap{position:relative}
+.night h2{color:#F3EDE2;font-family:"Fraunces",serif;font-weight:400;letter-spacing:-.02em}
+.night .lede{color:#7C8592}
+.night .label{color:#7C8592}
+.night .pipe .ring{background:#0F1216;border-color:rgba(243,237,226,.25);color:#F3EDE2}
+.night .pipe .wire .base{stroke:rgba(243,237,226,.2)}
+.night .pipe small{color:#7C8592}
+.night .pipe .ring{--accent:#C6A469}
+.night .marq{border-color:rgba(243,237,226,.15);color:#7C8592}
+.devices{margin-top:96px}
+.devcap{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap;margin-top:28px;font-family:var(--mono);font-size:11px;letter-spacing:.06em;text-transform:uppercase;color:#7C8592}
+.nroles{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:16px;margin-top:64px}
+.nr{border:1px solid rgba(243,237,226,.15);border-radius:14px;background:rgba(243,237,226,.03);overflow:hidden;display:flex;flex-direction:column;transition:background .3s,border-color .3s,transform .3s var(--ease)}
+.nr .shot{position:relative;aspect-ratio:16/10;overflow:hidden;background:#0F1216}
+.nr .shot img{width:100%;height:100%;object-fit:cover;display:block;transition:transform .9s var(--ease)}
+.nr:hover .shot img{transform:scale(1.05)}
+.nr .shot::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(15,18,22,0) 55%,rgba(15,18,22,.55) 82%,rgba(15,18,22,.9))}
+.nr .txt{padding:18px 22px 24px;flex:1}
+.nr:hover{background:rgba(243,237,226,.06);border-color:rgba(243,237,226,.3);transform:translateY(-3px)}
+.rolewrap{position:relative;margin-top:140px}
+.rolewrap .hd,.rolewrap .nroles{position:relative;z-index:1}
+.rolebg{position:absolute;top:-80px;left:50%;transform:translateX(-50%);width:100vw;height:clamp(340px,44vh,540px);overflow:hidden;pointer-events:none}
+.rolebg img{width:100%;height:100%;object-fit:cover;object-position:50% 48%;opacity:.55}
+.rolebg::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(15,18,22,.80),rgba(15,18,22,.42) 42%,rgba(15,18,22,.93) 84%,#0F1216)}
+.ghostband{margin:96px 0 0;border-radius:16px;overflow:hidden;border:1px solid var(--line);position:relative}
+.ghostband img{width:100%;height:auto;display:block}
+.ghostband figcaption{position:absolute;left:16px;bottom:14px;font-family:var(--mono);font-size:11px;letter-spacing:.06em;text-transform:uppercase;color:var(--text2);background:rgba(15,18,22,.85);padding:6px 10px;border-radius:4px}
+@media(max-width:560px){.ghostband figcaption{position:static;display:block;background:none;padding:10px 0 0}}
+@media(max-width:560px){.ghostband{margin-top:56px}.rolebg{top:-40px;height:clamp(260px,36vh,400px)}}
+.nr b{display:flex;align-items:center;gap:10px;font-family:"Source Sans 3",sans-serif;font-weight:600;font-size:19px;margin-bottom:10px}
+.nr b .ic{color:#C6A469}
+.nr p{font-size:15px;color:#7C8592}
+@media(max-width:960px){.nroles{grid-template-columns:repeat(2,minmax(0,1fr))}}@media(max-width:560px){.nroles{grid-template-columns:1fr}}
+/* pillars promise graph */
+.pillsec{padding-block:140px 0;border-top:0}
+.pillsec h2,.rooms h2,.small-h2{font-family:"Fraunces",serif;font-weight:600;letter-spacing:-.02em}
+.chain{position:relative;display:grid;grid-template-columns:repeat(6,minmax(0,1fr));gap:8px;margin-top:64px;padding:32px 0}
+.chain::before{content:"";position:absolute;left:8%;right:8%;top:60px;height:2px;background:var(--accent);opacity:.35}
+.chain .cn{position:relative;display:flex;flex-direction:column;align-items:center;gap:12px;text-align:center}
+.chain .cn i{width:56px;height:56px;border-radius:50%;border:2px solid var(--accent);background:var(--bg);display:grid;place-items:center;color:var(--accent);position:relative;transition:transform .5s var(--ease),background .4s,color .4s}
+.chain .cn.in i{animation:cpop .6s var(--ease) both;animation-delay:calc(var(--k)*.2s)}
+@keyframes cpop{from{transform:scale(.6);opacity:0}to{transform:scale(1);opacity:1}}
+.chain .cn.ev i{border-color:var(--accent2);background:var(--accent2);color:#0F1216}
+.chain .cn b{font-family:"Source Sans 3",sans-serif;font-weight:600;font-size:15px}
+.chain .cn small{font-family:var(--mono);font-size:11px;color:var(--text2);letter-spacing:.04em}
+@media(max-width:760px){.chain{grid-template-columns:repeat(3,minmax(0,1fr));gap:24px 8px}.chain::before{display:none}}
+.pil{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:16px;margin-top:56px}
+.pil article{padding:32px 28px;border-radius:14px;background:var(--bg2);border:1px solid var(--line)}
+.pil .oring{margin-bottom:24px}
+.pil h3{font-size:22px;margin-bottom:10px}
+.pil p{font-size:16px;color:var(--text2)}
+@media(max-width:960px){.pil{grid-template-columns:repeat(2,minmax(0,1fr))}}@media(max-width:560px){.pil{grid-template-columns:1fr}}
+/* rooms */
+.rooms{padding-block:140px 0;border-top:0}
+.roomgrid{display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:12px;margin-top:64px}
+.room{position:relative;aspect-ratio:3/4;border-radius:14px;overflow:hidden}
+.room img{width:100%;height:100%;object-fit:cover;transition:transform 1.4s var(--ease)}
+.room:hover img{transform:scale(1.06)}
+.room .t{position:absolute;inset:auto 0 0 0;padding:20px;background:linear-gradient(180deg,transparent,rgba(15,18,22,.9));color:#F3EDE2;font-family:"Fraunces",serif;font-size:22px;display:flex;align-items:center;gap:10px}
+.room .t .ic{color:#C6A469}
+@media(max-width:960px){.roomgrid{grid-template-columns:repeat(3,minmax(0,1fr))}}@media(max-width:560px){.roomgrid{grid-template-columns:repeat(2,minmax(0,1fr))}}
+/* small teams */
+.smalls{padding-block:140px 0;border-top:0}
+.smalls .box{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:56px;align-items:center}
+.smalls .pic{border-radius:16px;overflow:hidden;aspect-ratio:4/3}.smalls .pic img{width:100%;height:100%;object-fit:cover}
+.stack{display:flex;flex-wrap:wrap;gap:10px;margin-top:28px}
+.stack span{display:inline-flex;align-items:center;gap:8px;height:40px;padding:0 14px;border:1px solid var(--line);border-radius:999px;font-family:var(--mono);font-size:12.5px;background:var(--bg2)}
+.stack span .ic{width:14px;height:14px;color:var(--accent)}
+@media(max-width:860px){.smalls .box{grid-template-columns:1fr}}
+.inv{padding-block:140px 0;border-top:0}
+.inv .box{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.4fr);gap:56px;padding:56px;border:1px solid var(--line);border-radius:16px;background:var(--bg2)}
+.inv .box p{color:var(--text2)}
+.inv h2{font-family:"Fraunces",serif;font-weight:600}
+@media(max-width:860px){.inv .box{grid-template-columns:1fr;padding:32px 24px;gap:24px}}
+.contact{padding-block:180px 160px}
+.contact h2{font-family:"Fraunces",serif;font-weight:400;letter-spacing:-.02em}
+.brand.product{font-family:"Fraunces",serif;font-weight:600;font-size:26px;letter-spacing:.02em}
+.wm{display:inline-flex;align-items:center;gap:10px}
+.wm svg{width:34px;height:34px}
+.disclose{font-family:var(--mono);font-size:11px;letter-spacing:.06em;text-transform:uppercase;color:var(--text2)}
+
+.receipt{margin:64px 0 0;border-radius:16px;overflow:hidden;border:1px solid var(--line);position:relative}
+.receipt img{width:100%;height:auto;display:block}
+.receipt figcaption{position:absolute;left:18px;bottom:14px;font-family:var(--mono);font-size:11px;letter-spacing:.06em;text-transform:uppercase;color:var(--text2);background:rgba(15,18,22,.85);padding:6px 10px;border-radius:4px}
+@media(max-width:560px){.receipt{margin-top:40px}.receipt figcaption{position:static;display:block;background:none;padding:10px 0 0}}
+.hero .bg picture{display:contents}
+.story{display:grid;gap:16px;margin-top:56px}
+.story figure{position:relative;border-radius:14px;overflow:hidden;border:1px solid var(--line);margin:0}
+.story img{width:100%;height:100%;object-fit:cover;display:block;aspect-ratio:4/3;transition:transform 1.2s var(--ease)}
+.story figure:hover img{transform:scale(1.04)}
+.story figcaption{position:absolute;left:0;right:0;bottom:0;padding:40px 16px 14px;font-size:13px;line-height:1.4}
+@media(max-width:860px){.story{grid-template-columns:1fr!important}.story figure.wide{grid-column:auto!important}.story img{aspect-ratio:16/10}}
+.story{grid-template-columns:repeat(2,minmax(0,1fr))}
+.story figure.wide{grid-column:1 / -1}
+.story figure.wide img{aspect-ratio:16/10}
+.story figcaption{color:#F3EDE2;background:linear-gradient(180deg,rgba(15,18,22,0),rgba(15,18,22,.9))}
+/* three systems, three islands, and the gap the promise falls through */
+.islands .sysc{position:relative}
+.islands .sysc::before{content:"";position:absolute;left:0;right:0;bottom:-15px;height:1px;background:repeating-linear-gradient(90deg,var(--accent2) 0 3px,transparent 3px 8px);opacity:.5}
+.gapnote{display:flex;align-items:center;gap:16px;margin-top:30px}
+.gapnote .gl{flex:1;height:1px;background:linear-gradient(90deg,transparent,var(--line))}
+.gapnote .gl:last-child{background:linear-gradient(90deg,var(--line),transparent)}
+.gapnote .gt{font-family:var(--mono);font-size:11.5px;letter-spacing:.07em;text-transform:uppercase;color:var(--accent2)}
+@media(max-width:760px){.islands .sysc::before{display:none}}
+.band{margin:56px 0 0;border-radius:16px;overflow:hidden;border:1px solid var(--line);position:relative}
+.band img{width:100%;height:auto;display:block}
+.band figcaption{position:absolute;left:16px;bottom:12px;font-family:var(--mono);font-size:11px;letter-spacing:.06em;text-transform:uppercase;color:var(--text2);background:var(--bandcap,rgba(0,0,0,.7));padding:6px 10px;border-radius:4px}
+.night .band{--bandcap:rgba(15,18,22,.82);max-width:720px;margin-bottom:56px}
+.opsband{margin:56px 0 0;border-radius:16px;overflow:hidden;border:1px solid rgba(243,237,226,.15);position:relative}
+.opsband img{width:100%;height:auto;display:block}
+.opsband figcaption{position:absolute;left:16px;bottom:14px;font-family:var(--mono);font-size:11px;letter-spacing:.06em;text-transform:uppercase;color:#7C8592;background:rgba(15,18,22,.82);padding:6px 10px;border-radius:4px}
+@media(max-width:560px){.opsband figcaption{position:static;display:block;background:none;padding:10px 0 0}}
+.contact{position:relative;overflow:hidden}
+.contact .wrap{position:relative;z-index:1}
+.ctbg{position:absolute;inset:0;pointer-events:none}
+.ctbg img{width:100%;height:100%;object-fit:cover;opacity:.26}
+.signoff{margin-top:56px;font-family:"Fraunces",serif;font-style:italic;font-weight:600;font-size:clamp(22px,2.2vw,30px);color:var(--brass);text-align:center}
+.wink{margin-top:28px;font-family:"Fraunces",serif;font-style:italic;font-size:clamp(17px,1.5vw,21px);color:var(--slate)}
+.ctbg::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,var(--bg),rgba(15,18,22,.55) 40%,var(--bg))}</style></head>
+<body data-brand="ha"><template id="__bundler_thumbnail"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><rect width="100" height="100" fill="#0F1216"/><text x="50" y="50" text-anchor="middle" dominant-baseline="central" font-family="Fraunces,Georgia,serif" font-weight="600" font-size="44" fill="#C6A469">G</text></svg></template>
+<script src="/familybar.js"></script>
+<header class="site-nav"><span class="progress" aria-hidden="true"></span><div class="wrap">
+<a class="brand product" href="/ghost" aria-label="GHOST home"><span class="wm"><img class="ic-mark" src="/assets/logos/ghost-mark-2026.png" alt="" width="38" height="38" decoding="async">GHOST</span><span class="by" style="align-self:flex-end;margin-bottom:4px">by Auxerion</span></a>
+<nav class="links" id="links" aria-label="Primary"><a href="#how">How it works</a><a href="#inside">Inside</a><a href="#roles">For every role</a><a href="#rooms">Operating rooms</a><a href="#investors">Investors</a><a href="#contact">Contact</a></nav>
+<a class="btn primary nav-cta" href="#contact">Request a demonstration</a>
+<button class="menu-btn" aria-expanded="false" aria-controls="links">Menu</button>
+</div></header>
+<main>
+<section class="hero" data-screen-label="Hero">
+<div class="bg" aria-hidden="true"><picture><source media="(max-width:860px)" srcset="/assets/ghost-web/v2/hero-promise-mobile.jpg" width="1086" height="1448"><img class="on" src="/assets/ghost-web/v2/hero-promise.jpg" alt="" width="1672" height="941" fetchpriority="high" decoding="async"></picture></div>
+<div class="veil" aria-hidden="true"></div>
+<div class="pring" aria-hidden="true"><img class="ghost" src="/assets/logos/ghost-mascot.png" alt="" width="384" height="424" fetchpriority="high" decoding="async"><svg viewBox="0 0 400 400"><circle class="r" cx="200" cy="200" r="150"/><circle class="dot" cx="322" cy="112" r="9"/><circle class="orb" r="5"><animateMotion dur="9s" repeatCount="indefinite" path="M322 112A150 150 0 1 1 350 200A150 150 0 1 1 50 200A150 150 0 0 1 322 112"/></circle><text x="200" y="376" text-anchor="middle">requested · committed · accepted · executed · evidenced · acknowledged</text></svg></div>
+<div class="wrap"><div class="copy">
+<div class="eyebrow reveal in"><span class="tag accent">GHOST · Guest &amp; Hospitality OS Toolkit</span><span class="tag">Investor demonstration</span><span class="live"><i></i>Pilot property next</span></div>
+<h1 class="words"><span>Your</span> <i><span>invisible</span></i> <span>operations</span> <span>partner.</span></h1>
+<p class="lede reveal in d3">GHOST is the AI-native operating layer for independent hotels. It sees the whole property, works out what every promise depends on, puts the next move in front of the right person, and keeps the record. Guests never see it. They only notice that everything happened.</p>
+<p class="kicker reveal in d3">See the whole operation. Act on what matters. A person approves every consequential move.</p>
+<div class="actions reveal in d4"><a class="btn primary lg" href="#contact">Request a demonstration <svg class="ic"><use href="#i-arrow"/></svg></a><a class="btn secondary lg" href="#investors">For investors</a></div>
+</div>
+<div class="strip reveal in d4"><div><small>Detect</small>what is happening</div><div><small>Reason</small>what it affects</div><div><small>Recommend</small>the next move, with the reason</div><div><small>Coordinate</small>people and partners</div><div><small>Approve</small>a human's yes on anything consequential</div></div>
+</div><a class="cue" href="#problem" aria-label="Scroll"><span></span></a></section>
+
+<section class="block prob" id="problem" data-screen-label="Problem"><div class="wrap">
+<div class="hd"><div class="reveal"><div class="signal draw" style="margin-bottom:28px"></div><h2 class="statement">Your hotel runs on promises. Your software runs on records.</h2></div><p class="lede reveal d1">A hospitality day moves faster than any plan. Nobody holds the whole picture of what the guest was told, what it depends on, and whether it happened, so every missed connection becomes a service, cost, or margin risk that surfaces only when the guest does.</p></div>
+<div class="systems islands">
+<div class="sysc reveal"><b><svg class="ic"><use href="#i-bed"/></svg>The PMS</b><p>knows rooms.</p></div>
+<div class="sysc reveal d1"><b><svg class="ic"><use href="#i-card"/></svg>The POS</b><p>knows covers.</p></div>
+<div class="sysc reveal d2"><b><svg class="ic"><use href="#i-chat"/></svg>The group chat</b><p>knows everything else, until the shift changes.</p></div>
+</div>
+<div class="gapnote" role="img" aria-label="Each system holds one part of the picture; the promise falls through the gaps between them, and GHOST works in those gaps"><span class="gl" aria-hidden="true"></span><span class="gt">the promise falls through the gaps · GHOST works in the gaps</span><span class="gl" aria-hidden="true"></span></div>
+
+<div class="gallery">
+<figure class="g1 reveal"><img src="/assets/ghost-web/reef-pavilion.jpg" alt="Reef pavilion at golden hour"><figcaption><small>the promise</small>A pavilion, ready at six.</figcaption></figure>
+<figure class="g2 reveal d1"><img src="/assets/ghost-web/ember-and-salt.jpg" alt="Dinner table set at Ember &amp; Salt"><figcaption><small>depends on</small>Prep, labor, bar stock.</figcaption></figure>
+<figure class="g3 reveal d2"><img src="/assets/ghost-web/tide-house-spa.jpg" alt="Spa interior"><figcaption><small>depends on</small>Room turnover.</figcaption></figure>
+<figure class="g4 reveal d3"><img src="/assets/ghost-web/reef-with-naturalist.jpg" alt="Reef with naturalist guide"><figcaption><small>depends on</small>Weather · partners.</figcaption></figure>
+<figure class="g5 reveal d2"><img src="/assets/ghost-web/private-launch-arrival.jpg" alt="Private launch arriving at the jetty"><figcaption><small>did it happen?</small>Evidence on the record.</figcaption></figure>
+</div>
+<p class="disclose" style="margin-top:16px">Imagery · Maravé, a synthetic demonstration property</p>
+<figure class="ghostband reveal"><img src="/assets/ghost-web/ghost-lobby-banner.jpg" alt="A hotel lobby at check-in, with GHOST working alongside the team: a guest on a tablet, the desk behind her, and the app's welcome screen in hand" width="1024" height="434" loading="lazy" decoding="async"><figcaption>GHOST · your invisible assistant. The guest sees a welcome; the app carries what it depends on.</figcaption></figure>
+</div></section>
+
+<section class="block night" id="how" data-screen-label="How it works (night)"><div class="wrap">
+<div class="hd"><div class="reveal"><span class="label" style="display:block;margin-bottom:16px">How it works · staff side</span><h2 class="statement sm">Present everywhere. In the way nowhere.</h2></div><p class="lede reveal d1">From scattered signals to one action-ready operating system. Detect what is happening. Reason about what it affects. Recommend, with the reason attached. Coordinate people and partners. Human approval on anything consequential. Every role sees its part of the same graph, on a device built for where it works.</p></div>
+<div class="pipe reveal" style="--n:5" aria-hidden="true"><svg class="wire" viewBox="0 0 1000 10" preserveAspectRatio="none"><defs><path id="wp" d="M0 5H1000"/></defs><path d="M0 5H1000" class="base"/><circle r="4" fill="#C6A469"><animateMotion dur="6s" repeatCount="indefinite"><mpath href="#wp"/></animateMotion></circle><circle r="4" fill="#C6A469"><animateMotion dur="6s" begin="3s" repeatCount="indefinite"><mpath href="#wp"/></animateMotion></circle></svg>
+<div class="st" style="--d:0s"><span class="ring"><svg class="ic"><use href="#i-radio"/></svg></span><b>Detect</b><small>what is happening</small></div>
+<div class="st" style="--d:1.2s"><span class="ring"><svg class="ic"><use href="#i-branch"/></svg></span><b>Reason</b><small>what it affects</small></div>
+<div class="st" style="--d:2.4s"><span class="ring"><svg class="ic"><use href="#i-sparkles"/></svg></span><b>Recommend</b><small>with the reason attached</small></div>
+<div class="st" style="--d:3.6s"><span class="ring"><svg class="ic"><use href="#i-users"/></svg></span><b>Coordinate</b><small>people and partners</small></div>
+<div class="st" style="--d:4.8s"><span class="ring"><svg class="ic"><use href="#i-usercheck"/></svg></span><b>Human approval</b><small>anything consequential</small></div>
+</div>
+
+<figure class="opsband reveal"><img src="/assets/ghost-web/ghost-ops-banner.jpg" alt="Back of house: housekeeping and maintenance staff around an operations dashboard of floor status and the task queue, with GHOST beside them and the same queue on a phone" width="1024" height="434" loading="lazy" decoding="async"><figcaption>Back of house · the same graph, on the wall and in a pocket.</figcaption></figure>
+<figure class="band reveal"><img src="/assets/ghost-web/v2/experience-handoff.jpg" alt="A key handed across a jetty from one person to another" width="1200" height="900" loading="lazy" decoding="async"><figcaption>The handoff the guest never sees.</figcaption></figure>
+<div class="devices reveal" data-tilt>
+<div class="dev pc"><img src="/assets/screens/ghost/hotel-today.webp" alt="GHOST manager desktop showing Today at Maravé, the hotel operating view" width="3200" height="2000" loading="lazy" decoding="async"></div>
+<div class="dev tab"><img src="/assets/screens/ghost/worker-tablet.webp" alt="GHOST crew tablet showing a route map with readiness checks and captured evidence" width="1840" height="1370" loading="lazy" decoding="async"></div>
+<div class="dev ph"><img src="/assets/screens/ghost/guest-phone.webp" alt="GHOST guest phone showing your stay, in motion" width="1170" height="2472" loading="lazy" decoding="async"></div>
+</div>
+<div class="devcap"><span>Manager desktop · crew tablet · guest phone</span><span>live captures · current build · synthetic demonstration property</span></div>
+<div class="rolewrap"><div class="rolebg" aria-hidden="true"><img src="/assets/ghost-web/roles-header.jpg" alt="" width="1760" height="587" loading="lazy" decoding="async"></div><div class="hd" id="roles"><div class="reveal"><span class="label" style="display:block;margin-bottom:16px">For every role</span><h2 class="statement sm">Purpose-built for the floor, the desk, and the office.</h2></div></div>
+<div class="nroles">
+<div class="nr reveal"><div class="shot"><img src="/assets/ghost-web/roles/crew.jpg" alt="Hotel team member checking room readiness with a tablet" width="880" height="587" loading="lazy" decoding="async"></div><div class="txt"><b><svg class="ic"><use href="#i-route"/></svg>Crew</b><p>See the next action, the route, and the evidence to capture, on a tablet that keeps working when the Wi-Fi doesn't.</p></div></div>
+<div class="nr reveal d1"><div class="shot"><img src="/assets/ghost-web/roles/front-desk.jpg" alt="Receptionist coordinating an arrival with a hotel guest" width="880" height="587" loading="lazy" decoding="async"></div><div class="txt"><b><svg class="ic"><use href="#i-bed"/></svg>Front desk</b><p>Arrivals, departures, and requests with the dependencies already checked, so hello comes with confidence.</p></div></div>
+<div class="nr reveal d2"><div class="shot"><img src="/assets/ghost-web/roles/managers.jpg" alt="Hotel managers discussing an operational decision together" width="880" height="587" loading="lazy" decoding="async"></div><div class="txt"><b><svg class="ic"><use href="#i-scan"/></svg>Managers</b><p>Exceptions and trade-offs, ranked, with a receipt behind every decision.</p></div></div>
+<div class="nr reveal d3"><div class="shot"><img src="/assets/ghost-web/roles/guests.jpg" alt="Guests receiving attentive service in a boutique hotel lounge" width="880" height="587" loading="lazy" decoding="async"></div><div class="txt"><b><svg class="ic"><use href="#i-check"/></svg>Guests</b><p>One clear status, and a real alternative when plans change. Never a glimpse of the machinery.</p></div></div>
+</div></div>
+<div class="marq" style="margin-top:64px"><div>Live Promise Graph · outcome receipt · graduated autonomy: insight → recommend → draft → approve → automate within policy · Connect what exists. Coordinate what happens next. · Live Promise Graph · outcome receipt · graduated autonomy: insight → recommend → draft → approve → automate within policy · </div></div>
+</div></section>
+
+<section class="block tour" id="inside" data-screen-label="Inside GHOST"><div class="wrap">
+<div class="hd"><div class="reveal"><span class="label" style="display:block;margin-bottom:16px">Inside GHOST</span><h2 class="statement sm">One graph. Every device. Nothing in the guest's way.</h2></div><p class="lede reveal d1">Real screens from the current build on Maravé, the synthetic demonstration property. The same promise graph, seen from the office, the desk, the floor, and the guest's hand.</p></div>
+<div class="tourgrid">
+<ol class="tour-steps reveal">
+<li class="tour-step" data-cap="Hotel today · manager view"><button type="button"><span class="k">Hotel today</span><span class="t">See the whole operation.</span><span class="d">A property pulse timeline of the next six hours: arrivals, room releases, experiences, dining, and the dependencies underneath them, with the arrival at risk called out beside it.</span></button></li>
+<li class="tour-step" data-cap="Front desk · lobby station"><button type="button"><span class="k">Front desk</span><span class="t">Arrivals, with the dependencies already checked.</span><span class="d">Who is next through the lobby, how ready each arrival is, and the promise made to the guest, with registration, payment, room, and access verified before hello.</span></button></li>
+<li class="tour-step" data-cap="Guest ownership · the arrival plan"><button type="button"><span class="k">The promise</span><span class="t">Requested. Accepted. Verified. Confirmed.</span><span class="d">A guest's request becomes an arrival plan the hotel accepts, departments check, a duty manager verifies, and the guest confirms, every step on the record.</span></button></li>
+<li class="tour-step" data-cap="Restaurant POS · station"><button type="button"><span class="k">Restaurant</span><span class="t">Guest context, only where it changes service.</span><span class="d">The order carries the stay: confirmed preferences, room-charge authorization, the promise window, and the kitchen's readiness on one station.</span></button></li>
+<li class="tour-step" data-cap="Guest website · Maravé"><button type="button"><span class="k">Guest side</span><span class="t">The promise starts on the guest's screen.</span><span class="d">The property's own site asks how the stay should feel, then hands the answer to the operation that has to keep it. GHOST is nowhere in sight.</span></button></li>
+</ol>
+<div class="tour-stage reveal d1"><div class="tour-frame" data-tilt>
+<figure class="on"><img src="/assets/screens/ghost/hotel-today.webp" alt="GHOST hotel operating view: Today at Maravé Private Island, a property pulse timeline of arrivals, room releases, experiences and dining, with an arrival-at-risk panel" width="3200" height="2000" loading="lazy" decoding="async"></figure>
+<figure><img src="/assets/screens/ghost/front-desk.webp" alt="GHOST front desk station: next arrivals through the lobby with readiness, room and arrival promise, and the guest's verified checks" width="3200" height="2000" loading="lazy" decoding="async"></figure>
+<figure><img src="/assets/screens/ghost/arrival-plan.webp" alt="GHOST staff desk: accept Amara's arrival plan, with the guest's recorded request, department checks, and the promise steps from request received to guest confirmed" width="3200" height="2000" loading="lazy" decoding="async"></figure>
+<figure><img src="/assets/screens/ghost/restaurant-pos.webp" alt="GHOST restaurant POS: build an order for an in-house guest with confirmed preferences, room charge, promise window and kitchen readiness" width="2560" height="1600" loading="lazy" decoding="async"></figure>
+<figure><img src="/assets/screens/ghost/guest-website.webp" alt="Maravé guest website: Arrive with less. Leave with more of yourself. With a stay-rhythm selector and availability search" width="3200" height="2000" loading="lazy" decoding="async"></figure>
+</div><div class="tour-cap"><b>Hotel today · manager view</b><span>Maravé · synthetic demonstration property</span></div></div>
+</div>
+<div class="tour-duo">
+<figure class="reveal"><div class="tour-tab" data-tilt><img src="/assets/screens/ghost/manager-tablet.webp" alt="GHOST manager tablet: live property map of Maravé with residence pins and promise status, beside the morning brief" width="1840" height="1370" loading="lazy" decoding="async"></div><figcaption><b>Live property · manager tablet</b>Every residence, pin, and promise on one map, with the morning brief and today's house beside it.</figcaption></figure>
+<figure class="reveal d1"><div class="tour-tab" data-tilt><img src="/assets/screens/ghost/guest-tablet.webp" alt="GHOST guest tablet: Good afternoon, Amara. Ocean House is ready, with the island day and held experiences" width="1894" height="1408" loading="lazy" decoding="async"></div><figcaption><b>Guest tablet</b>Ocean House is ready, the reef sail is held, and the host replies in under two minutes. One clear status, in the guest's hand.</figcaption></figure>
+</div>
+</div></section>
+
+<section class="block pillsec" data-screen-label="Pillars"><div class="wrap">
+<div class="hd"><div class="reveal"><h2 class="statement sm">The outcome receipt. Proof of the work no one saw.</h2></div><p class="lede reveal d1">Requested, committed, accepted, executed, evidenced, acknowledged. The record that makes the operation auditable and the story provable.</p></div>
+<div class="chain reveal">
+<div class="cn" style="--k:0"><i><svg class="ic"><use href="#i-chat"/></svg></i><b>Requested</b><small>guest</small></div>
+<div class="cn" style="--k:1"><i><svg class="ic"><use href="#i-task"/></svg></i><b>Committed</b><small>feasibility checked</small></div>
+<div class="cn" style="--k:2"><i><svg class="ic"><use href="#i-usercheck"/></svg></i><b>Accepted</b><small>owner named</small></div>
+<div class="cn" style="--k:3"><i><svg class="ic"><use href="#i-route"/></svg></i><b>Executed</b><small>crew</small></div>
+<div class="cn ev" style="--k:4"><i><svg class="ic"><use href="#i-filecheck"/></svg></i><b>Evidenced</b><small>proof captured</small></div>
+<div class="cn" style="--k:5"><i><svg class="ic"><use href="#i-check"/></svg></i><b>Acknowledged</b><small>guest</small></div>
+</div>
+<figure class="receipt reveal d1"><img src="/assets/ghost-web/receipt-artifact.jpg" alt="A proof-of-completion card resting beside the keys, linen and rosemary it attests to" width="1870" height="841" loading="lazy" decoding="async"><figcaption>Illustration. The live receipt carries owner, approval, evidence and status.</figcaption></figure>
+<div class="pil">
+<article class="reveal"><span class="oring"><svg viewBox="0 0 64 64"><circle cx="32" cy="32" r="30"/></svg><svg class="ic"><use href="#i-shield"/></svg></span><h3>Promise feasibility before commitment.</h3><p>Check what the hotel can actually deliver, across room, stay, team, supplies, partners, and policy, then commit with confidence.</p></article>
+<article class="reveal d1"><span class="oring"><svg viewBox="0 0 64 64"><circle cx="32" cy="32" r="30"/></svg><svg class="ic"><use href="#i-users"/></svg></span><h3>One commitment, many owners.</h3><p>Guests see one status; the hotel sees the dependency chain and who owns each link. Finishing a task does not mark the promise kept; evidence does.</p></article>
+<article class="reveal d2"><span class="oring"><svg viewBox="0 0 64 64"><circle cx="32" cy="32" r="30"/></svg><svg class="ic"><use href="#i-zap"/></svg></span><h3>Recovery before disappointment.</h3><p>Weather, capacity, and supply problems become explained alternatives, with the impact previewed, before anyone has to apologize.</p></article>
+<article class="reveal d3"><span class="oring"><svg viewBox="0 0 64 64"><circle cx="32" cy="32" r="30"/></svg><svg class="ic"><use href="#i-filecheck"/></svg></span><h3>The outcome receipt.</h3><p>Requested, committed, accepted, executed, evidenced, acknowledged. The record that makes the operation auditable and the story provable.</p></article>
+</div>
+<div class="story"><figure class="reveal wide"><img src="/assets/ghost-web/v2/weather-recovery.jpg" alt="A dinner moved under cover as weather turns, service continuing" width="1400" height="876" loading="lazy" decoding="async"><figcaption>Recovery before disappointment. The evening moves and the guest keeps the night.</figcaption></figure><figure class="reveal d1"><img src="/assets/ghost-web/v2/promise-feasibility.jpg" alt="A service checked against what the day can actually carry" width="880" height="660" loading="lazy" decoding="async"><figcaption>Feasibility checked before the promise is made.</figcaption></figure><figure class="reveal d2"><img src="/assets/ghost-web/v2/one-promise-many-owners.jpg" alt="Several departments working to one plan" width="880" height="495" loading="lazy" decoding="async"><figcaption>One commitment, many owners, each knowing their part of it.</figcaption></figure><figure class="reveal d3"><img src="/assets/ghost-web/v2/outcome-in-the-room.jpg" alt="The finished table photographed where it stands, as the evidence" width="880" height="660" loading="lazy" decoding="async"><figcaption>The outcome receipt. Evidence captured in the room.</figcaption></figure></div><p class="signoff reveal d1">Every promise, quietly kept.</p></div></section>
+
+<section class="block rooms" id="rooms" data-screen-label="Connected operating rooms"><div class="wrap">
+<div class="hd"><div class="reveal"><h2 class="statement sm">Food, bar, events, facilities, and finance, moving as one operation.</h2></div><p class="lede reveal d1">One event plan moves prep, labor, bar stock, room turnover, and maintenance together. Forecasting reads the day before it happens. Receiving, waste, vendors, and invoices close the loop between what was planned, ordered, and delivered.</p></div>
+<div class="roomgrid">
+<div class="room reveal"><img src="/assets/ghost-web/rooms/food.jpg" alt="A restaurant pass plated and waiting before service" width="880" height="1173" loading="lazy" decoding="async"><div class="t"><svg class="ic"><use href="#i-flask"/></svg>Food</div></div>
+<div class="room reveal d1"><img src="/assets/ghost-web/rooms/bar.jpg" alt="A resort bar counter at dusk, brass catching the last light" width="880" height="1173" loading="lazy" decoding="async"><div class="t"><svg class="ic"><use href="#i-card"/></svg>Bar</div></div>
+<div class="room reveal d2"><img src="/assets/ghost-web/rooms/events.jpg" alt="A long terrace table set for an event above the sea" width="880" height="1173" loading="lazy" decoding="async"><div class="t"><svg class="ic"><use href="#i-route"/></svg>Events</div></div>
+<div class="room reveal d3"><img src="/assets/ghost-web/rooms/facilities.jpg" alt="A back-of-house service corridor, immaculate and calm" width="880" height="1173" loading="lazy" decoding="async"><div class="t"><svg class="ic"><use href="#i-scan"/></svg>Facilities</div></div>
+<div class="room reveal d4"><img src="/assets/ghost-web/rooms/finance.jpg" alt="A quiet back-office desk with a leather folio and brass lamp" width="880" height="1173" loading="lazy" decoding="async"><div class="t"><svg class="ic"><use href="#i-table"/></svg>Finance</div></div>
+</div></div></section>
+
+<section class="block smalls" data-screen-label="Small teams"><div class="wrap"><div class="box">
+<div class="reveal"><span class="label" style="display:block;margin-bottom:16px">Small teams welcome</span><h2 class="small-h2" style="margin-bottom:16px">Built for properties without a back office.</h2><p class="lede">Start manual, with governed evidence, and add integrations when you're ready. GHOST fits around the stack you already have, PMS, POS, accounting, and payroll, instead of asking you to replace it. The same person can cover the desk, the experiences, and duty management from one queue.</p>
+<div class="stack"><span><svg class="ic"><use href="#i-bed"/></svg>PMS</span><span><svg class="ic"><use href="#i-card"/></svg>POS</span><span><svg class="ic"><use href="#i-table"/></svg>Accounting</span><span><svg class="ic"><use href="#i-users"/></svg>Payroll</span><span><svg class="ic"><use href="#i-filecheck"/></svg>Manual-first · governed evidence</span></div></div>
+<div class="pic reveal d1"><img src="/assets/ghost-web/smalls-oneperson.jpg" alt="One oak counter serving reception, experiences and duty management at once" width="1448" height="1086" loading="lazy" decoding="async"></div>
+</div></div></section>
+
+<section class="block inv" id="investors" data-screen-label="Investors"><div class="wrap"><div class="box reveal">
+<div><span class="label" style="display:block;margin-bottom:16px">For investors</span><h2 style="margin-bottom:20px">Investor demonstration. A pilot property is the next milestone.</h2><a class="btn primary" href="mailto:troy@auxerion.com?subject=GHOST%20investor%20overview">GHOST investor overview <svg class="ic"><use href="#i-arrow"/></svg></a></div>
+<p>Independent full-service hotels sit between enterprise platforms built for chains and point solutions that each own one slice, and none of them can say whether the hotel kept its promise. GHOST targets the operational layer above the PMS with a promise-centric model, purpose-built role experiences, graduated autonomy, and a manual-first path that opens properties without sophisticated systems, including in markets competitors serve poorly. The investor demonstration shows guided arrival, experience-recovery, and room-service journeys end to end on a synthetic property, with private server records and outcome receipts. A pilot property is the next milestone. Market sizing, pricing, and pilot evidence are in the investor overview.</p>
+</div></div></section>
+
+<section class="block contact" id="contact" data-screen-label="Contact"><div class="ctbg" aria-hidden="true"><img src="/assets/ghost-web/v2/evening-ready.jpg" alt="" width="1400" height="788" loading="lazy" decoding="async"></div><div class="halo" aria-hidden="true"><i></i><i></i><i></i></div><div class="wrap">
+<h2 class="reveal">Request a demonstration.</h2>
+<p class="lede reveal d1">Guided arrival, experience-recovery, and room-service journeys, end to end, on a synthetic property.</p>
+<a class="big reveal d2" href="mailto:troy@auxerion.com?subject=GHOST%20demonstration"><svg class="ic"><use href="#i-mail"/></svg>troy@auxerion.com</a>
+<p class="wink reveal d3">You won’t see GHOST on the tour. That’s rather the point.</p>
+</div></section>
+</main>
+<footer><img class="hushpeek" src="/assets/logos/ghost-mascot.png" alt="" width="384" height="424" loading="lazy" decoding="async"><div class="wrap"><div class="top">
+<a class="brand" href="/" aria-label="Auxerion"><img class="ic-mark" src="/assets/logos/auxerion-mark-2026.png" alt="" width="24" height="24" decoding="async"><span style="font-size:13px">AUXERION</span></a>
+<nav class="family" aria-label="Auxerion family"><a href="/"><span class="dot" style="background:var(--ax)"></span>Auxerion</a><a href="/creativ8"><span class="dot" style="background:var(--c8)"></span>Creativ8</a><a href="/moose"><span class="dot" style="background:var(--mo)"></span>MOOSE</a><a href="/ghost" aria-current="true"><span class="dot" style="background:var(--ha)"></span>GHOST</a><a href="/workos"><span class="dot" style="background:var(--wo)"></span>WorkOS</a></nav>
+<div><a href="mailto:troy@auxerion.com">troy@auxerion.com</a></div></div>
+<div class="bottom"><span>© 2026 GHOST · Guest &amp; Hospitality OS Toolkit · an Auxerion company</span><span>auxerion.com/ghost</span></div></div></footer>
+<script src="/icons.js"></script><script src="/family.js"></script><script src="/cinema.js"></script><script src="/tour.js"></script>
+<script>new IntersectionObserver((es,o)=>{es.forEach(e=>{if(e.isIntersecting){e.target.querySelectorAll('.cn').forEach(c=>c.classList.add('in'));o.unobserve(e.target)}})},{threshold:.4}).observe(document.querySelector('.chain'));</script>
+</body></html>

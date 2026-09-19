@@ -2,7 +2,7 @@
 /* Refresh the product screenshots on the product pages straight from the live Vercel deployments.
    Usage:  node scripts/capture-screens.mjs                 # every screen in scripts/screens.json
            node scripts/capture-screens.mjs moose           # one product
-           node scripts/capture-screens.mjs kept front-desk # one screen
+           node scripts/capture-screens.mjs ghost front-desk # one screen
    Needs Node 18+, Google Chrome, and Playwright (`npm i -g playwright`; Chrome itself is driven via channel "chrome").
    Output: assets/screens/<product>/<name>.webp (2x DPR by default). Add new files under new names — /assets is cached immutable. */
 import fs from 'node:fs';

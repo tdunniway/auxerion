@@ -3,6 +3,11 @@
  "trailingSlash": false,
  "redirects": [
   {
+   "source": "/kept",
+   "destination": "/ghost",
+   "permanent": true
+  },
+  {
    "source": "/auxerion",
    "destination": "/",
    "permanent": true

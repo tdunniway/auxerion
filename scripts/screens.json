@@ -109,25 +109,25 @@
       "url": "https://flowrightapp.vercel.app/office"
     },
     {
-      "product": "kept",
+      "product": "ghost",
       "name": "hotel-today",
       "url": "https://foodopsapp.vercel.app/hotel-today",
       "cropSelector": "nav.demo-control-bar"
     },
     {
-      "product": "kept",
+      "product": "ghost",
       "name": "front-desk",
       "url": "https://foodopsapp.vercel.app/demo/front-desk",
       "cropSelector": "nav.demo-control-bar"
     },
     {
-      "product": "kept",
+      "product": "ghost",
       "name": "arrival-plan",
       "url": "https://foodopsapp.vercel.app/demo/team-desktop?workflow=arrival",
       "cropSelector": "nav.demo-control-bar"
     },
     {
-      "product": "kept",
+      "product": "ghost",
       "name": "restaurant-pos",
       "url": "https://foodopsapp.vercel.app/demo/operations-restaurant",
       "viewport": {
@@ -137,13 +137,13 @@
       "cropSelector": "nav.demo-control-bar"
     },
     {
-      "product": "kept",
+      "product": "ghost",
       "name": "guest-website",
       "url": "https://foodopsapp.vercel.app/demo/guest-website",
       "cropSelector": "nav.demo-control-bar"
     },
     {
-      "product": "kept",
+      "product": "ghost",
       "name": "manager-tablet",
       "url": "https://foodopsapp.vercel.app/demo/manager-tablet",
       "viewport": {
@@ -154,7 +154,7 @@
       "clipSelector": ".tablet-demo-screen"
     },
     {
-      "product": "kept",
+      "product": "ghost",
       "name": "guest-tablet",
       "url": "https://foodopsapp.vercel.app/demo/guest-tablet",
       "viewport": {
@@ -166,7 +166,7 @@
       "clipInset": 12
     },
     {
-      "product": "kept",
+      "product": "ghost",
       "name": "worker-tablet",
       "url": "https://foodopsapp.vercel.app/demo/worker-tablet",
       "viewport": {
@@ -177,7 +177,7 @@
       "clipSelector": ".tablet-demo-screen"
     },
     {
-      "product": "kept",
+      "product": "ghost",
       "name": "guest-phone",
       "url": "https://foodopsapp.vercel.app/demo/guest-phone",
       "viewport": {

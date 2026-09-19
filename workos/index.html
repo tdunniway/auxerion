@@ -395,12 +395,12 @@ body{font-size:18px}
 <div class="wrap"><div class="copy">
 <div class="eyebrow reveal in"><span class="tag accent">Foundation v1 · running</span><span class="tag">Platform, not a product</span><span class="live"><i></i>internal core</span></div>
 <h1 class="words"><span>Done</span> <span>is</span> <span>a</span> <span><em>system</em></span> <span>decision.</span></h1>
-<p class="lede reveal d1">WorkOS is the shared operational core beneath Creativ8, MOOSE and Kept. It models work as outcomes with owners, dependencies, proof and completion rules, so a person can finish their step while the system decides whether the work is actually done.</p>
+<p class="lede reveal d1">WorkOS is the shared operational core beneath Creativ8, MOOSE and GHOST. It models work as outcomes with owners, dependencies, proof and completion rules, so a person can finish their step while the system decides whether the work is actually done.</p>
 <div class="actions reveal d2"><a class="btn primary lg" href="#reuse">How three products share one core <svg class="ic"><use href="#i-arrow"/></svg></a><a class="btn secondary lg" href="#status">What is real today</a></div>
 <div class="strip reveal d3">
 <div><small><i style="background:var(--c8)"></i>Creativ8</small>Feature delivery</div>
 <div><small><i style="background:var(--mo)"></i>MOOSE</small>Patient visit</div>
-<div><small><i style="background:var(--ha-on-dark)"></i>Kept</small>Guest promise</div>
+<div><small><i style="background:var(--ha-on-dark)"></i>GHOST</small>Guest promise</div>
 </div>
 </div></div><a class="cue" href="#why" aria-label="Scroll"><span></span></a></section>
 
@@ -635,14 +635,14 @@ body{font-size:18px}
 <section class="block" id="reuse" data-screen-label="One core, three products"><div class="grid-field" aria-hidden="true" style="opacity:.35"></div><div class="wrap">
 <div class="hd">
 <div class="reveal"><span class="label" style="display:block;margin-bottom:16px">One core, three products</span><h2 class="statement sm">The same engine, wearing three vocabularies.</h2></div>
-<p class="lede reveal d1">This is the whole reason Auxerion can build deeply for three industries at once. Creativ8, MOOSE and Kept are not three codebases that resemble each other. They are three configurations of one engine, and the row that matters is the last one: underneath the language, it is the same object.</p>
+<p class="lede reveal d1">This is the whole reason Auxerion can build deeply for three industries at once. Creativ8, MOOSE and GHOST are not three codebases that resemble each other. They are three configurations of one engine, and the row that matters is the last one: underneath the language, it is the same object.</p>
 </div>
 
 <div class="vocab reveal">
 <span class="fld">Product</span>
 <span class="hd"><b><i style="background:var(--c8)"></i>Creativ8</b><small>Game development</small></span>
 <span class="hd"><b><i style="background:var(--mo)"></i>MOOSE</b><small>Medical practice</small></span>
-<span class="hd"><b><i style="background:var(--ha-on-dark)"></i>Kept</b><small>Hotel operations</small></span>
+<span class="hd"><b><i style="background:var(--ha-on-dark)"></i>GHOST</b><small>Hotel operations</small></span>
 
 <span class="fld">The outcome</span>
 <span>Feature delivered</span>
@@ -687,7 +687,7 @@ body{font-size:18px}
 <div class="plates">
 <div class="pl" style="--pc:var(--c8)"><b>Creativ8</b><small>Game development</small><span class="vocab2"><span>feature_delivery</span><span>build artifact</span><span>review note</span><span>wiki</span></span></div>
 <div class="pl" style="--pc:var(--mo)"><b>MOOSE</b><small>Medical practice</small><span class="vocab2"><span>patient_visit</span><span>signed note</span><span>result on file</span><span>provider</span></span></div>
-<div class="pl" style="--pc:var(--ha-on-dark)"><b>Kept</b><small>Hotel operations</small><span class="vocab2"><span>guest_service</span><span>room check</span><span>service photo</span><span>partner</span></span></div>
+<div class="pl" style="--pc:var(--ha-on-dark)"><b>GHOST</b><small>Hotel operations</small><span class="vocab2"><span>guest_service</span><span>room check</span><span>service photo</span><span>partner</span></span></div>
 <div class="pl future" style="--pc:var(--text2)"><b>Next vertical</b><small>Not yet built</small><span class="vocab2"><span>its own object</span><span>its own proof</span><span>its own panels</span></span></div>
 </div>
 <div class="conn">
@@ -737,7 +737,7 @@ body{font-size:18px}
 </figure>
 <div class="note reveal">
 <span class="label">Stated plainly</span>
-<p>This is a <b>design target, not a measured result</b>. Creativ8, MOOSE and Kept are each at a different stage, and none has yet been migrated onto the foundation end to end. The claim on this page is that the architecture is built to make that migration additive, and the adapters, contract tests and neutrality checks exist so the claim can be checked rather than believed.</p>
+<p>This is a <b>design target, not a measured result</b>. Creativ8, MOOSE and GHOST are each at a different stage, and none has yet been migrated onto the foundation end to end. The claim on this page is that the architecture is built to make that migration additive, and the adapters, contract tests and neutrality checks exist so the claim can be checked rather than believed.</p>
 </div>
 </div></section>
 
@@ -755,7 +755,7 @@ body{font-size:18px}
 <div class="r"><b>Product surfaces</b><p>My Day, Mission Control, Workflows, workflow detail, Process Designer and WorkPilot, running against seeded scenarios for blocked steps, missing proof, failed handoffs and critical-path risk.</p><span class="st part">First pass</span></div>
 <div class="r"><b>Data layer</b><p>Typed mock services behind the same contracts a real backend will implement, with a provider-backed session seam and a session audit trail already in place.</p><span class="st part">Mock-first</span></div>
 <div class="r"><b>Production backend, auth, integrations</b><p>Database, identity, permissions and external connectors fit behind the contracts the foundation already defines. Not started.</p><span class="st next">Next phase</span></div>
-<div class="r"><b>Sold separately</b><p>WorkOS is internal infrastructure. It is what makes Creativ8, MOOSE and Kept possible; it is not a fourth thing to buy.</p><span class="st next">No</span></div>
+<div class="r"><b>Sold separately</b><p>WorkOS is internal infrastructure. It is what makes Creativ8, MOOSE and GHOST possible; it is not a fourth thing to buy.</p><span class="st next">No</span></div>
 </div>
 </div></section>
 
@@ -770,7 +770,7 @@ body{font-size:18px}
 
 <footer><div class="wrap"><div class="top">
 <a class="brand" href="/" aria-label="Auxerion"><img class="ic-mark" src="/assets/logos/auxerion-mark-2026.png" alt="" width="24" height="24" decoding="async"><span style="font-size:13px">AUXERION</span></a>
-<nav class="family" aria-label="Auxerion family"><a href="/"><span class="dot" style="background:var(--ax)"></span>Auxerion</a><a href="/creativ8"><span class="dot" style="background:var(--c8)"></span>Creativ8</a><a href="/moose"><span class="dot" style="background:var(--mo)"></span>MOOSE</a><a href="/kept"><span class="dot" style="background:var(--ha-on-dark)"></span>Kept</a><a href="/workos" aria-current="true"><span class="dot" style="background:var(--accent2)"></span>WorkOS</a></nav>
+<nav class="family" aria-label="Auxerion family"><a href="/"><span class="dot" style="background:var(--ax)"></span>Auxerion</a><a href="/creativ8"><span class="dot" style="background:var(--c8)"></span>Creativ8</a><a href="/moose"><span class="dot" style="background:var(--mo)"></span>MOOSE</a><a href="/ghost"><span class="dot" style="background:var(--ha-on-dark)"></span>GHOST</a><a href="/workos" aria-current="true"><span class="dot" style="background:var(--accent2)"></span>WorkOS</a></nav>
 <div><a href="mailto:troy@auxerion.com">troy@auxerion.com</a></div></div>
 <div class="bottom"><span>© 2026 Auxerion · WorkOS is Auxerion's shared operational core</span><span>auxerion.com/workos</span></div></div></footer>
 
